@@ -14,8 +14,7 @@ alias h='history'															# Show the executed commands history list
 function take {	
 	mkdir $1
 	cd $1
-}
-																		
+}				
 ########################################################## Mac OSX
 alias ff='open -a Firefox'													# Open FireFox
 alias o='open'																# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
@@ -33,6 +32,8 @@ alias gc='git checkout'														# Git Checkout (Used to switch between bran
 function gg {
 	git commit -v -a -m "$*"
 }
+alias gm='git merge'														# Git Merge
+alias gcp='git cherry-pick'													# Git Cherry-Pick Commit to merge into current branch.
 alias gd='git diff | mate'
 ########################################################## Rails	
 alias ss='./script/server'				# Run the server for the current Rails project
