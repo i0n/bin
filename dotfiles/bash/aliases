@@ -1,32 +1,40 @@
-############################################################################################################################################################# Local Environment Config
-alias ianb='mate -w ~/bin/ && reload'												# Edit personal environment setup and reload
-alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'				# Reload personal bash and zsh setup
-alias iana='mate -w ~/bin/dotfiles/bash/aliases && reload'							# Edit aliases and reload
-alias ianc='mate -w ~/bin/dotfiles/bash/config && reload'							# Edit config and reload
-alias iane='mate -w ~/bin/dotfiles/bash/env && reload'								# Edit env and reload
-############################################################################################################################################################# General
-alias l='ls -lah' 																			# List files and folders including hidden files
-alias c='cd'																				# Shorten the change directory command to one letter
-alias cpu='top -o cpu' 																		# Display CPU usage with the highest processes at the top
-alias mem='top -o vsize' 																	# Display Memory usage with the highest processes at the top
-alias h='history'																			# Show the executed commands history list
-############################################################################################################################################################# Mac OSX
-alias ff='open -a Firefox'	# Open FireFox
-alias o='open'				# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
-############################################################################################################################################################# Textmate
-alias m='mate -w'					# Textmate Unix command
-############################################################################################################################################################# Git 
-alias g='git status'				# Git Status
-alias ga='git add .'				# Git Add (Everything to pending commit)
-alias gl='git log'					# Git Log (ALL)
-alias gpl='git pull'					# Git Pull
-alias gps='git push'					# Git Push
+########################################################## Local Environment Config
+alias ianb='mate -w ~/bin/ && reload'										# Edit personal environment setup and reload
+alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
+alias iana='mate -w ~/bin/dotfiles/bash/aliases && reload'					# Edit aliases and reload
+alias ianc='mate -w ~/bin/dotfiles/bash/config && reload'					# Edit config and reload
+alias iane='mate -w ~/bin/dotfiles/bash/env && reload'						# Edit env and reload
+########################################################## General
+alias l='ls -lah' 															# List files and folders including hidden files
+alias c='cd'																# Shorten the change directory command to one letter
+alias cpu='top -o cpu' 														# Display CPU usage with the highest processes at the top
+alias mem='top -o vsize' 													# Display Memory usage with the highest processes at the top
+alias h='history'															# Show the executed commands history list
+																			# Create a directory and then move into it 
+function take {	
+	mkdir $1
+	cd $1
+}
+																		
+########################################################## Mac OSX
+alias ff='open -a Firefox'													# Open FireFox
+alias o='open'																# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
+########################################################## Textmate
+alias m='mate -w'															# Textmate Unix command
+########################################################## Git 
+alias g='git status'														# Git Status
+alias ga='git add .'														# Git Add (Everything to pending commit)
+alias gl='git log'															# Git Log (ALL)
+alias gpl='git pull'														# Git Pull
+alias gps='git push'														# Git Push
+alias gb='git branch'														# Git Branch
+alias gc='git checkout'														# Git Checkout (Used to switch between branches in the repository)
+																			# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
+function gg {
+	git commit -v -a -m "$*"
+}
 alias gd='git diff | mate'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gb='git branch'
-alias gba='git branch -a'
-############################################################################################################################################################# Rails	
+########################################################## Rails	
 alias ss='./script/server'				# Run the server for the current Rails project
 alias sg='./script/generate'			# Run script generation for the current Rails project
 alias sp='./script/plugin install' 		# Run a plugin install on the current Rails project
@@ -34,16 +42,4 @@ alias sc='./script/console'				# Run the console for the current Rails project
 alias r='rake'							# Rake command
 alias rmig='rake db:migrate'			# Runs a Rake database migration
 
-############################################################################################################################################################# Functions
-### Create a directory and then move into it 
-function take {	
-	mkdir $1
-	cd $1
-}
-###
-### Git Commit with all arguments, does not require quotes around message
-function gg {
-	git commit -v -a -m "$*"
-}
-###
 # history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
