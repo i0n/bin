@@ -1,0 +1,4 @@
+Host waavoo
+	HostName waavoo.com
+	User waavooc
+	Port 22

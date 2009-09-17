@@ -1,14 +1,48 @@
-############################################################## General Aliases
-alias ls='ls -lah'
-############################################################## Git Aliases
-alias gst='git status'
-alias gl='git pull'
-alias gp='git push'
+############################################################################################################################################################# Local Environment Config
+alias ianb='mate -w ~/bin/ && reload'							# Edit personal environment setup and reload
+alias reload='source ~/.bashrc'									# Reload personal bash setup
+alias iana='mate -w ~/bin/dotfiles/bash/aliases && reload'		# Edit aliases and reload
+alias ianc='mate -w ~/bin/dotfiles/bash/config && reload'		# Edit config and reload
+alias iane='mate -w ~/bin/dotfiles/bash/env && reload'			# Edit env and reload
+############################################################################################################################################################# General
+alias l='ls -lah' 																			# List files and folders including hidden files
+alias c='cd'																				# Shorten the change directory command to one letter
+alias cpu='top -o cpu' 																		# Display CPU usage with the highest processes at the top
+alias mem='top -o vsize' 																	# Display Memory usage with the highest processes at the top
+alias h='history'																			# Show the executed commands history list
+############################################################################################################################################################# Finder
+alias ff='open -a Firefox'	# Open FireFox
+alias o='open . &'
+############################################################################################################################################################# Textmate
+alias m='mate -w'					# Textmate Unix command
+############################################################################################################################################################# Git 
+alias g='git status'				# Git Status
+alias ga='git add .'				# Gitt Add (Everything to pending commit)
+alias gl='git pull'					# Git Pull
+alias gp='git push'					# Git Push
 alias gd='git diff | mate'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gb='git branch'
 alias gba='git branch -a'
-############################################################## Rails Aliases	
-alias ss='script/server'
+############################################################################################################################################################# Rails	
+alias ss='./script/server'				# Run the server for the current Rails project
+alias sg='./script/generate'			# Run script generation for the current Rails project
+alias sp='./script/plugin install' 		# Run a plugin install on the current Rails project
+alias sc='./script/console'				# Run the console for the current Rails project
+alias r='rake'							# Rake command
+alias rmig='rake db:migrate'			# Runs a Rake database migration
 
+############################################################################################################################################################# Functions
+### Create a directory and then move into it 
+function take {	
+	mkdir $1
+	cd $1
+}
+###
+### Git Commit with all arguments, does not require quotes around message
+function gg {
+	git commit -v -a -m "$*"
+}
+###
+# history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
