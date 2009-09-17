@@ -1,9 +1,9 @@
 ############################################################################################################################################################# Local Environment Config
-alias ianb='mate -w ~/bin/ && reload'							# Edit personal environment setup and reload
-alias reload='source ~/.bashrc'									# Reload personal bash setup
-alias iana='mate -w ~/bin/dotfiles/bash/aliases && reload'		# Edit aliases and reload
-alias ianc='mate -w ~/bin/dotfiles/bash/config && reload'		# Edit config and reload
-alias iane='mate -w ~/bin/dotfiles/bash/env && reload'			# Edit env and reload
+alias ianb='mate -w ~/bin/ && reload'												# Edit personal environment setup and reload
+alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'				# Reload personal bash and zsh setup
+alias iana='mate -w ~/bin/dotfiles/bash/aliases && reload'							# Edit aliases and reload
+alias ianc='mate -w ~/bin/dotfiles/bash/config && reload'							# Edit config and reload
+alias iane='mate -w ~/bin/dotfiles/bash/env && reload'								# Edit env and reload
 ############################################################################################################################################################# General
 alias l='ls -lah' 																			# List files and folders including hidden files
 alias c='cd'																				# Shorten the change directory command to one letter

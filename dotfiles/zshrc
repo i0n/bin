@@ -1,0 +1,7 @@
+# When setting up don't forget to create the file ~/.zshrc if it does not already exist and paste the following line into it
+# . ~/bin/dotfiles/zshrc
+# When setting up don't forget to create the file ~/.zshenv if it does not already exist and paste the following line into it
+# . ~/bin/dotfiles/zsh/env
+
+. ~/bin/dotfiles/zsh/config
+. ~/bin/dotfiles/zsh/aliases
