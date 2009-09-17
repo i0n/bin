@@ -10,16 +10,17 @@ alias c='cd'																				# Shorten the change directory command to one le
 alias cpu='top -o cpu' 																		# Display CPU usage with the highest processes at the top
 alias mem='top -o vsize' 																	# Display Memory usage with the highest processes at the top
 alias h='history'																			# Show the executed commands history list
-############################################################################################################################################################# Finder
+############################################################################################################################################################# Mac OSX
 alias ff='open -a Firefox'	# Open FireFox
-alias o='open . &'
+alias o='open'				# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
 ############################################################################################################################################################# Textmate
 alias m='mate -w'					# Textmate Unix command
 ############################################################################################################################################################# Git 
 alias g='git status'				# Git Status
-alias ga='git add .'				# Gitt Add (Everything to pending commit)
-alias gl='git pull'					# Git Pull
-alias gp='git push'					# Git Push
+alias ga='git add .'				# Git Add (Everything to pending commit)
+alias gl='git log'					# Git Log (ALL)
+alias gpl='git pull'					# Git Pull
+alias gps='git push'					# Git Push
 alias gd='git diff | mate'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
