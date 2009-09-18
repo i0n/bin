@@ -6,7 +6,9 @@ alias ianc='mate -w ~/bin/dotfiles/bash/config && reload'					# Edit config and 
 alias iane='mate -w ~/bin/dotfiles/bash/env && reload'						# Edit env and reload
 ########################################################## General
 alias l='ls -lah' 															# List files and folders including hidden files
-alias c='cd'																# Shorten the change directory command to one letter
+alias c='cd'																# Change directory
+alias ..='cd ..'															# Change directory up one level
+alias ...='cd ../..'														# Change directory up two levels
 alias cpu='top -o cpu' 														# Display CPU usage with the highest processes at the top
 alias mem='top -o vsize' 													# Display Memory usage with the highest processes at the top
 alias h='history'															# Show the executed commands history list
