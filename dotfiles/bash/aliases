@@ -29,7 +29,7 @@ alias gl='git log'															# Git Log (ALL)
 alias gpl='git pull'														# Git Pull
 																			# Git Push to github
 function gps {
-	git push git://github.com/$1/$2.git	
+	git push git@github.com/$1/$2.git	
 }
 alias gb='git branch'														# Git Branch
 alias gc='git checkout'														# Git Checkout (Used to switch between branches in the repository)
