@@ -12,6 +12,10 @@ alias ...='cd ../..'														# Change directory up two levels
 alias cpu='top -o cpu' 														# Display CPU usage with the highest processes at the top
 alias mem='top -o vsize' 													# Display Memory usage with the highest processes at the top
 alias h='history'															# Show the executed commands history list
+																			# Show the most used commands from this session
+function hl {
+	history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
 																			# Create a directory and then move into it 
 function take {	
 	mkdir $1
@@ -26,11 +30,12 @@ alias m='mate -w'															# Textmate Unix command
 alias g='git status'														# Git Status
 alias ga='git add .'														# Git Add (Everything to pending commit)
 alias gl='git log'															# Git Log (ALL)
-alias gpl='git pull'														# Git Pull
-																			# Git Push to github
-function gps {
-	git push git@github.com:$1/$2.git	
+																			# Git clone from GitHub
+function gcl() {
+  git clone git://github.com/$1/$2.git $3
 }
+alias gpl='git pull'														# Git Pull
+alias gps='git push'														# Git Push
 alias gb='git branch'														# Git Branch
 alias gc='git checkout'														# Git Checkout (Used to switch between branches in the repository)
 																			# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
@@ -39,7 +44,8 @@ function gg {
 }
 alias gm='git merge'														# Git Merge
 alias gcp='git cherry-pick'													# Git Cherry-Pick Commit to merge into current branch.
-alias gd='git diff | mate'
+alias gd='git diff'															# Git Diff
+alias gh='github'															# Alias for the github gem
 ########################################################## Rails	
 alias ss='./script/server'				# Run the server for the current Rails project
 alias sg='./script/generate'			# Run script generation for the current Rails project
@@ -48,4 +54,4 @@ alias sc='./script/console'				# Run the console for the current Rails project
 alias r='rake'							# Rake command
 alias rmig='rake db:migrate'			# Runs a Rake database migration
 
-# history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+# 
