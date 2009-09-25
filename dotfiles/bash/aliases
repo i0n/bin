@@ -11,7 +11,7 @@ alias ..='cd ..'															# Change directory up one level
 alias ...='cd ../..'														# Change directory up two levels
 alias cpu='top -o cpu' 														# Display CPU usage with the highest processes at the top
 alias mem='top -o vsize' 													# Display Memory usage with the highest processes at the top
-alias h='history'															# Show the executed commands history list
+alias h='history 1'															# Show the executed commands history list
 																			# Show the most used commands from this session
 function hl {
 	history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
@@ -30,7 +30,7 @@ alias m='mate -w'															# Textmate Unix command
 alias g='git status'														# Git Status
 alias ga='git add .'														# Git Add (Everything to pending commit)
 alias gl='git log'															# Git Log (ALL)
-																			# Git clone from GitHub
+																			# Git clone from GitHub $1= user $2= repo $3= name of dir to clone into (will default to name of repo) 
 function gcl() {
   git clone git://github.com/$1/$2.git $3
 }
@@ -53,5 +53,3 @@ alias sp='./script/plugin install' 		# Run a plugin install on the current Rails
 alias sc='./script/console'				# Run the console for the current Rails project
 alias r='rake'							# Rake command
 alias rmig='rake db:migrate'			# Runs a Rake database migration
-
-# 
