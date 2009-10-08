@@ -55,9 +55,10 @@ function gdl() {
 	rm -rf $2
 }
 ########################################################## Rails	
-alias ss='./script/server'				# Run the server for the current Rails project
-alias sg='./script/generate'			# Run script generation for the current Rails project
+alias ss='./script/server'						# Run the server for the current Rails project
+alias sg='./script/generate'					# Run script generation for the current Rails project
+alias sd='./script/destroy'						# Run script destroy for the current Rails project
 alias sp='./script/plugin install' 		# Run a plugin install on the current Rails project
-alias sc='./script/console'				# Run the console for the current Rails project
-alias r='rake'							# Rake command
-alias rmig='rake db:migrate'			# Runs a Rake database migration
+alias sc='./script/console'						# Run the console for the current Rails project
+alias r='rake'												# Rake command
+alias rmig='rake db:migrate'					# Runs a Rake database migration
