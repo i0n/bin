@@ -61,4 +61,5 @@ alias sd='./script/destroy'						# Run script destroy for the current Rails proj
 alias sp='./script/plugin install' 		# Run a plugin install on the current Rails project
 alias sc='./script/console'						# Run the console for the current Rails project
 alias r='rake'												# Rake command
+alias rr='rake routes'								# Rake Routes command shows current route mappings
 alias rmig='rake db:migrate'					# Runs a Rake database migration
