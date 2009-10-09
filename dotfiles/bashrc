@@ -6,6 +6,6 @@
 #	source ~/.bashrc
 # fi
 
-. ~/bin/dotfiles/bash/env
-. ~/bin/dotfiles/bash/config
-. ~/bin/dotfiles/bash/aliases
+. ~/sites/bin/dotfiles/bash/env
+. ~/sites/bin/dotfiles/bash/config
+. ~/sites/bin/dotfiles/bash/aliases
