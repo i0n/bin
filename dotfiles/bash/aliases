@@ -1,52 +1,53 @@
 ########################################################## Local Environment Config
-alias ianb='mate -w ~/sites/bin/ && reload'										# Edit personal environment setup and reload
+alias ianb='mate -w ~/sites/bin/ && reload'																# Edit personal environment setup and reload
 alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
 alias iana='mate -w ~/sites/bin/dotfiles/bash/aliases && reload'					# Edit aliases and reload
-alias ianc='mate -w ~/sites/bin/dotfiles/bash/config && reload'					# Edit config and reload
-alias iane='mate -w ~/sites/bin/dotfiles/bash/env && reload'						# Edit env and reload
+alias ianc='mate -w ~/sites/bin/dotfiles/bash/config && reload'						# Edit config and reload
+alias iane='mate -w ~/sites/bin/dotfiles/bash/env && reload'							# Edit env and reload
 ########################################################## General
-alias l='ls -lah' 															# List files and folders including hidden files
-alias c='cd'																# Change directory
-alias ..='cd ..'															# Change directory up one level
-alias ...='cd ../..'														# Change directory up two levels
-alias cpu='top -o cpu' 														# Display CPU usage with the highest processes at the top
-alias mem='top -o vsize' 													# Display Memory usage with the highest processes at the top
-alias h='history 1'															# Show the executed commands history list
-																			# Show the most used commands from this session
+alias l='ls -lah' 																												# List files and folders including hidden files
+alias c='cd'																															# Change directory
+alias ..='cd ..'																													# Change directory up one level
+alias ...='cd ../..'																											# Change directory up two levels
+alias cpu='top -o cpu' 																										# Display CPU usage with the highest processes at the top
+alias mem='top -o vsize' 																									# Display Memory usage with the highest processes at the top
+alias h='history 1'																												# Show the executed commands history list
+																																					# Show the most used commands from this session
 function hl {
 	history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
-																			# Create a directory and then move into it 
+																																					# Create a directory and then move into it 
 function take {	
 	mkdir $1
 	cd $1
 }				
 ########################################################## Mac OSX
-alias ff='open -a Firefox'													# Open FireFox
-alias o='open'																# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
+alias ff='open -a Firefox'																								# Open FireFox
+alias o='open'																														# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
 ########################################################## Textmate
-alias m='mate -w'															# Textmate Unix command
+alias m='mate -w'																													# Textmate Unix command
 ########################################################## Git 
-alias g='git status'														# Git Status
-alias ga='git add .'														# Git Add (Everything to pending commit)
-alias gl='git log'															# Git Log (ALL)
-																			# Git clone from GitHub $1= user $2= repo $3= name of dir to clone into (will default to name of repo) 
+alias g='git status'																											# Git Status
+alias ga='git add .'																											# Git Add (Everything to pending commit)
+alias gl='git log'																												# Git Log (ALL)
+alias gt='git gc'																													# Tidies git repository (run every 100 commits or so)							
+																																					# Git clone from GitHub $1= user $2= repo $3= name of dir to clone into (will default to name of repo) 
 function gcl() {
   git clone git://github.com/$1/$2.git $3
 }
-alias gpl='git pull'														# Git Pull
-alias gps='git push'														# Git Push
-alias gb='git branch'														# Git Branch
-alias gc='git checkout'														# Git Checkout (Used to switch between branches in the repository)
-																			# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
+alias gpl='git pull'																											# Git Pull
+alias gps='git push'																											# Git Push
+alias gb='git branch'																											# Git Branch
+alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
+																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
 function gg {
 	git commit -v -a -m "$*"
 }
-alias gm='git merge'														# Git Merge
-alias gcp='git cherry-pick'													# Git Cherry-Pick Commit to merge into current branch.
-alias gd='git diff'															# Git Diff
-alias gh='github'															# Alias for the github gem
-																			# Download the files from a GitHub repository to the current dir. Pass the username then the repo.
+alias gm='git merge'																											# Git Merge
+alias gcp='git cherry-pick'																								# Git Cherry-Pick Commit to merge into current branch.
+alias gd='git diff'																												# Git Diff
+alias gh='github'																													# Alias for the github gem
+																																					# Download the files from a GitHub repository to the current dir. Pass the username then the repo.
 function gdl() {
 	git clone git://github.com/$1/$2.git
 	cd $2
