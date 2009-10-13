@@ -30,7 +30,7 @@ alias m='mate -w'																													# Textmate Unix command
 alias g='git status'																											# Git Status
 alias ga='git add .'																											# Git Add (Everything to pending commit)
 alias gl='git log'																												# Git Log (ALL)
-alias gt='git gc'																													# Tidies git repository (run every 100 commits or so)							
+alias ggc='git gc'																													# Tidy git repository (run every 100 commits or so)							
 																																					# Git clone from GitHub $1= user $2= repo $3= name of dir to clone into (will default to name of repo) 
 function gcl() {
   git clone git://github.com/$1/$2.git $3
@@ -38,6 +38,7 @@ function gcl() {
 alias gpl='git pull'																											# Git Pull
 alias gps='git push'																											# Git Push
 alias gb='git branch'																											# Git Branch
+alias gt='git tag'																												# Git Tag
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
 																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
 function gg {
