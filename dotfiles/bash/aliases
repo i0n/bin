@@ -57,11 +57,14 @@ function gdl() {
 	rm -rf $2
 }
 ########################################################## Rails	
-alias ss='./script/server'						# Run the server for the current Rails project
-alias sg='./script/generate'					# Run script generation for the current Rails project
-alias sd='./script/destroy'						# Run script destroy for the current Rails project
-alias sp='./script/plugin install' 		# Run a plugin install on the current Rails project
-alias sc='./script/console'						# Run the console for the current Rails project
-alias r='rake'												# Rake command
-alias rr='rake routes'								# Rake Routes command shows current route mappings
-alias rmig='rake db:migrate'					# Runs a Rake database migration
+alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
+alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.
+alias tlog='tail -f ./log/test.log'										#Runs the development log for the current Rails project.
+alias ss='./script/server'														# Run the server for the current Rails project
+alias sg='./script/generate'													# Run script generation for the current Rails project
+alias sd='./script/destroy'														# Run script destroy for the current Rails project
+alias sp='./script/plugin install' 										# Run a plugin install on the current Rails project
+alias sc='./script/console'														# Run the console for the current Rails project
+alias r='rake'																				# Rake command
+alias rr='rake routes'																# Rake Routes command shows current route mappings
+alias rmig='rake db:migrate'													# Runs a Rake database migration
