@@ -4,6 +4,11 @@ alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload
 alias iana='mate -w ~/sites/bin/dotfiles/bash/aliases && reload'					# Edit aliases and reload
 alias ianc='mate -w ~/sites/bin/dotfiles/bash/config && reload'						# Edit config and reload
 alias iane='mate -w ~/sites/bin/dotfiles/bash/env && reload'							# Edit env and reload
+																																					# Opening function for my terminal to go to my sites folder and display a list
+function cdsl {
+	cd sites
+	ls -lah
+}
 ########################################################## General
 alias l='ls -lah' 																												# List files and folders including hidden files
 alias c='cd'																															# Change directory
