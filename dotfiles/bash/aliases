@@ -4,6 +4,13 @@ alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload
 alias iana='mate -w ~/sites/bin/dotfiles/bash/aliases && reload'					# Edit aliases and reload
 alias ianc='mate -w ~/sites/bin/dotfiles/bash/config && reload'						# Edit config and reload
 alias iane='mate -w ~/sites/bin/dotfiles/bash/env && reload'							# Edit env and reload
+																																					# Function to load my usual apps
+function ian {
+	open -a "Google Docs"
+	open -a GMail
+	open -a "Ta Da List"
+	open -a "Google Chrome"
+}
 																																					# Opening function for my terminal to go to my sites folder and display a list
 function cdsl {
 	cd sites
@@ -27,7 +34,9 @@ function take {
 	cd $1
 }				
 ########################################################## Mac OSX
+alias chrome='open -a "Google Chrome"'																		# Open Google Chrome
 alias ff='open -a Firefox'																								# Open FireFox
+alias safari='open -a safari'																							# Open Safari
 alias o='open'																														# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
 ########################################################## Textmate
 alias m='mate -w'																													# Textmate Unix command
