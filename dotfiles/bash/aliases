@@ -16,6 +16,7 @@ function cdsl {
 	cd sites
 	ls -lah
 }
+
 ########################################################## General
 alias l='ls -lah' 																												# List files and folders including hidden files
 alias c='cd'																															# Change directory

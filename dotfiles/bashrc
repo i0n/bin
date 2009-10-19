@@ -1,5 +1,5 @@
 # When setting up don't forget to create the file ~/.bashrc if it does not already exist and paste the following line into it:
-# . ~/bin/dotfiles/bashrc
+# . ~/sites/bin/dotfiles/bashrc
 # When setting up don't forget to create the file ~/.bash_profile if it does not already exist and paste the following lines into it:
 # if [ -f ~/.bashrc ];
 # then
