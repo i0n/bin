@@ -2,3 +2,8 @@ Host waavoo
 	HostName waavoo.com
 	User waavooc
 	Port 22
+	
+Host mosaic
+	HostName 68.233.9.144
+	User mosaicp
+	port 22
