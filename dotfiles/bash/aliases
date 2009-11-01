@@ -87,4 +87,4 @@ alias sp='./script/plugin install' 										# Run a plugin install on the curre
 alias sc='./script/console'														# Run the console for the current Rails project
 alias r='rake'																				# Rake command
 alias rr='rake routes'																# Rake Routes command shows current route mappings
-alias rmig='rake db:migrate'													# Runs a Rake database migration
+alias rdm='rake db:migrate'														# Runs a Rake database migration
