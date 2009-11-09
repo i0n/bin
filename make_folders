@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+path = '/Users/' + %x{echo $USER}.chomp + '/Desktop'
+
+puts 'Please enter a name for the container folder:'
+container_folder = gets.chomp
+puts
+
+puts "Folders will be created in #{path}/#{container_folder}"
+puts
+
+puts "How many folders would you like to create?"
+number_of_folders = gets.chomp.to_i
+puts
+
+puts "If you would like a prefix for the folders, please enter it now:"
+folder_prefix = gets.chomp
+Dir.chdir path
+Dir.mkdir container_folder
+Dir.chdir path + '/' + container_folder
+dir_count = 0
+number_of_folders.times do |x|
+  dir_count += 1
+  Dir.mkdir folder_prefix + dir_count.to_s
+end
+puts
+
+puts "Your folders have been created!"

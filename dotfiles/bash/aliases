@@ -42,7 +42,7 @@ alias ff='open -a Firefox'																								# Open FireFox
 alias safari='open -a safari'																							# Open Safari
 alias o='open'																														# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
 ########################################################## Textmate
-alias m='mate -w'																													# Textmate Unix command
+alias m='mate'																													# Textmate Unix command
 ########################################################## Git 
 alias g='git status'																											# Git Status
 alias ga='git add .'																											# Git Add (Everything to pending commit)
@@ -74,48 +74,49 @@ function gdl() {
 	rm -rf $2
 }
 ########################################################## Nginx & Passenger
-alias restart='touch ./tmp/restart.txt'								# Restart Passenger when executed from the project root
+alias restart='touch ./tmp/restart.txt'															# Restart Passenger when executed from the project root
+alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						#Runs the NginX error log
 
 # Edit Nginx config for adding sites to local dev environment
 alias nginx_config='mate -w /usr/local/nginx/conf/nginx.conf /etc/hosts'
 
 function nginx_reload() {
-FILE="/usr/local/nginx/logs/nginx.pid"
-if [ -e $FILE ]; then
-echo "Reloading NGINX..."
-PID=`cat /usr/local/nginx/logs/nginx.pid`
-sudo kill -HUP $PID
-else
-echo "Nginx pid file not found"
-return 0
-fi
+	FILE="/usr/local/nginx/logs/nginx.pid"
+	if [ -e $FILE ]; then
+	echo "Reloading NGINX..."
+	PID=`cat /usr/local/nginx/logs/nginx.pid`
+	sudo kill -HUP $PID
+	else
+	echo "Nginx pid file not found"
+	return 0
+	fi
 }
  
 function nginx_stop() {
-FILE="/usr/local/nginx/logs/nginx.pid"
-if [ -e $FILE ]; then
-echo "Stopping NGINX..."
-PID=`cat /usr/local/nginx/logs/nginx.pid`
-sudo kill -INT $PID
-else
-echo "Nginx pid file not found"
-return 0
-fi
+	FILE="/usr/local/nginx/logs/nginx.pid"
+	if [ -e $FILE ]; then
+	echo "Stopping NGINX..."
+	PID=`cat /usr/local/nginx/logs/nginx.pid`
+	sudo kill -INT $PID
+	else
+	echo "Nginx pid file not found"
+	return 0
+	fi
 }
  
 function nginx_restart() {
-FILE="/usr/local/nginx/logs/nginx.pid"
-if [ -e $FILE ]; then
-echo "Stopping NGINX..."
-PID=`cat /usr/local/nginx/logs/nginx.pid`
-sudo kill -INT $PID
-sleep 1
-echo "Starting NGINX..."
-sudo nginx
-else
-echo "Nginx pid file not found"
-return 0
-fi
+	FILE="/usr/local/nginx/logs/nginx.pid"
+	if [ -e $FILE ]; then
+	echo "Stopping NGINX..."
+	PID=`cat /usr/local/nginx/logs/nginx.pid`
+	sudo kill -INT $PID
+	sleep 1
+	echo "Starting NGINX..."
+	sudo nginx
+	else
+	echo "Nginx pid file not found"
+	return 0
+	fi
 }
 
 ########################################################## Rails	
