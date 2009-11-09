@@ -73,6 +73,51 @@ function gdl() {
 	cd ..
 	rm -rf $2
 }
+########################################################## Nginx & Passenger
+alias restart='touch ./tmp/restart.txt'								# Restart Passenger when executed from the project root
+
+# Edit Nginx config for adding sites to local dev environment
+alias nginx_config='mate -w /usr/local/nginx/conf/nginx.conf /etc/hosts'
+
+function nginx_reload() {
+FILE="/usr/local/nginx/logs/nginx.pid"
+if [ -e $FILE ]; then
+echo "Reloading NGINX..."
+PID=`cat /usr/local/nginx/logs/nginx.pid`
+sudo kill -HUP $PID
+else
+echo "Nginx pid file not found"
+return 0
+fi
+}
+ 
+function nginx_stop() {
+FILE="/usr/local/nginx/logs/nginx.pid"
+if [ -e $FILE ]; then
+echo "Stopping NGINX..."
+PID=`cat /usr/local/nginx/logs/nginx.pid`
+sudo kill -INT $PID
+else
+echo "Nginx pid file not found"
+return 0
+fi
+}
+ 
+function nginx_restart() {
+FILE="/usr/local/nginx/logs/nginx.pid"
+if [ -e $FILE ]; then
+echo "Stopping NGINX..."
+PID=`cat /usr/local/nginx/logs/nginx.pid`
+sudo kill -INT $PID
+sleep 1
+echo "Starting NGINX..."
+sudo nginx
+else
+echo "Nginx pid file not found"
+return 0
+fi
+}
+
 ########################################################## Rails	
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
 alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.

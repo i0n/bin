@@ -3,4 +3,4 @@ export EDITOR="mate -w"
 
 ############################################################## Path Variable 
 export PATH=$PATH:~/sites/bin
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:$PATH"
