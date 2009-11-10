@@ -1,9 +1,9 @@
 ########################################################## Local Environment Config
-alias ianb='mate -w ~/sites/bin/ && reload'																# Edit personal environment setup and reload
+alias ianb='mate ~/sites/bin/ && reload'																# Edit personal environment setup and reload
 alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
-alias iana='mate -w ~/sites/bin/dotfiles/bash/aliases && reload'					# Edit aliases and reload
-alias ianc='mate -w ~/sites/bin/dotfiles/bash/config && reload'						# Edit config and reload
-alias iane='mate -w ~/sites/bin/dotfiles/bash/env && reload'							# Edit env and reload
+alias iana='mate ~/sites/bin/dotfiles/bash/aliases && reload'					# Edit aliases and reload
+alias ianc='mate ~/sites/bin/dotfiles/bash/config && reload'						# Edit config and reload
+alias iane='mate ~/sites/bin/dotfiles/bash/env && reload'							# Edit env and reload
 																																					# Function to load my usual apps
 function ian {
 	open -a "Google Docs"
@@ -78,7 +78,7 @@ alias restart='touch ./tmp/restart.txt'															# Restart Passenger when e
 alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						#Runs the NginX error log
 
 # Edit Nginx config for adding sites to local dev environment
-alias nginx_config='mate -w /usr/local/nginx/conf/nginx.conf /etc/hosts'
+alias nginx_config='mate /usr/local/nginx/conf/nginx.conf /etc/hosts'
 
 function nginx_reload() {
 	FILE="/usr/local/nginx/logs/nginx.pid"
@@ -103,21 +103,22 @@ function nginx_stop() {
 	return 0
 	fi
 }
- 
-function nginx_restart() {
-	FILE="/usr/local/nginx/logs/nginx.pid"
-	if [ -e $FILE ]; then
-	echo "Stopping NGINX..."
-	PID=`cat /usr/local/nginx/logs/nginx.pid`
-	sudo kill -INT $PID
-	sleep 1
-	echo "Starting NGINX..."
-	sudo nginx
-	else
-	echo "Nginx pid file not found"
-	return 0
-	fi
-}
+
+# Does not work when launching Nginx through launchctl on OSX 
+# function nginx_restart() {
+# 	FILE="/usr/local/nginx/logs/nginx.pid"
+# 	if [ -e $FILE ]; then
+# 	echo "Stopping NGINX..."
+# 	PID=`cat /usr/local/nginx/logs/nginx.pid`
+# 	sudo kill -INT $PID
+# 	sleep 1
+# 	echo "Starting NGINX..."
+# 	sudo nginx
+# 	else
+# 	echo "Nginx pid file not found"
+# 	return 0
+# 	fi
+# }
 
 ########################################################## Rails	
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
