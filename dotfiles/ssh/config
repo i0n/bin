@@ -7,3 +7,8 @@ Host mosaic
 	HostName 68.233.9.144
 	User mosaicp
 	port 22
+	
+Host thoughtplant
+	HostName 109.123.70.124
+	User i0n
+	port 22

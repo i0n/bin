@@ -47,7 +47,7 @@ alias m='mate'																													# Textmate Unix command
 alias g='git status'																											# Git Status
 alias ga='git add .'																											# Git Add (Everything to pending commit)
 alias gl='git log'																												# Git Log (ALL)
-alias ggc='git gc'																													# Tidy git repository (run every 100 commits or so)							
+alias ggc='git gc'																												# Tidy git repository (run every 100 commits or so)							
 																																					# Git clone from GitHub $1= user $2= repo $3= name of dir to clone into (will default to name of repo) 
 function gcl() {
   git clone git://github.com/$1/$2.git $3
@@ -79,47 +79,12 @@ alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						#Runs the NginX e
 
 # Edit Nginx config for adding sites to local dev environment
 alias nginx_config='mate /usr/local/nginx/conf/nginx.conf /etc/hosts'
-
-function nginx_reload() {
-	FILE="/usr/local/nginx/logs/nginx.pid"
-	if [ -e $FILE ]; then
-	echo "Reloading NGINX..."
-	PID=`cat /usr/local/nginx/logs/nginx.pid`
-	sudo kill -HUP $PID
-	else
-	echo "Nginx pid file not found"
-	return 0
-	fi
+alias nginx_stop='sudo nginx -s stop'
+alias nginx_start='sudo launchctl load -F  /System/Library/LaunchDaemons/nginx.plist'
+function nginx_restart {
+	sudo nginx -s stop
+	sudo launchctl load -F  /System/Library/LaunchDaemons/nginx.plist
 }
- 
-function nginx_stop() {
-	FILE="/usr/local/nginx/logs/nginx.pid"
-	if [ -e $FILE ]; then
-	echo "Stopping NGINX..."
-	PID=`cat /usr/local/nginx/logs/nginx.pid`
-	sudo kill -INT $PID
-	else
-	echo "Nginx pid file not found"
-	return 0
-	fi
-}
-
-# Does not work when launching Nginx through launchctl on OSX 
-# function nginx_restart() {
-# 	FILE="/usr/local/nginx/logs/nginx.pid"
-# 	if [ -e $FILE ]; then
-# 	echo "Stopping NGINX..."
-# 	PID=`cat /usr/local/nginx/logs/nginx.pid`
-# 	sudo kill -INT $PID
-# 	sleep 1
-# 	echo "Starting NGINX..."
-# 	sudo nginx
-# 	else
-# 	echo "Nginx pid file not found"
-# 	return 0
-# 	fi
-# }
-
 ########################################################## Rails	
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
 alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.
