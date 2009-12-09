@@ -12,3 +12,8 @@ Host thoughtplant
 	HostName 109.123.70.124
 	User i0n
 	port 22
+	
+Host commval
+	HostName 77.92.77.106
+	User i0n
+	port 22

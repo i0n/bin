@@ -35,7 +35,8 @@ function hl {
 function take {	
 	mkdir $1
 	cd $1
-}				
+}
+alias ssh_config='mate ~/sites/bin/dotfiles/ssh/config'										# Shortcut for setting ssh aliases
 ########################################################## Mac OSX
 alias chrome='open -a "Google Chrome"'																		# Open Google Chrome
 alias ff='open -a Firefox'																								# Open FireFox
@@ -46,6 +47,7 @@ alias m='mate'																													# Textmate Unix command
 ########################################################## Git 
 alias g='git status'																											# Git Status
 alias ga='git add .'																											# Git Add (Everything to pending commit)
+alias gr='git rm'																													# Git remove a file from staging area. eg: gr file.txt
 alias gl='git log'																												# Git Log (ALL)
 alias ggc='git gc'																												# Tidy git repository (run every 100 commits or so)							
 																																					# Git clone from GitHub $1= user $2= repo $3= name of dir to clone into (will default to name of repo) 
