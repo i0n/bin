@@ -102,3 +102,6 @@ alias sc='./script/console'														# Run the console for the current Rails
 alias r='rake'																				# Rake command
 alias rr='rake routes'																# Rake Routes command shows current route mappings
 alias rdm='rake db:migrate'														# Runs a Rake database migration
+alias rt='rake test'																	# Runs all tests
+alias rtu='rake test:units'														# Runs all unit tests (models)
+alias rtf='rake test:functionals'											# Runs all functional tests (controllers)
