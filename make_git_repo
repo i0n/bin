@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+git_dir = '/home/i0n/git'
+Dir.chdir git_dir
+Dir.mkdir "#{ARGV}.git"
+puts "SUCCESS!"
