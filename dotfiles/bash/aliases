@@ -64,7 +64,7 @@ function gg {
 	git commit -v -a -m "$*"
 }
 alias gm='git merge'																											# Git Merge
-alias gcp='git cherry-pick'																								# Git Cherry-Pick Commit to merge into current branch.
+alias gcp='git cherry-pick'																								# Git Cherry-Pick Commit to merge into current branch. From branch you want to pull change into: gcp 21312hfff (represents the unique key for that change)
 alias gd='git diff'																												# Git Diff
 alias gh='github'																													# Alias for the github gem
 																																					# Download the files from a GitHub repository to the current dir. Pass the username then the repo.
