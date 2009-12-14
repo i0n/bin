@@ -2,4 +2,6 @@
 git_dir = '/home/i0n/git'
 Dir.chdir git_dir
 Dir.mkdir "#{ARGV}.git"
+exec "cd #{git_dir}/#{ARGV}.git"
+exec "git init --bare"
 puts "SUCCESS!"
