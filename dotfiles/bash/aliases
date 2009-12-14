@@ -106,3 +106,4 @@ alias rdm='rake db:migrate'														# Runs a Rake database migration
 alias rt='rake test'																	# Runs all tests
 alias rtu='rake test:units'														# Runs all unit tests (models)
 alias rtf='rake test:functionals'											# Runs all functional tests (controllers)
+alias irails='rails -d mysql -m ~/sites/rails-templates/base.rb' # Runs the rails generator with my preference of DB and my custom Rails template
