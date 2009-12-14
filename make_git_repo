@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 git_dir = '/home/i0n/git'
+app_name = ARGV
 Dir.chdir git_dir
-Dir.mkdir "#{ARGV}.git"
-system "cd #{git_dir}/#{ARGV}.git"
+Dir.mkdir "#{app_name}.git"
+system "cd #{git_dir}/#{app_name}.git"
 system "git init --bare"
 puts "SUCCESS!"
