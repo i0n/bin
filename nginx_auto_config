@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
-  target_file = ARGV[0]
-  nginx_new = ARGV[1]
-  nginx_config = IO.readlines(target_file)
-  nginx_last_line = nginx_config.pop
-  nginx_config.push nginx_new
-  nginx_config.push nginx_last_line
-  File.open(target_file, "w") do |file|
-    file.puts nginx_config
-  end  
+target_file = ARGV[0]
+nginx_new = ARGV[1]
+nginx_config = IO.readlines(target_file)
+nginx_last_line = nginx_config.pop
+nginx_config.push nginx_new
+nginx_config.push nginx_last_line
+File.open(target_file, "w") do |file|
+  file.puts nginx_config
+end
