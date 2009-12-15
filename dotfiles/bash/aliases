@@ -56,6 +56,7 @@ function gcl() {
 }
 alias gpl='git pull'																											# Git Pull
 alias gps='git push'																											# Git Push
+alias grao='git remote add origin'																				# To add a remote Git repository append clone URL e.g: git@github.com:i0n/dotfiles.git
 alias gb='git branch'																											# Git Branch
 alias gt='git tag'																												# Git Tag
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
