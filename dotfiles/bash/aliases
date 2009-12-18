@@ -50,17 +50,13 @@ alias ga='git add .'																											# Git Add (Everything to pending 
 alias gr='git rm'																													# Git remove a file from staging area. eg: gr file.txt
 alias gl='git log'																												# Git Log (ALL)
 alias ggc='git gc'																												# Tidy git repository (run every 100 commits or so)							
-																																					# Git clone from GitHub $1= user $2= repo $3= name of dir to clone into (will default to name of repo) 
-function gcl() {
-  git clone git://github.com/$1/$2.git $3
-}
 alias gpl='git pull'																											# Git Pull
 alias gps='git push'																											# Git Push
 alias grao='git remote add origin'																				# To add a remote Git repository append clone URL e.g: git@github.com:i0n/dotfiles.git
 alias gb='git branch'																											# Git Branch
 alias gt='git tag'																												# Git Tag
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
-alias gcl='sudo git clone'																											# Clone a remote repository. e.g: gcl git://github.com/masterkain/macruby.git
+alias gcl='sudo git clone'																								# Clone a remote repository. e.g: gcl git://github.com/masterkain/macruby.git
 																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
 function gg {
 	git commit -v -a -m "$*"
