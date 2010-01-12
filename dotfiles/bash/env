@@ -2,5 +2,7 @@
 export EDITOR="mate -w"
 
 ############################################################## Path Variable 
+export RUBY_PATH="/usr/local/ruby-1.9.1-p376/bin"
+
 export PATH=$PATH:~/sites/bin
-export PATH="/usr/local/ruby-1.9.1-p376/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:$PATH"
+export PATH="$RUBY_PATH:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:$PATH"

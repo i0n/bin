@@ -44,6 +44,7 @@ alias safari='open -a safari'																							# Open Safari
 alias o='open'																														# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
 ########################################################## Textmate
 alias m='mate'																													# Textmate Unix command
+alias reset_textmate="defaults delete com.macromates.textmate OakLanguageFileBindings"  # Resets the textmate file type bindings.
 ########################################################## Git 
 alias g='git status'																											# Git Status
 alias ga='git add .'																											# Git Add (Everything to pending commit)
