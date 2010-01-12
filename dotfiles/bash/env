@@ -2,7 +2,13 @@
 export EDITOR="mate -w"
 
 ############################################################## Path Variable 
-export RUBY_PATH="/usr/local/ruby-1.9.1-p376/bin"
+# INSTALL OPTS FOR RUBY:
+# ./configure --enable-shared --enable-pthread --prefix=/usr/local/ruby-**VERSION-HERE** CFLAGS=-D_XOPEN_SOURCE=1
+#
+
+#export RUBY_PATH="/usr/local/ruby-1.8.7-p249/bin"
+#export RUBY_PATH="/usr/local/ruby-1.9.1-p376/bin"
+export RUBY_PATH="/usr/local/ruby-1.9.1-p378/bin"
 
 export PATH=$PATH:~/sites/bin
 export PATH="$RUBY_PATH:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:$PATH"
