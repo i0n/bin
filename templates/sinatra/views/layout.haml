@@ -1,0 +1,45 @@
+!!! 5
+%html
+  %head   
+    %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
+    %meta{:name => 'description', :content => "Virtual Freed is a Macruby application built by Ian Alexander Wood. It's objective is to model the esteemed Mr. Freed as closely as possible. Just a bit of fun really."}
+    %meta{:name => 'keywords', :content => 'macruby,ruby,mac,osx,software'}    
+    %title
+      = @title
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "stylesheets/global.css", :media => "all"}
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "stylesheets/layout.css", :media => "all"}
+    /
+      [if IE 7]>
+      %link{ :rel => "stylesheet", :type => "text/css", :href => "stylesheets/ie.css", :media => "screen, projection"}
+      %link{ :rel => "stylesheet", :type => "text/css", :href => "stylesheets/print.css", :media => "print"}
+      <![endif]
+  %body
+    .header
+      .container
+        .rivup_logo
+    = yield
+    .clear
+    .footer
+      .container
+        .footer_content
+          %p
+            = "Rampages to date: #{ClickTracker.all.count}"        
+          %p
+            This app has only been tested on Snow Leopard.
+          %p
+            Want to experiment with Virtual Freed or MacRuby?
+            %a{:href => "http://github.com/i0n/Virtual-Freed"}
+              Check out the code.
+          %p
+            For a chat contact
+            %a{:href => "http://twitter.com/i0n"}
+              @i0n
+            on twitter.
+          %p
+            = Time.now.strftime("Page generated at: %I:%M%p on %A %d %B %Y")
+          %p
+            Site built with 
+            %a{:href => "http://www.sinatrarb.com/"}
+              Sinatra
+            = "version: #{Sinatra::VERSION}"
+    
