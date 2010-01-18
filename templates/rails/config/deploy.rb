@@ -26,7 +26,7 @@ default_run_options[:pty] = true
 namespace :deploy do
   #task which causes Passenger to initiate a restart
   task  :restart do
-    run "touch #{current_path}/tmp/restart.txt"
+    run "mkdir -p #{release_path}/tmp && touch #{release_path}/tmp/restart.txt"
   end
   
   task :install_gems do

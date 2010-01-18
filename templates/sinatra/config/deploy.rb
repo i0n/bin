@@ -1,7 +1,6 @@
-
 set :user, 'i0n'
-set :domain, "thoughtplant"
-set :application, "rivup"
+set :domain, ""
+set :application, ""
 
 set :repository,  "#{user}@#{domain}:/home/#{user}/git/#{application}.git"
 
