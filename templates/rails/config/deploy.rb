@@ -1,6 +1,6 @@
-set :user, 'i0n'
-set :domain, "#{remote_server}"
 set :application, "#{app_name}"
+set :domain, "#{remote_server}"
+set :user, 'i0n'
 
 set :repository,  "#{user}@#{domain}:/home/#{user}/git/#{application}.git"
 

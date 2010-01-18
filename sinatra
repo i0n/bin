@@ -1,3 +1,32 @@
 #!/usr/bin/env ruby
 
-puts ENV['ARGV1']
+input_value = ARGV.dup
+ARGV.clear
+
+class App
+  
+  attr_accessor :name, :domain
+  
+  def initialize(name, domain)
+    @name = name
+    @domain = domain
+  end
+    
+  def test_input
+    self.instance_variables.each do |variable|
+      if self.instance_variable_get(variable) == nil
+        puts "You must enter a #{variable}. Please enter it now."
+        self.instance_variable_set(variable, gets.chomp)
+      end  
+    end
+  end
+    
+end
+
+app = App.new(input_value[0], input_value[1])
+app.test_input
+
+
+puts "The app name is set to #{app.name}"
+puts "The app domain is set to #{app.domain}"
+

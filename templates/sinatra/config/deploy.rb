@@ -1,6 +1,8 @@
-set :user, 'i0n'
-set :domain, ""
 set :application, ""
+set :domain, ""
+set :user, 'i0n'
+
+
 
 set :repository,  "#{user}@#{domain}:/home/#{user}/git/#{application}.git"
 
