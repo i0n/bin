@@ -11,7 +11,7 @@ class App
     @name = name
     @domain = domain
   end
-    
+  
   def test_input
     self.instance_variables.each do |variable|
       if self.instance_variable_get(variable) == nil
@@ -19,8 +19,8 @@ class App
         self.instance_variable_set(variable, gets.chomp)
       end  
     end
-  end
-    
+  end    
+  
 end
 
 app = App.new(input_value[0], input_value[1])
