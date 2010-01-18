@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head		
+    %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
+    %meta{:name => 'description', :content => ''}
+    %meta{:name => 'keywords', :content => ''}    
+    %title
+      #{controller.action_name}
+    = stylesheet_link_tag 'global','layout', :media => :all
+    = javascript_include_tag "jquery-1.3.2.min.js"
+    / = javascript_include_tag http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js
+    = javascript_include_tag "init.js"
+    /
+      [if IE 7]>
+      = stylesheet_link_tag 'ie', :media => 'screen, projection'
+      = stylesheet_link_tag 'print', :media => 'print'
+      <![endif]		
+  %body
+    - if flash[:notice] != nil
+      %p{:class => "flash_notice"}
+        = flash[:notice]
+    =yield
