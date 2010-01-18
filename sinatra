@@ -2,6 +2,8 @@
 
 input_value = ARGV.dup
 ARGV.clear
+current_path = `pwd`.chomp
+user = `echo $USER`.chomp
 
 class App
   
@@ -15,7 +17,7 @@ class App
   def test_input
     self.instance_variables.each do |variable|
       if self.instance_variable_get(variable) == nil
-        puts "You must enter a #{variable}. Please enter it now."
+        puts "You must enter a #{variable.to_s.sub(/@/, '')} for the application. Please enter it now."
         self.instance_variable_set(variable, gets.chomp)
       end  
     end
@@ -26,7 +28,20 @@ end
 app = App.new(input_value[0], input_value[1])
 app.test_input
 
+install_path = "/Users/#{user}/sites"
+Dir.chdir install_path
+begin
+  Dir.mkdir app.name
+rescue Errno::EEXIST
+  puts "**ERROR!!** The application could not be created because the directory #{install_path}/#{app.name} already exists."
+rescue Exception => e
+  puts "**ERROR!!** There was a problem creating the folder for #{app.name}\n The following error occurred: #{e}"
+end
+
+
 
 puts "The app name is set to #{app.name}"
 puts "The app domain is set to #{app.domain}"
-
+puts current_path
+puts current_path.inspect
+puts user.inspect
