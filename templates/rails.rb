@@ -90,7 +90,7 @@ rake("spec")
 
 # Create .gitignore
 file ".gitignore" do
- IO.read("#{rails_templates_path}base/.gitignore")
+ IO.read("#{rails_templates_path}/base/.gitignore")
 end
 
 # Change Production environment config for use with remote server
