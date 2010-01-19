@@ -1,7 +1,7 @@
 ################################################################### SET INSTALL VARIABLES & DEPENDENCIES #################################
 
 # Get the name of the app
-@app_name = `pwd`.split('/').last.strip
+app_name = `pwd`.split('/').last.strip
 
 # Get the name or IP of the remote server
 puts "Enter the name or IP address of the remote server for this project"
@@ -88,11 +88,11 @@ end
 append_to_end_of_file('config/database.yml', '  socket: /var/run/mysqld/mysqld.sock', true)
 
 # config for local OSX Nginx environment
-nginx_auto_config("#{rails_templates_path}/rails/config/nginx.local.conf", '/usr/local/nginx/conf/nginx.conf')
+nginx_auto_config("#{rails_templates_path}/rails/config/nginx.local.conf", '/usr/local/nginx/conf/nginx.conf', "#{app_name}")
 
 # Appending URI to /etc/hosts to complete local OSX Nginx config
 run "sudo chmod 777 /etc/hosts"
-run "echo '\n127.0.0.1 #{@app_name}.local'>>/etc/hosts"
+run "echo '\n127.0.0.1 #{app_name}.local'>>/etc/hosts"
 
 # Create HAML application layout
 file 'app/views/layouts/application.html.haml' do
@@ -140,7 +140,7 @@ capify!
 # Read Capistrano template and replace remote_server and app_name variables with the values entered during app creation
 cap_txt = IO.read("#{rails_templates_path}/rails/config/deploy.rb")
 cap_txt.gsub!(/\#\{remote_server\}/, "#{remote_server}")
-cap_txt.gsub!(/\#\{app_name\}/, "#{@app_name}")
+cap_txt.gsub!(/\#\{app_name\}/, "#{app_name}")
 file 'config/deploy.rb' do
   cap_txt
 end
@@ -165,8 +165,8 @@ if yes?("Do you want to push this project to the remote server #{remote_server}?
   run "ssh #{remote_server} sudo cp /usr/local/bin/dotfiles/nginx_auto_config.rb /usr/local/bin/nginx_auto_config.rb"
   run "ssh #{remote_server} sudo cp /usr/local/bin/dotfiles/templates/rails/config/nginx.remote.conf /usr/local/bin/nginx.remote.conf"
   run "ssh #{remote_server} sudo rm -rf /usr/local/bin/dotfiles"
-  run "ssh #{remote_server} 'make_git_repo #{@app_name}'"
-  run "git remote add origin ssh://#{remote_server}/~/git/#{@app_name}.git"
+  run "ssh #{remote_server} 'make_git_repo #{app_name}'"
+  run "git remote add origin ssh://#{remote_server}/~/git/#{app_name}.git"
   run "git push origin master"
   run "cap deploy:setup"
   run "cap deploy:create_mysql_db"

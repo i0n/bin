@@ -4,9 +4,6 @@ set :user, 'i0n'
 
 set :repository,  "#{user}@#{domain}:/home/#{user}/git/#{application}.git"
 
-#default_environment['PATH']='/usr/local/bin /usr/local/sbin /usr/local/mysql/bin /usr/local/bin /usr/local/sbin /usr/local/mysql/bin /usr/local/bin /usr/local/sbin /usr/local/mysql/bin /usr/local/bin /usr/local/sbin /usr/local/mysql/bin /usr/local/bin /usr/local/sbin /usr/local/mysql/bin /usr/local/bin /usr/local/sbin /usr/local/mysql/bin /usr/local/bin /usr/local/sbin /usr/local/mysql/bin /usr/bin /bin /usr/sbin /sbin /usr/local/bin /usr/local/git/bin /usr/X11/bin /Users/i0n/sites/bin /Users/i0n/sites/bin /Users/i0n/sites/bin /Users/i0n/sites/bin /Users/i0n/sites/bin /Users/i0n/sites/bin /Users/i0n/sites/bin'
-#default_environment['GEM_PATH']='/usr/lib/ruby/gems/1.8'
-
 role :app, domain                           # This may be the same as the `Web` server
 role :web, domain                           # Your HTTP server, Apache/etc
 role :db,  domain , :primary => true        # This is where Rails migrations will run
@@ -39,7 +36,7 @@ namespace :deploy do
   
   #Task to set up the remote Nginx server for app deployment
   task :nginx do
-    run "#{sudo} nginx_auto_config '/usr/local/bin/nginx.remote.conf', '/opt/nginx/conf/nginx.conf' "
+    run "#{sudo} nginx_auto_config /usr/local/bin/nginx.remote.conf /opt/nginx/conf/nginx.conf #{app_name}"
   end
 end
 

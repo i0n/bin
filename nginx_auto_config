@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 path = $0
 require "#{path}.rb"
-nginx_auto_config(ARGV[0], ARGV[1])
+nginx_auto_config(ARGV[0], ARGV[1], ARGV[2])
