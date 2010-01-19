@@ -33,21 +33,39 @@ namespace :deploy do
   task :nginx do
     run "#{sudo} nginx_auto_config '/opt/nginx/conf/nginx.conf' \"
     server {
-      listen 80;
-      server_name #{application}.com;
-      gzip on;
-      gzip_proxied any;
-      gzip_vary on;
-      gzip_disable 'MSIE [1-6]\\.';
-      gzip_http_version 1.1;
-      gzip_min_length 10;
-      gzip_comp_level 9;
-      gzip_types text/plain application/xhtml+xml text/css application/x-javascript text/xml application/xml;
-      location / {
-        root /home/i0n/sites/#{application}/current/public/;
-        passenger_enabled on;
-        if (\\$request_filename ~ '.+\\.(jpg|jpeg|gif|css|png|js|ico|html)$') { access_log off; expires 30d; }
-      }
+        listen 80;
+        server_name  #{application}.com;
+        gzip on;
+        gzip_proxied any;
+        gzip_vary on;
+        gzip_disable 'MSIE [1-6]\\.';
+        gzip_http_version 1.1;
+        gzip_min_length 10;
+        gzip_comp_level 9;
+        gzip_types text/plain application/xhtml+xml text/css application/x-javascript text/xml application/xml;
+        location / {
+                root /home/i0n/sites/#{application}/current/public/;
+                passenger_enabled on;
+                if (\\$request_filename ~ '.+\\.(jpg|jpeg|gif|css|png|js|ico|html)$') { access_log off; expires 30d; }
+        }
+    }
+    server {
+        listen 80;
+        server_name www.#{application}.com;
+        rewrite   ^  http://#{application}.com$request_uri?;
+        gzip on;
+        gzip_proxied any;
+        gzip_vary on;
+        gzip_disable 'MSIE [1-6]\\.';
+        gzip_http_version 1.1;
+        gzip_min_length 10;
+        gzip_comp_level 9;
+        gzip_types text/plain application/xhtml+xml text/css application/x-javascript text/xml application/xml;
+        location / {
+                root /home/i0n/sites/#{application}/current/public/;
+                passenger_enabled on;
+                if (\\$request_filename ~ '.+\\.(jpg|jpeg|gif|css|png|js|ico|html)$') { access_log off; expires 30d; }
+        }
     }
     \"
     "
