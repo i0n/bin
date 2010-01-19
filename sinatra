@@ -34,6 +34,13 @@ begin
   Dir.mkdir app.name
 rescue Errno::EEXIST
   puts "**ERROR!!** The application could not be created because the directory #{install_path}/#{app.name} already exists."
+  puts "Would you like to rename your application and try again? yes/no?"
+  answer = gets.chomp
+  if answer == 'yes' || answer == 'y'
+    puts "seems to be working"
+  else
+    exit
+  end
 rescue Exception => e
   puts "**ERROR!!** There was a problem creating the folder for #{app.name}\n The following error occurred: #{e}"
 end
