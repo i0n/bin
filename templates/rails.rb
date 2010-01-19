@@ -111,6 +111,7 @@ nginx_auto_config('/usr/local/nginx/conf/nginx.conf', "
    }")
 
 # Appending URI to /etc/hosts to complete local OSX Nginx config
+run "sudo chmod 777 /etc/hosts"
 run "echo '\n127.0.0.1 #{app_name}.local'>>/etc/hosts"
 
 # Create HAML application layout

@@ -16,7 +16,7 @@ set :scm_verbose, true
 set :scm, :git
 set :scm_username, user
 set :runner, user
-set :use_sudo, true
+set :use_sudo, false
 set :branch, "master"
 set :deploy_via, :checkout
 set :git_shallow_clone, 1
@@ -63,7 +63,7 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update_code', 'deploy:install_gems'
+after 'deploy:symlink', 'deploy:install_gems'
 
 # Reminder of default actions for cap deploy:
 # deploy:update_code

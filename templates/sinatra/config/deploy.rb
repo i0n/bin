@@ -15,7 +15,7 @@ set :scm_verbose, false
 set :scm, :git
 set :scm_username, user
 set :runner, user
-set :use_sudo, true
+set :use_sudo, false
 set :branch, "master"
 set :deploy_via, :checkout
 set :git_shallow_clone, 1
