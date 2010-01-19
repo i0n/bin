@@ -13,6 +13,7 @@ class App
   def initialize(name, domain)
     @name = name
     @domain = domain
+    check_variables
   end
   
   def check_variables
@@ -47,7 +48,7 @@ class App
 end
 
 app = App.new(input_value[0], input_value[1])
-app.check_variables
+# app.check_variables
 app.make_application_dir
 
 
