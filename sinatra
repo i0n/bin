@@ -8,12 +8,14 @@ INSTALL_PATH = "/Users/#{user}/sites"
 
 class App
   
-  attr_accessor :name, :domain
+  # Remove when testing is finished.
+  attr_reader :name, :domain
   
   def initialize(name, domain)
     @name = name
     @domain = domain
     check_variables
+    make_application_dir
   end
   
   def check_variables
@@ -48,8 +50,6 @@ class App
 end
 
 app = App.new(input_value[0], input_value[1])
-# app.check_variables
-app.make_application_dir
 
 
 puts "The app name is set to #{app.name}"
