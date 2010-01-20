@@ -82,10 +82,6 @@ alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						#Runs the NginX e
 alias nginx_config='mate /usr/local/nginx/conf/nginx.conf /etc/hosts'
 alias nginx_stop='sudo nginx -s stop'
 alias nginx_start='sudo launchctl load -F  /System/Library/LaunchDaemons/nginx.plist'
-function nginx_restart {
-	sudo nginx -s stop
-	sudo launchctl load -F  /System/Library/LaunchDaemons/nginx.plist
-}
 ########################################################## Rails	
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
 alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.

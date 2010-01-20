@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+puts "Nginx is being stopped..."
+`echo nginx_stop`
+sleep 2
+puts "Nginx is being started..."
+`echo nginx_start`
+puts "SUCCESS! Nginx has been restarted!"
