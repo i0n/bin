@@ -7,7 +7,11 @@ require 'sass'
 require 'dm-core'
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/log/rivup.db")
 set :public, 'public'
-set :sass, {:style => :compressed }
+
+configure :production do
+  set :sass, {:style => :compressed }
+  set :haml, {:ugly => true}
+end
 
 ##################### DataMapper
 
