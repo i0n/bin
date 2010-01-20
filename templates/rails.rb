@@ -95,8 +95,8 @@ run "sudo chmod 777 /etc/hosts"
 run "echo '\n127.0.0.1 #{app_name}.local'>>/etc/hosts"
 
 # Create HAML application layout
-file 'app/views/layouts/application.html.haml' do
-  IO.read("#{rails_templates_path}/rails/app/views/layouts/application.html.haml")
+file 'app/views/layouts/application.haml' do
+  IO.read("#{rails_templates_path}/rails/app/views/layouts/application.haml")
 end
 
 # Create stylesheets and sass directories and populate with standard stylesheet framework
