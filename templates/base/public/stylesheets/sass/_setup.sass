@@ -1,0 +1,52 @@
+/ ****** VARIABLES **********
+
+!global_font_size_in_pixels = 12
+!global_line_height = 1.5em
+
+!width_of_page = 79.5em
+
+!background_color = #ffffff
+
+!text_color_normal = #333333
+!text_color_bold = !text_color_normal / 100
+!text_color_faint = !text_color_normal * 2
+!text_color_faintest = !text_color_normal * 4
+
+!link_color = #3300CC
+!link_color_visited = #551A8B
+
+!link_horizontal_padding = 0.166em 
+
+!line_padding_normal = 0 0 1.5em
+
+/ ****** MIXINS **********
+
+=font_small( !padding = 0 0 1.5em)
+  font-size: 1em
+  line-height: 1.5em
+  padding = !padding
+
+=font_normal( !padding = 0 0 1.5em)
+  font-size: 1em
+  line-height: 1.5em
+  padding = !padding
+
+=font_large( !padding = 0 0 1em)
+  font-size: 1.5em
+  line-height: 1em
+  padding = !padding
+
+=font_largest( !padding = 0 0 0.5em)
+  font-size: 3em
+  line-height: 1em
+  padding = !padding
+  
+=system_message( !text_color = #00B300, !background_color = #A1FFA1 )
+  +font_large(1em)
+  background-color = !background_color
+  margin: 0 0 0.777em
+  color = !text_color
+  border: 0.113em solid #{!text_color}
+  border-radius: 0.333em
+  -moz-border-radius: 0.333em
+  -webkit-border-radius: 0.333em

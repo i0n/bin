@@ -1,3 +1,5 @@
+@import setup.sass
+
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
   margin: 0
   padding: 0
@@ -11,11 +13,14 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 body
   font-size: 75%
 
-
 html>body
-  font: normal normal 12px/1.5em Helvetica, Arial, sans-serif
-  background-color: #ffffff
-  color: #333333
+  font-style: normal 
+  font-weight: normal 
+  font-family: Helvetica, Arial, sans-serif
+  font-size: #{!global_font_size_in_pixels}px
+  line-height = !global_line_height  
+  background-color = !background_color
+  color = !text_color_normal
   word-wrap: break-word
 
 table
@@ -28,6 +33,7 @@ caption, th, td
 
 table, td, th
   vertical-align: middle
+  padding: 0.5em
 
 blockquote
   &:before, &:after
@@ -44,8 +50,8 @@ a
   outline: none
   border: none
 
-  img
-    border: none
+img
+  border: none
 
 li
   list-style-position: inside

@@ -104,6 +104,9 @@ Dir.mkdir 'public/stylesheets/sass'
 file 'public/stylesheets/layout.css' do
   IO.read("#{rails_templates_path}/base/public/stylesheets/layout.css")
 end
+file 'public/stylesheets/sass/_setup.sass' do
+  IO.read("#{rails_templates_path}/base/public/stylesheets/sass/_setup.sass")
+end
 file 'public/stylesheets/sass/global.sass' do
   IO.read("#{rails_templates_path}/base/public/stylesheets/sass/global.sass")
 end
