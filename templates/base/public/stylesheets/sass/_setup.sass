@@ -2,8 +2,8 @@
 
 !global_font_size_in_pixels = 12
 !global_line_height = 1.5em
-
 !width_of_page = 79.5em
+!col_width = (!width_of_page - (5 * !global_line_height)) / 6
 
 !background_color = #ffffff
 
@@ -55,3 +55,7 @@
   +font_normal( 0 0 2.916em )
   margin = !margin
   border-top: 0.084em solid #{!text_color_faintest}
+
+=col(!number_of_cols = 3, !minus_gutter = 0)
+  width = (!col_width * !number_of_cols) + (!number_of_cols * !global_line_height) - (!global_line_height * !minus_gutter)
+  float: left
