@@ -75,4 +75,16 @@ p.flash_notice
   +system_message
 
 p.flash_error 
-  +system_message( #B31000, #FFAAA1 )
+  +system_message( !error_text_color, !error_background_color )
+
+.errorExplanation
+  color = !error_text_color
+  background-color = !error_background_color
+  padding: 1.333em 1.166em
+  border: 0.167em solid #{!error_text_color}
+  margin: 0 0 1.5em
+  border-radius: 0.499em
+  -moz-border-radius: 0.499em
+  -webkit-border-radius: 0.499em
+  h2
+    color = !error_text_color
