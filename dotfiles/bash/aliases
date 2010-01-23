@@ -57,7 +57,7 @@ alias gpom='git push origin master'                                       # To p
 alias gb='git branch'																											# Git Branch
 alias gt='git tag'																												# Git Tag
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
-alias gcl='sudo git clone'																								# Clone a remote repository. e.g: gcl git://github.com/masterkain/macruby.git
+alias gcl='git clone'																								# Clone a remote repository. e.g: gcl git://github.com/masterkain/macruby.git
 																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
 function gg {
 	git commit -v -a -m "$*"
