@@ -21,9 +21,10 @@ def nginx_auto_config(source_file, target_file, app_name)
     nginx_config.delete_if do |line|
       line == "\n" || line == ""
     end
-    nginx_config.reverse_each do |line|
-      if line == "}\n" || line == "}" && @nginx_last_line == nil
+    nginx_config.reverse_each do |line|      
+      if line =~ /^\}[\n]*/
         @nginx_last_line = nginx_config.slice!(nginx_config.find_index(line))
+        break
       end
     end
     source_config = IO.read(source_file)
