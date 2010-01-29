@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+ARGV = %w{ian 29 test testing one two three four}
+
+def testo(name, age, *opts)
+  puts "hello!"  
+  p name
+  p age
+  p opts
+  opts.each {|x| p x }
+end
+
+testo(*ARGV)

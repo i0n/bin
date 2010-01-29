@@ -1,11 +1,8 @@
 ########################################################## Local Environment Config
-alias ianb='mate ~/sites/bin/ && reload'																# Edit personal environment setup and reload
+alias ian='mate ~/sites/bin/ && reload'																# Edit personal environment setup and reload
 alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
-alias iana='mate ~/sites/bin/dotfiles/bash/aliases && reload'					# Edit aliases and reload
-alias ianc='mate ~/sites/bin/dotfiles/bash/config && reload'						# Edit config and reload
-alias iane='mate ~/sites/bin/dotfiles/bash/env && reload'							# Edit env and reload
 																																					# Function to load my usual apps
-function ian {
+function iapps {
 	open -a "Google Docs"
 	open -a GMail
 	open -a "Ta Da List"

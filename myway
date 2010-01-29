@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-require_relative "myway.rb"
-input_value = ARGV.dup
-ARGV.clear
-app = MyWay::App.new(input_value[0], input_value[1])
