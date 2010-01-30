@@ -17,3 +17,7 @@ export RUBY_PATH="/usr/local/ruby-1.9.1-p378/bin"
 ############################################################## Path Variable 
 export PATH=$PATH:~/sites/bin
 export PATH="$RUBY_PATH:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:$PATH"
+
+############################################################## Autotest settings 
+
+export AUTOFEATURE=true
