@@ -1,13 +1,28 @@
 #!/usr/bin/env ruby
 
-ARGV = %w{ian 29 test testing one two three four}
+module Testo
 
-def testo(name, age, *opts)
-  puts "hello!"  
-  p name
-  p age
-  p opts
-  opts.each {|x| p x }
+  class Project
+  
+    def initialize(args)
+      @args = args
+      @input = STDIN
+      @output = STDOUT
+    end
+  
+    def start
+      @output.puts @args
+    end
+    
+    def ask
+      @ask = @input.gets.chomp
+      @output.puts @ask
+    end
+  
+  end
+  
 end
 
-testo(*ARGV)
+project = Testo::Project.new(ARGV)
+project.start
+project.ask

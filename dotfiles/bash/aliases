@@ -99,3 +99,7 @@ alias rt='rake test'																	# Runs all tests
 alias rtu='rake test:units'														# Runs all unit tests (models)
 alias rtf='rake test:functionals'											# Runs all functional tests (controllers)
 alias irails='rails -d mysql -m ~/sites/bin/templates/rails.rb' # Runs the rails generator with my preference of DB and my custom Rails template
+########################################################## flac2mp3 (run from the containing dir)	
+function flac2mp3_dir {
+  for f in *.flac; do flac2mp3 "$f"; done
+}
