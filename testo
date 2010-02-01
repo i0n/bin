@@ -1,28 +1,41 @@
 #!/usr/bin/env ruby
 
-module Testo
+require 'rubygems'
+# require 'spreadsheet'
 
-  class Project
-  
-    def initialize(args)
-      @args = args
-      @input = STDIN
-      @output = STDOUT
-    end
-  
-    def start
-      @output.puts @args
-    end
-    
-    def ask
-      @ask = @input.gets.chomp
-      @output.puts @ask
-    end
-  
-  end
-  
-end
+ 
 
-project = Testo::Project.new(ARGV)
-project.start
-project.ask
+# module Testo
+# 
+#   class Project
+#   
+#     def initialize
+# 
+#     end
+#   
+#     def start
+# 
+#     end
+#     
+#     def spreadsheet
+#       spreadsheet = Excel.new("test.xls")
+#       spreadhseet.default_sheet = spreadhseet.sheets.first
+#       1.upto(spreadsheet.last_row) do |col|
+#         row_a   = spreadhseet.cell(col,'A')
+#         row_b   = spreadhseet.cell(col,'B')
+#         row_c   = spreadhseet.cell(col,'C')
+#       end
+#     end
+#     
+#   
+#   end
+#   
+# end
+# 
+# project = Testo::Project.new
+# project.spreadsheet
+# 
+
+# book = Spreadsheet.open '/Users/i0n/Sites/bin/test.xls'
+# sheet = book.worksheet 0
+# sheet.each do |row| puts row[0] end
