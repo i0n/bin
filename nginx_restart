@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 puts "Nginx is being stopped..."
 `sudo nginx -s stop`
-sleep 2
+sleep 4
 puts "Nginx is being started..."
 `sudo launchctl load -F  /System/Library/LaunchDaemons/nginx.plist`
 puts "SUCCESS! Nginx has been restarted!"
