@@ -9,3 +9,6 @@
 if [[ -f "$HOME/.amazon_keys" ]]; then
   source "$HOME/.amazon_keys";
 fi
+if [[ -s /Users/i0n/.rvm/scripts/rvm ]] ; then 
+  source /Users/i0n/.rvm/scripts/rvm ; 
+fi
