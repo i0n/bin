@@ -30,8 +30,11 @@ namespace :deploy do
     run "cd #{current_path}; rake gems:install"
   end
   
-  task :create_mysql_db do
-    run "mysqladmin -u root create #{application}_production"
+  namespace :db do
+    desc "Create database for the production environment using the servers rake db:create task"
+    task :create do
+      run "cd #{current_path}; rake db:create RAILS_ENV=production"
+    end  
   end
   
   #Task to set up the remote Nginx server for app deployment

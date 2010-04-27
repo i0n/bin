@@ -1,3 +1,27 @@
 #!/usr/bin/env ruby
 
-puts RUBY_DESCRIPTION
+
+# string = "HelloWorld!23!"
+# 
+# if string.include? " "
+#   puts string
+# else
+#   puts "No spaces!"
+# end
+
+# puts RUBY_DESCRIPTION
+
+# num = []
+# puts num.count
+# puts num.empty?
+
+array_1 = %w[A B C]
+array_2 = %w[D E F]
+array_3 = %w[G H I]
+array_4 = %w[A Y Z]
+
+combined_array = (array_1 + array_2 + array_3).join('+')
+puts combined_array
+
+minus_array = array_1 - array_4
+puts minus_array

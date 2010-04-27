@@ -1,6 +1,6 @@
 ############################################################## Default Editor 
 
-export EDITOR="mate -w"
+# export EDITOR="mate -w"
 
 ############################################################## Ruby Path 
 
@@ -17,7 +17,7 @@ export EDITOR="mate -w"
 # export RUBY_PATH="/usr/local/ruby-1.9.1-p378/bin"
 
 ############################################################## Path Variable 
-export PATH=$PATH:~/sites/bin
+# export PATH=$PATH:~/sites/bin
 # export PATH="$RUBY_PATH:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:$PATH"
 
