@@ -1,0 +1,11 @@
+Set_User{user{password}
+Set_DDF{OFF}
+Get_SYS{}
+Set_DDF{NoNews}
+Set_DDF{Cycle}
+Set_DDF{Realtime}
+Set_DDF{Extended}
+Clear_ExWL{}
+Get_SymD{11n{IBM}
+Add_SymWL{11n{IBM}
+Set_DDF{ON}

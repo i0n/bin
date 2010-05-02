@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+socket = TCPSocket.open('198.190.11.21', 4001)
+data = {:client_id => 'ibm', :message => 'hello world'}
+socket.send(data)
+response = socket.gets
+socket.close

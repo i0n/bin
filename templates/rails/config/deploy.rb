@@ -44,10 +44,18 @@ namespace :deploy do
     
   end
   
-  #Task to set up the remote Nginx server for app deployment
+  desc "Task to set up the remote Nginx server for app deployment"
   task :nginx do
     run "#{sudo} nginx_auto_config /usr/local/bin/nginx.remote.conf /opt/nginx/conf/nginx.conf #{app_name}"
   end
+  
+  desc "Create bare remote git repo then add remote origin to local git repo and push to remote"
+  task :git do
+    run "cd /home/#{user}/git; mkdir #{application}.git; cd #{application}.git; git init --bare"
+    `git remote add origin ssh://#{user}@#{domain}/~/git/#{application}.git`
+    `git push origin master`
+  end
+  
 end
 
 after 'deploy:symlink', 'deploy:install_gems'
