@@ -59,7 +59,7 @@ run "haml --rails ."
 run "echo '\n\nSass::Plugin.options[:style] = :compressed' >> config/environment.rb"
 
 # Install Gems if they are not already on the local system
-rake("gems:install", :sudo => true)
+rake("gems:install")
 
 # Freeze Gems for upload
 rake("rails:freeze:gems")

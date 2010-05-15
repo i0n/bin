@@ -11,12 +11,12 @@ def nginx_auto_config(source_file, target_file, app_name)
     puts
     exit
   else
-    `sudo chmod 777 #{target_file}`
     puts
     puts "******************************************************************************************************************************************"
     puts
     puts "Setting permissions for: #{target_file}"
     puts
+    `sudo chmod 755 #{target_file}`
     nginx_config = IO.readlines(target_file)
     nginx_config.delete_if do |line|
       line == "\n" || line == ""
