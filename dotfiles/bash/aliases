@@ -48,7 +48,7 @@ alias gr='git rm'																													# Git remove a file from staging a
 alias gl='git log'																												# Git Log (ALL)
 alias ggc='git gc'																												# Tidy git repository (run every 100 commits or so)							
 alias gpl='git pull'																											# Git Pull
-alias gps='git push'																											# Git Push
+alias gps='git push --tags'																								# Git Push with all tags
 alias grao='git remote add origin'																				# To add a remote Git repository append clone URL e.g: git@github.com:i0n/dotfiles.git
 alias gpom='git push origin master'                                       # To push master branch to origin (For instance after creating a bare remote repo and wanting to push local changes)
 alias gb='git branch'																											# Git Branch
@@ -79,7 +79,7 @@ alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						#Runs the NginX e
 alias nginx_config='mate /usr/local/nginx/conf/nginx.conf /etc/hosts'
 alias nginx_stop='sudo nginx -s stop'
 alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist'
-########################################################## Rails	
+########################################################## Rails
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
 alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.
 alias tlog='tail -f ./log/test.log'										#Runs the development log for the current Rails project.
@@ -99,6 +99,8 @@ alias rt='rake test'																	# Runs all tests
 alias rtu='rake test:units'														# Runs all unit tests (models)
 alias rtf='rake test:functionals'											# Runs all functional tests (controllers)
 alias irails='rails -d mysql -m ~/sites/bin/templates/rails.rb' # Runs the rails generator with my preference of DB and my custom Rails template
+########################################################## Jumpstart
+alias js='jumpstart'                                  # Alias for my jumpstart gems command
 ########################################################## flac2mp3 (run from the containing dir)	
 function flac2mp3_dir {
   for f in *.flac; do flac2mp3 "$f"; done

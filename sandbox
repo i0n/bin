@@ -1,1 +1,54 @@
 #!/usr/bin/env ruby
+
+require 'fileutils'
+require 'yaml'
+
+module Super
+  
+  ROOT_PATH = File.expand_path(File.join(File.dirname(__FILE__)))
+  @testo = "test inside super module"
+    
+  def self.testo=(value)
+    @testo = value
+  end
+  
+  def self.testo
+    @testo
+  end
+  
+  class Base
+        
+    def write
+      @testo = 1
+    end
+    
+    def read
+      @testo
+    end
+        
+  end
+  
+end
+
+puts obj = Super::Base.new
+puts obj.write
+puts obj.read
+puts
+puts Super.testo = "mashup"
+puts Super.testo
+
+
+
+##################################################################################################################################################################
+
+# def capture_stdout(&block)
+#   original_stdout = $stdout
+#   $stdout = fake = StringIO.new
+#   begin
+#     yield
+#   ensure
+#     $stdout = original_stdout
+#   end
+#  fake.string
+# end
+
