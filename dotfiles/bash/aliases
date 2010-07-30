@@ -72,6 +72,10 @@ function gdl() {
 	cd ..
 	rm -rf $2
 }
+########################################################## Subversion
+alias s= "svn status"                                               # Subversion status
+alias sa= "svn add --force *"                                       # Add all new files to Subversion repo
+alias sc= "svn commit"                                              # Commit changes to Subversion repo
 ########################################################## Nginx & Passenger
 alias restart='touch ./tmp/restart.txt'															# Restart Passenger when executed from the project root
 alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						#Runs the NginX error log
@@ -87,12 +91,12 @@ alias tlog='tail -f ./log/test.log'										#Runs the development log for the c
 alias dsql='sqlite3 -line db/development.sqlite3'			#Opens SQlite3 prompt for development database.
 alias psql='sqlite3 -line db/production.sqlite3'			#Opens SQlite3 prompt for production database.
 alias tsql='sqlite3 -line db/test.sqlite3'						#Opens SQlite3 prompt for test database.
-alias ss='./script/server'														# Run the server for the current Rails project
-alias db='./script/dbconsole'													# Launches the database console for whichever backend has been selected for that rails project.
-alias sg='./script/generate'													# Run script generation for the current Rails project
-alias sd='./script/destroy'														# Run script destroy for the current Rails project
-alias sp='./script/plugin install' 										# Run a plugin install on the current Rails project
-alias sc='./script/console'														# Run the console for the current Rails project
+# alias ss='./script/server'                            # Run the server for the current Rails project
+# alias db='./script/dbconsole'                         # Launches the database console for whichever backend has been selected for that rails project.
+# alias sg='./script/generate'                          # Run script generation for the current Rails project
+# alias sd='./script/destroy'                           # Run script destroy for the current Rails project
+# alias sp='./script/plugin install'                    # Run a plugin install on the current Rails project
+# alias sc='./script/console'                           # Run the console for the current Rails project
 alias r='rake'																				# Rake command
 alias rr='rake routes'																# Rake Routes command shows current route mappings
 alias rdm='rake db:migrate'														# Runs a Rake database migration
