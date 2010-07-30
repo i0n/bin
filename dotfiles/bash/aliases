@@ -75,7 +75,10 @@ function gdl() {
 ########################################################## Subversion
 alias s="svn status"                                               # Subversion status
 alias sa="svn add --force *"                                       # Add all new files to Subversion repo
-alias sc="svn commit"                                              # Commit changes to Subversion repo
+alias sps="svn commit"                                             # Commit changes to Subversion repo
+alias spl="svn update"                                             # Update subversion repo
+alias scl="svn checkout"                                           # Checkout (like clone) an existing Subversion repo
+
 ########################################################## Nginx & Passenger
 alias restart='touch ./tmp/restart.txt'															# Restart Passenger when executed from the project root
 alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						#Runs the NginX error log
