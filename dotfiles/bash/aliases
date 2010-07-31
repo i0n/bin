@@ -81,13 +81,14 @@ alias spl="svn update"                                             # Update subv
 alias scl="svn checkout"                                           # Checkout (like clone) an existing Subversion repo
 
 ########################################################## Nginx & Passenger
-alias restart='touch ./tmp/restart.txt'															# Restart Passenger when executed from the project root
-alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						#Runs the NginX error log
+alias restart='touch ./tmp/restart.txt'															          # Restart Passenger when executed from the project root
+alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						          #Runs the NginX error log
 
-# Edit Nginx config for adding sites to local dev environment
-alias nginx_config='mate /usr/local/nginx/conf/nginx.conf /etc/hosts'
-alias nginx_stop='sudo nginx -s stop'
-alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist'
+alias nginx_config='mate /usr/local/nginx/conf/nginx.conf /etc/hosts'         # Edit Nginx config for adding sites to local dev environment
+alias nginx_stop='sudo nginx -s stop'                                         # Stops the NginX server
+alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist' # Starts the NginX server
+alias nrs='nginx_stop;sleep 1;nginx_start'                                    # Restarts the NginX server
+
 ########################################################## Rails
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
 alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.
