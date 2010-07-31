@@ -1,5 +1,5 @@
 ########################################################## Local Environment Config
-alias ian='mate ~/sites/bin/ && reload'																# Edit personal environment setup and reload
+alias ian='mate ~/sites/bin/ && reload'																    # Edit personal environment setup and reload
 alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
 																																					# Function to load my usual apps
 function iapps {
@@ -41,6 +41,7 @@ alias o='open'																														# Open command for OSX integration, 
 ########################################################## Textmate
 alias m='mate'																													# Textmate Unix command
 alias reset_textmate="defaults delete com.macromates.textmate OakLanguageFileBindings"  # Resets the textmate file type bindings.
+alias tmb="cd /Users/i0n/Library/Application\ Support/TextMate/Bundles"             # Move into the Textmate bundles directory
 ########################################################## Git 
 alias g='git status'																											# Git Status
 alias ga='git add .'																											# Git Add (Everything to pending commit)
