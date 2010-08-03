@@ -1,65 +1,30 @@
-class Red
-  def gets(*args)
-    @input.gets(*args)
-  end
-  def puts(*args)
-    @output.puts(*args)
-  end
-  def initialize
-    @input = $stdin
-    @output = $stdout
-  end
-  private
-  def first_method
-    input = gets.chomp
-    if input == "test"
-      second_method(input)
-    end
-  end
-  def second_method(value)
-    puts value
-    second_method(value)
+#!/usr/bin/env ruby -w
+# encoding: utf-8
+
+require 'find'
+
+Find.find(ENV['TM_PROJECT_DIRECTORY']) do |x|
+  case
+  when File.file?(x) && x =~ /\/global\.css/ then
+    puts "Found #{x}"
+    @global_css_file_path = x
+  when File.file?(x) && x =~ /\/screen\.css/ then
+    puts "Found #{x}"
+    @screen_css_file_path = x
   end
 end
+file = IO.read(@global_css_file_path)
+html_body_rules = file.match(/(html > body \{)([^\}]*)(\}{1})/m)[0]
+global_font_size_in_px = html_body_rules.match(/font-size:[\s+](\d+)px/)[1]
 
-require 'test/unit'
-# require 'stringio'
-# require 'rubygems'
-require 'mocha'
+# input_value = ENV['TM_SELECTED_TEXT'].dup
+input_value = "24px"
 
-class Test::Unit::TestCase
+input_value.gsub!(/\D*/, '')
+font_size_converted_to_ems = (input_value.to_f / global_font_size_in_px.to_i)
+if font_size_converted_to_ems.denominator == 1 
+  puts font_size_converted_to_ems.round.to_s + "em"
+else
+  puts font_size_converted_to_ems.round(3).to_s + "em"
+end 
 
-end
-
-
-# MiniTest::Unit.autorun
-
-class RedTest < Test::Unit::TestCase
-  def setup
-    @project = Red.new
-    @project.instance_variable_set(:@input, StringIO.new("test\n"))
-    @project.stubs(:second_method)
-  end
-  
-  def test_pass_input_value_to_second_method
-    @project.expects(:second_method).with("test").once
-    @project.instance_eval {first_method}
-  end
-end
-
-# $ ruby red_test.rb 
-# Loaded suite red_test
-# Started
-# .
-# Finished in 0.000656 seconds.
-#
-# 1 tests, 1 assertions, 0 failures, 0 errors, 0 skips
-
-# $ ruby -v
-# ruby 1.9.2dev (2009-07-18 trunk 24186) [i386-darwin10.3.0] 
-
-# $ gem list mocha
-# 
-# *** LOCAL GEMS ***
-#
-# mocha (0.9.8)
