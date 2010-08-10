@@ -112,6 +112,8 @@ alias rtf='rake test:functionals'											# Runs all functional tests (control
 alias irails='rails -d mysql -m ~/sites/bin/templates/rails.rb' # Runs the rails generator with my preference of DB and my custom Rails template
 ########################################################## Jumpstart
 alias js='jumpstart'                                  # Alias for my jumpstart gems command
+########################################################## MongoDB
+alias mdb='mongod run --config /usr/local/Cellar/mongodb/1.6.0-x86_64/mongod.conf' #Starts MongoDB
 ########################################################## flac2mp3 (run from the containing dir)	
 function flac2mp3_dir {
   for f in *.flac; do flac2mp3 "$f"; done
