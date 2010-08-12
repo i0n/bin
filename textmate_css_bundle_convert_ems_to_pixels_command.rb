@@ -20,19 +20,13 @@ global_font_size_in_px = html_body_rules.match(/font-size:[\s+](\d+)px/)[1]
 
 if ENV['TM_SELECTED_TEXT'] != nil
   input_value = ENV['TM_SELECTED_TEXT'].dup
-elsif ENV['TM_CURRENT_WORD'] != nil
-  input_value = ENV['TM_CURRENT_WORD'].dup
+# Having to disable the use of Textmate's TM_CURRENT_WORD variable in em to px conversion until I can figure out how to get it to treat the values either side of a decimal point as the same number or 'current word'
+# elsif ENV['TM_CURRENT_WORD'] != nil
+#   input_value = ENV['TM_CURRENT_WORD'].dup
+  input_value.gsub!(/[^0-9\.]/, '')
+  font_size_converted_to_px = (input_value.to_f * global_font_size_in_px.to_i)
+  print font_size_converted_to_px.round.to_s + "px"
 else
   print ENV['TM_CURRENT_WORD']
-  exit
 end
 
-if input_value != nil
-  input_value.gsub!(/\D*/, '')
-  font_size_converted_to_ems = (input_value.to_f / global_font_size_in_px.to_i)
-  if font_size_converted_to_ems.denominator == 1 
-    print font_size_converted_to_ems.round.to_s + "em"
-  else
-    print font_size_converted_to_ems.round(3).to_s + "em"
-  end
-end
