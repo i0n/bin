@@ -21,6 +21,7 @@ global_font_size_in_px = html_body_rules.match(/font-size:[\s+](\d+)px/)[1]
 if ENV['TM_SELECTED_TEXT'] != nil
   input_value = ENV['TM_SELECTED_TEXT'].dup
 # Having to disable the use of Textmate's TM_CURRENT_WORD variable in em to px conversion until I can figure out how to get it to treat the values either side of a decimal point as the same number or 'current word'
+# TODO Look into using TM_CURRENT_LINE in conjunction with TM_CURRENT_WORD in order to correctly deduce the selection.
 # elsif ENV['TM_CURRENT_WORD'] != nil
 #   input_value = ENV['TM_CURRENT_WORD'].dup
   input_value.gsub!(/[^0-9\.]/, '')
