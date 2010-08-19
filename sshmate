@@ -1,18 +1,103 @@
 #!/bin/sh
 
-host=`echo $SSH_CLIENT | cut -d' ' -f1`
-path=`pwd | sed "s|^$HOME|/Volumes/chaos|"`
-app="/Applications/TextMate.app"
-file=$1
+# host=`echo $SSH_CLIENT | cut -d' ' -f1`
+# path=`pwd | sed "s|^$HOME|/Volumes/chaos|"`
+# app="/Applications/TextMate.app"
+# file=$1
+# 
+# if [ ! -e $file ]; then
+#   echo -n "create $file? [Yn] "
+#   read input
+#   if [ -z "$input" -o "$input" = "Y" -o "$input" = "y" ]; then
+#     touch $file
+#   else
+#     exit
+#   fi
+# fi
+# 
+# ssh $host "open -a $app $path/$file; exit"
 
-if [ ! -e $file ]; then
-	echo -n "create $file? [Yn] "
-	read input
-	if [ -z "$input" -o "$input" = "Y" -o "$input" = "y" ]; then
-		touch $file
-	else
-		exit
-	fi
-fi
 
-ssh $host "open -a $app $path/$file; exit"
+# echo $SSH_CLIENT | cut -d' ' -f1 
+# returns the ip of the connection. e.g 90.194.1.143
+
+# pwd | sed "s|^$HOME||"
+# returns: sites/test
+
+# pwd 
+# returns: /home/i0n/sites/test
+
+# $1 
+# returns the first argument
+
+# ssh 90.194.1.143 "open -a /Applications/TextMate.app test_server; exit"
+# ssh 90.194.1.143 "open -a /Applications/Firefox.app; exit"
+# ssh 90.194.1.143 44996 22 "open -a GitX; exit"
+# 
+# cat myfile | ssh user@desktop lpr
+# 
+# cat test_server | ssh i0n@90.194.1.143
+
+
+
+
+
+
+
+
+
+#!/bin/sh
+
+# HOST=${SSH_CLIENT%% *}
+# USER='i0n'
+# FILE=''
+# 
+# if [ $# == 0 ]; then
+#      echo "Usage: $0 [-h host] [-u user] [-f] file"
+#      exit 1
+# fi
+# 
+# while [ "$1" != "" ]; do
+# 
+#      case $1 in
+#          -h)
+#              HOST=$2
+#              shift 2
+#              ;;
+#          -u)
+#              USER=$2
+#              shift 2
+#              ;;
+#          -f)
+#              shift 2
+#              ;;
+#          -f)
+#              FILE=$2
+#              shift 2
+#              ;;
+#          *)
+#              FILE=$1
+#              shift
+#              ;;
+#      esac
+# done
+# 
+# TMPNAME=`date +%Y%m%d%H%M%S`.$FILE
+# 
+# scp -p $FILE $USER@$HOST:/tmp/$TMPNAME && \
+# ssh $USER@$HOST "osascript -e \
+#    'tell app \"Terminal\" to do \
+#     shell script \"mate -w /tmp/$TMPNAME\"'"
+# 
+# if [ $? -eq 0 ]; then
+#   scp -p $USER@$HOST:/tmp/$TMPNAME $FILE
+# fi
+# ssh $USER@$HOST "rm /tmp/$TMPNAME"
+
+
+
+
+
+
+
+ # lainee@work$ tail ~/.ssh/config     Host home-with-tunnel        Hostname      204.225.288.29        RemoteForward 2222:localhost:22        User          laineeboo            lainee@work$ ssh home-with-tunnel   laineeboo@204.225.228.29's password: ********      laineeboo@home$ ping -i 5 127.0.0.1   PING 127.0.0.1 (127.0.0.1): 56 data bytes   64 bytes from 127.0.0.1: icmp_seq=0 ttl=255 time=0.1 ms   64 bytes from 127.0.0.1: icmp_seq=1 ttl=255 time=0.2 ms   64 bytes from 127.0.0.1: icmp_seq=2 ttl=255 time=0.2 ms   ... 

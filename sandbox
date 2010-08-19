@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
 
 puts ENV['TM_BUNDLE_SUPPORT']
+puts RUBY_DESCRIPTION

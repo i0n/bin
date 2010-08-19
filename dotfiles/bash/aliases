@@ -90,6 +90,9 @@ alias nginx_stop='sudo nginx -s stop'                                         # 
 alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist' # Starts the NginX server
 alias nrs='nginx_stop;sleep 2;nginx_start'                                    # Restarts the NginX server
 
+########################################################## Thin
+alias th='thin --debug --rackup config.ru start' #starts standard rack apps with thin
+
 ########################################################## Rails
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
 alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.
