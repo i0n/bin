@@ -93,6 +93,12 @@ alias nrs='nginx_stop;sleep 2;nginx_start'                                    # 
 ########################################################## Thin
 alias th='thin --debug --rackup config.ru start' #starts standard rack apps with thin
 
+########################################################## Ruby Gems
+alias gu='gem update'
+
+########################################################## Home Brew
+alias bu='brew update'
+
 ########################################################## Rails
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
 alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.
