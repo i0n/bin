@@ -96,8 +96,13 @@
 
 
 
+# MY VERSION OF THE SCRIPT
+# This hasn't been assembled into a script format yet, still testing the commands!
 
+# To reverse tunnel to the server
+ssh -R 2000:localhost:22 i0n@109.123.70.124
 
+# To copy a test file back to the local machine
+scp -P 2000 /home/i0n/test/test.txt i0n@localhost:/tmp/local_test.txt
 
-
- # lainee@work$ tail ~/.ssh/config     Host home-with-tunnel        Hostname      204.225.288.29        RemoteForward 2222:localhost:22        User          laineeboo            lainee@work$ ssh home-with-tunnel   laineeboo@204.225.228.29's password: ********      laineeboo@home$ ping -i 5 127.0.0.1   PING 127.0.0.1 (127.0.0.1): 56 data bytes   64 bytes from 127.0.0.1: icmp_seq=0 ttl=255 time=0.1 ms   64 bytes from 127.0.0.1: icmp_seq=1 ttl=255 time=0.2 ms   64 bytes from 127.0.0.1: icmp_seq=2 ttl=255 time=0.2 ms   ... 
+ssh -p 2000 i0n@localhost "osascript -e 'tell app \"Terminal\" to do shell script \"mate -w /tmp/local_test.txt\"'"

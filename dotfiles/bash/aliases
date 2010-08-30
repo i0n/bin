@@ -41,8 +41,7 @@ alias o='open'																														# Open command for OSX integration, 
 ########################################################## Textmate
 alias m='mate'																													                # Textmate Unix command
 alias reset_textmate="defaults delete com.macromates.textmate OakLanguageFileBindings"  # Resets the textmate file type bindings.
-alias tmb="cd /Users/i0n/Library/Application\ Support/TextMate/Bundles"                 # Move into the Textmate bundles directory
-alias tmt="cd /Users/i0n/Library/Application\ Support/TextMate/Themes"
+alias tmb="cd /Users/i0n/Library/Application\ Support/TextMate"                         # Move into the Textmate directory
 ########################################################## Git 
 alias g='git status'																											# Git Status
 alias ga='git add .'																											# Git Add (Everything to pending commit)
