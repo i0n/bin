@@ -1,13 +1,6 @@
 ########################################################## Local Environment Config
 alias ian='mate ~/sites/bin/ && reload'																    # Edit personal environment setup and reload
 alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
-																																					# Function to load my usual apps
-function iapps {
-	open -a "Google Docs"
-	open -a GMail
-	open -a "Ta Da List"
-	open -a "Google Chrome"
-}
 																																					# Opening function for my terminal to go to my sites folder and display a list
 function cdsl {
 	cd sites
@@ -34,10 +27,12 @@ function take {
 }
 alias ssh_config='mate ~/sites/bin/dotfiles/ssh/config'										# Shortcut for setting ssh aliases
 ########################################################## Mac OSX
-alias chrome='open -a "Google Chrome"'																		# Open Google Chrome
-alias ff='open -a Firefox'																								# Open FireFox
-alias safari='open -a safari'																							# Open Safari
-alias o='open'																														# Open command for OSX integration, use to open files folders and apps (-a flag for apps)
+alias chrome='open -a "Google Chrome"'																		              # Open Google Chrome
+alias ff='open -a Firefox'																								              # Open FireFox
+alias safari='open -a safari'																							              # Open Safari
+alias o='open'																								                          # Open command for OSX integration, use to open files folders and apps (-a flag for apps)
+alias showf='defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder'     # Shows all hidden files in the finder
+alias hidef='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder'    # Hides all hidden files in the finder
 ########################################################## Textmate
 alias m='mate'																													                # Textmate Unix command
 alias reset_textmate="defaults delete com.macromates.textmate OakLanguageFileBindings"  # Resets the textmate file type bindings.
