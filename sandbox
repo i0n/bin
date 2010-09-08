@@ -38,20 +38,19 @@ def replace_strings(target_file, args)
     args.each do |x, y|
       new_txt.gsub!(/#{x.to_s.upcase}_CLASS/, y.capitalize)
       new_txt.gsub!(/#{x.to_s.upcase}/, y)
-      [new_dir, new_file].each do |z|
-        z.gsub!(/#{x.to_s.downcase}/, y)
+      new_dir.gsub!(/#{x.to_s.downcase}/, y)
+      new_file.gsub!(/#{x.to_s.downcase}/, y)
       end
     end
     if (old_dir <=> new_dir) != 0
       FileUtils.mkdir_p(new_dir)
+      FileUtils.rm(target_file)
     end
     if (original_txt <=> new_txt) != 0
-      # puts "This file has changed: #{target_file}"
-      File.open("#{new_dir}/#{new_file}", "w+") do |file|
+      File.open("#{new_dir}/#{new_file}", "w") do |file|
         file.puts new_txt
         file.chmod(0755) if permissions
       end
-      FileUtils.rm(target_file)        
       if File.directory?(old_dir)
         if (Dir.entries(old_dir) - ['.', '..']).empty?
           FileUtils.remove_dir(old_dir)
@@ -67,7 +66,7 @@ end
 #   replace_strings(a, {:change => "yay", :ipsum => "MAATTE!!"})
 # end
 
-# replace_strings(string2, :change => "yay")
+replace_strings(string2, {:change => "yay", :ipsum => "MAATTE!!"})
 
 # name1 = "name"
 # name2 = "name"
