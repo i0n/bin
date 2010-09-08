@@ -45,8 +45,8 @@ def replace_strings(target_file, args)
     if old_dir.to_s != new_dir.to_s
       FileUtils.mkdir_p(new_dir)
     end
-    if original_txt != new_txt
-      puts "This file has changed: #{target_file}"
+    if original_txt.to_s != new_txt.to_s
+      # puts "This file has changed: #{target_file}"
       File.open("#{new_dir}/#{new_file}", "w+") do |file|
         file.puts new_txt
         file.chmod(0755) if permissions
@@ -63,6 +63,8 @@ def replace_strings(target_file, args)
   end
 end
 
-strings.each do |x|
-  replace_strings(x, {:change => "yay", :ipsum => "MAATTE!!"})
-end
+# strings.each do |a|
+#   replace_strings(a, {:change => "yay", :ipsum => "MAATTE!!"})
+# end
+
+replace_strings(string2, {:change => "yay", :ipsum => "MAATTE!!"})
