@@ -40,7 +40,6 @@ def replace_strings(target_file, args)
       new_txt.gsub!(/#{x.to_s.upcase}/, y)
       new_dir.gsub!(/#{x.to_s.downcase}/, y)
       new_file.gsub!(/#{x.to_s.downcase}/, y)
-      end
     end
     if (old_dir <=> new_dir) != 0
       FileUtils.mkdir_p(new_dir)
