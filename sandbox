@@ -42,16 +42,16 @@ def replace_strings(target_file, args)
         z.gsub!(/#{x.to_s.downcase}/, y)
       end
     end
-    if old_dir.to_s != new_dir.to_s
+    if (old_dir <=> new_dir) != 0
       FileUtils.mkdir_p(new_dir)
     end
-    if original_txt.to_s != new_txt.to_s
+    if (original_txt <=> new_txt) != 0
       # puts "This file has changed: #{target_file}"
       File.open("#{new_dir}/#{new_file}", "w+") do |file|
         file.puts new_txt
         file.chmod(0755) if permissions
       end
-      FileUtils.rm(target_file)            
+      FileUtils.rm(target_file)        
       if File.directory?(old_dir)
         if (Dir.entries(old_dir) - ['.', '..']).empty?
           FileUtils.remove_dir(old_dir)
@@ -67,4 +67,13 @@ end
 #   replace_strings(a, {:change => "yay", :ipsum => "MAATTE!!"})
 # end
 
-replace_strings(string2, {:change => "yay", :ipsum => "MAATTE!!"})
+# replace_strings(string2, :change => "yay")
+
+# name1 = "name"
+# name2 = "name"
+# 
+# if (name1 <=> name2) != 0
+#   puts "not the same"
+# else
+#   puts "the same"
+# end
