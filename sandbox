@@ -43,17 +43,19 @@ def replace_strings(target_file, args)
     end
     if (old_dir <=> new_dir) != 0
       FileUtils.mkdir_p(new_dir)
+    end
+    if ("#{old_dir}/#{new_file}" <=> "#{new_dir}/#{new_file}") != 0
       FileUtils.rm(target_file)
+      if File.directory?(old_dir)
+        if (Dir.entries(old_dir) - ['.', '..']).empty?
+          FileUtils.remove_dir(old_dir)
+        end
+      end
     end
     if (original_txt <=> new_txt) != 0
       File.open("#{new_dir}/#{new_file}", "w") do |file|
         file.puts new_txt
         file.chmod(0755) if permissions
-      end
-      if File.directory?(old_dir)
-        if (Dir.entries(old_dir) - ['.', '..']).empty?
-          FileUtils.remove_dir(old_dir)
-        end
       end
     end
   else
@@ -61,11 +63,11 @@ def replace_strings(target_file, args)
   end
 end
 
-# strings.each do |a|
-#   replace_strings(a, {:change => "yay", :ipsum => "MAATTE!!"})
-# end
+strings.each do |a|
+  replace_strings(a, {:change => "yay", :ipsum => "MAATTE!!"})
+end
 
-replace_strings(string2, {:change => "yay", :ipsum => "MAATTE!!"})
+# replace_strings(string2, {:change => "yay", :ipsum => "MAATTE!!"})
 
 # name1 = "name"
 # name2 = "name"
