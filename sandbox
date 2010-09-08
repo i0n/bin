@@ -47,27 +47,22 @@ def replace_strings(target_file, args)
     end
     if original_txt != new_txt
       puts "This file has changed: #{target_file}"
+      File.open("#{new_dir}/#{new_file}", "w+") do |file|
+        file.puts new_txt
+        file.chmod(0755) if permissions
+      end
+      FileUtils.rm(target_file)            
+      if File.directory?(old_dir)
+        if (Dir.entries(old_dir) - ['.', '..']).empty?
+          FileUtils.remove_dir(old_dir)
+        end
+      end
     end
-    # File.open(FileUtils.join_paths(new_dir, new_file), "w+") do |file|
-    #   file.puts txt
-    #   file.chmod(0755) if permissions
-    # end
-    # FileUtils.rm(target_file)            
-    # if File.directory?(old_dir)
-    #   if (Dir.entries(old_dir) - ['.', '..']).empty?
-    #     FileUtils.remove_dir(old_dir)
-    #   end
-    # end
-    puts "target_file: #{target_file}"
-    puts "old_dir: #{old_dir}"
-    puts "new_dir: #{new_dir}"
-    puts "new_file: #{new_file}"
-    
   else
     puts "#{target_file} is NOT a file"
   end
 end
 
 strings.each do |x|
-  replace_strings(x, {:change => "yay"})
+  replace_strings(x, {:change => "yay", :ipsum => "MAATTE!!"})
 end
