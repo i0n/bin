@@ -9,9 +9,10 @@ export SVN_EDITOR='/usr/bin/vim'
 # ./configure --enable-shared --enable-pthread --prefix=/usr/local/ruby-**VERSION-HERE** CFLAGS=-D_XOPEN_SOURCE=1
 #
 
-############################################################## Path Variable 
+############################################################## Path Variables
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:/usr/local/share/npm/bin:$PATH"
+export NODE_PATH="/usr/local/lib/node"
 
 ############################################################## Autotest settings 
 
