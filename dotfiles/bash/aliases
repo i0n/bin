@@ -30,6 +30,8 @@ alias ssh_config='mate ~/sites/bin/dotfiles/ssh/config'										# Shortcut for 
 function ab_test {
   ab -n 1000 -c 100 $1
 }
+########################################################## SSHFS
+alias tp='sshfs i0n@thoughtplant:/ /Users/i0n/thoughtplant'
 ########################################################## Mac OSX
 alias chrome='open -a "Google Chrome"'																		              # Open Google Chrome
 alias ff='open -a Firefox'																								              # Open FireFox
@@ -80,13 +82,14 @@ alias spl="svn update"                                             # Update subv
 alias scl="svn checkout"                                           # Checkout (like clone) an existing Subversion repo
 
 ########################################################## Nginx & Passenger
-alias restart='touch ./tmp/restart.txt'															          # Restart Passenger when executed from the project root
-alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						          #Runs the NginX error log
+alias restart='touch ./tmp/restart.txt'															                                                          # Restart Passenger when executed from the project root
+alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						                                                          #Runs the NginX error log
 
-alias nginx_config='mate /usr/local/nginx/conf/nginx.conf /etc/hosts'         # Edit Nginx config for adding sites to local dev environment
-alias nginx_stop='sudo nginx -s stop'                                         # Stops the NginX server
-alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist' # Starts the NginX server
-alias nrs='nginx_stop;sleep 2;nginx_start'                                    # Restarts the NginX server
+alias nginx_local='mate /usr/local/nginx/conf'                                                                                # Edit Nginx config for adding sites to local dev environment
+alias nginx_remote='sshfs i0n@thoughtplant:/ /Users/i0n/thoughtplant; mate /Users/i0n/thoughtplant/opt/nginx/conf/nginx.conf' # Edit Remote Nginx config
+alias nginx_stop='sudo nginx -s stop'                                                                                         # Stops the NginX server
+alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist'                                                 # Starts the NginX server
+alias nrs='nginx_stop;sleep 2;nginx_start'                                                                                    # Restarts the NginX server
 
 ########################################################## Thin
 alias th='thin --debug --rackup config.ru start' #starts standard rack apps with thin
@@ -104,19 +107,12 @@ alias tlog='tail -f ./log/test.log'										#Runs the development log for the c
 alias dsql='sqlite3 -line db/development.sqlite3'			#Opens SQlite3 prompt for development database.
 alias psql='sqlite3 -line db/production.sqlite3'			#Opens SQlite3 prompt for production database.
 alias tsql='sqlite3 -line db/test.sqlite3'						#Opens SQlite3 prompt for test database.
-# alias ss='./script/server'                            # Run the server for the current Rails project
-# alias db='./script/dbconsole'                         # Launches the database console for whichever backend has been selected for that rails project.
-# alias sg='./script/generate'                          # Run script generation for the current Rails project
-# alias sd='./script/destroy'                           # Run script destroy for the current Rails project
-# alias sp='./script/plugin install'                    # Run a plugin install on the current Rails project
-# alias sc='./script/console'                           # Run the console for the current Rails project
 alias r='rake'																				# Rake command
 alias rr='rake routes'																# Rake Routes command shows current route mappings
 alias rdm='rake db:migrate'														# Runs a Rake database migration
 alias rt='rake test'																	# Runs all tests
 alias rtu='rake test:units'														# Runs all unit tests (models)
 alias rtf='rake test:functionals'											# Runs all functional tests (controllers)
-alias irails='rails -d mysql -m ~/sites/bin/templates/rails.rb' # Runs the rails generator with my preference of DB and my custom Rails template
 ########################################################## Jumpstart
 alias js='jumpstart'                                  # Alias for my jumpstart gems command
 ########################################################## MongoDB
