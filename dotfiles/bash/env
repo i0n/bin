@@ -11,9 +11,12 @@ export SVN_EDITOR='/usr/bin/vim'
 
 ############################################################## Path Variables
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:/usr/local/Cellar/node/0.2.2/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:/usr/local/share/npm/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node"
-export MANPATH="/usr/local/Cellar/node/0.2.2/share/man:$MAN_PATH"
+export MANPATH="/usr/local/Cellar/node/0.2.3/share/man:$MAN_PATH"
+
+############################################################## Environment variables
+export NODE_ENV="development"
 
 ############################################################## Autotest settings 
 
