@@ -1,23 +1,14 @@
-############################################################## Default Editor 
-
+############################################################## Default Editor
 export EDITOR='/usr/bin/vim'
 export SVN_EDITOR='/usr/bin/vim'
 
-############################################################## Ruby Path 
-
-# INSTALL OPTS FOR RUBY:
-# ./configure --enable-shared --enable-pthread --prefix=/usr/local/ruby-**VERSION-HERE** CFLAGS=-D_XOPEN_SOURCE=1
-#
-
-############################################################## Path Variables
-
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:/usr/local/share/npm/bin:$PATH"
-export NODE_PATH="/usr/local/lib/node"
-export MANPATH="/usr/local/Cellar/node/0.2.3/share/man:$MAN_PATH"
-
-############################################################## Environment variables
+############################################################## Node.js
 export NODE_ENV="development"
+export NODE_PATH="/usr/local/lib/node"
 
-############################################################## Autotest settings 
-
+############################################################## Autotest
 export AUTOFEATURE=true
+
+############################################################## Paths
+export MANPATH="/usr/local/Cellar/node/0.2.3/share/man:$MAN_PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:/usr/local/share/npm/bin:$MAGICK_HOME/bin:/usr/local/Cellar/php/5.3.3:$PATH"

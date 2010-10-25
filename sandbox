@@ -1,4 +1,41 @@
 #!/usr/bin/env ruby
 
-puts ENV['TM_BUNDLE_SUPPORT']
-puts RUBY_DESCRIPTION
+# puts ENV['TM_BUNDLE_SUPPORT']
+# puts RUBY_DESCRIPTION
+
+  
+module Woo
+  
+  attr_accessor :uber
+  
+  # class << self
+    
+    def testo
+      
+      puts "Yay!"
+      self.uber = "uber!"
+      
+    end
+    
+    
+    
+  # end
+  
+end
+
+class Sandbox
+  
+  # class << self
+    include Woo
+  # end
+
+  # Sandbox.testo
+  
+end
+
+
+mega = Sandbox.new
+
+mega.testo
+puts mega.uber
+# Sandbox.testo
