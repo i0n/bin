@@ -4,11 +4,11 @@ export SVN_EDITOR='/usr/bin/vim'
 
 ############################################################## Node.js
 export NODE_ENV="development"
-export NODE_PATH="/usr/local/lib/node"
+export NODE_PATH="/usr/local/Cellar/node/0.2.5/lib/node"
 
 ############################################################## Autotest
 export AUTOFEATURE=true
 
 ############################################################## Paths
 export MANPATH="/usr/local/Cellar/node/0.2.3/share/man:$MAN_PATH"
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:/usr/local/share/npm/bin:$MAGICK_HOME/bin:/usr/local/Cellar/php/5.3.3:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/nginx/sbin:/usr/local/Cellar/node/0.2.5/bin:$MAGICK_HOME/bin:/usr/local/Cellar/php/5.3.3:$PATH"
