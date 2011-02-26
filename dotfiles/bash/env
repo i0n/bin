@@ -6,8 +6,11 @@ export SVN_EDITOR='/usr/local/bin/vim'
 export NODE_ENV="production"
 export NODE_PATH="/usr/local/lib/node"
 
-############################################################## Autotest
-export AUTOFEATURE=true
+############################################################## Mongo
+export MONGOID_HOST=localhost
+export MONGOID_PORT=27017
+export MONGOID_USERNAME=mongoman
+export MONGOID_PASSWORD=dr0pk1ck
 
 ############################################################## Paths
-export PATH=$PATH
+export PATH=$PATH:/usr/sbin:/opt/mongodb/bin:
