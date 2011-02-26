@@ -4,7 +4,7 @@ Host waavoo
 	Port 22
 	
 Host mosaic
-	HostName 68.233.9.144
+	HostName 66.84.0.147
 	User mosaicp
 	port 22
 	

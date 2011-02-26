@@ -120,13 +120,11 @@ alias rtu='rake test:units'														# Runs all unit tests (models)
 alias rtf='rake test:functionals'											# Runs all functional tests (controllers)
 
 ########################################################## MongoDB
-alias mongo_start='mongod run --config /usr/local/Cellar/mongodb/1.6.3-x86_64/mongod.conf'
+alias mongo_start='mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf'
 alias mongo_repair='rm /usr/local/var/mongodb/mongod.lock'
 
 ########################################################## Jumpstart
 alias js='jumpstart'                                  # Alias for my jumpstart gems command
-########################################################## MongoDB
-alias mdb='mongod run --config /usr/local/Cellar/mongodb/1.6.0-x86_64/mongod.conf' #Starts MongoDB
 ########################################################## flac2mp3 (run from the containing dir)	
 function flac2mp3_dir {
   for f in *.flac; do flac2mp3 "$f"; done
