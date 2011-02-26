@@ -43,6 +43,10 @@ alias hidef='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Fin
 alias m='mate'																													                # Textmate Unix command
 alias reset_textmate="defaults delete com.macromates.textmate OakLanguageFileBindings"  # Resets the textmate file type bindings.
 alias tmb="cd /Users/i0n/Library/Application\ Support/TextMate"                         # Move into the Textmate directory
+
+########################################################## Vim
+alias v='vim'
+
 ########################################################## Git 
 alias g='git status'																											# Git Status
 alias ga='git add .'																											# Git Add (Everything to pending commit)

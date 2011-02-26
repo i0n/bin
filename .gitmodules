@@ -1,0 +1,9 @@
+[submodule "dotfiles/vim/bundle/vim-fugitive"]
+	path = dotfiles/vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "dotfiles/vim/bundle/vim-rails"]
+	path = dotfiles/vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "dotfiles/vim/bundle/nerdtree"]
+	path = dotfiles/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
