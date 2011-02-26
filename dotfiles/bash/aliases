@@ -1,11 +1,9 @@
 ########################################################## Local Environment Config
-alias ian='mate ~/sites/bin/ && reload'																    # Edit personal environment setup and reload
-alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
-																																					# Opening function for my terminal to go to my sites folder and display a list
-function cdsl {
-	cd sites
-	ls -lah
-}
+alias ianb='nano ~/bin/ && reload'																# Edit personal environment setup and reload
+alias reload='source ~/.bashrc '		# Reload personal bash and zsh setup
+alias iana='nano ~/bin/dotfiles/bash/aliases && reload'					# Edit aliases and reload
+alias ianc='nano ~/bin/dotfiles/bash/config && reload'						# Edit config and reload
+alias iane='nano ~/bin/dotfiles/bash/env && reload'							# Edit env and reload
 
 ########################################################## General
 alias l='ls -lah' 																												# List files and folders including hidden files
@@ -24,26 +22,10 @@ function take {
 	mkdir $1
 	cd $1
 }
-alias ssh_config='mate ~/sites/bin/dotfiles/ssh/config'										# Shortcut for setting ssh aliases
                                                                           # Apache bench test
 function ab_test {
   ab -n 1000 -c 100 $1
 }
-alias updatedb='sudo /usr/libexec/locate.updatedb'                        # Update the locate database
-########################################################## SSHFS
-alias tp='sshfs i0n@thoughtplant:/ /Users/i0n/thoughtplant'
-########################################################## Mac OSX
-alias chrome='open -a "Google Chrome"'																		              # Open Google Chrome
-alias ff='open -a Firefox'																								              # Open FireFox
-alias safari='open -a safari'																							              # Open Safari
-alias o='open'																								                          # Open command for OSX integration, use to open files folders and apps (-a flag for apps)
-alias showf='defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder'     # Shows all hidden files in the finder
-alias hidef='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder'    # Hides all hidden files in the finder
-########################################################## Textmate
-alias m='mate'																													                # Textmate Unix command
-alias reset_textmate="defaults delete com.macromates.textmate OakLanguageFileBindings"  # Resets the textmate file type bindings.
-alias tmb="cd /Users/i0n/Library/Application\ Support/TextMate"                         # Move into the Textmate directory
-
 ########################################################## Vim
 alias v='vim'
 
@@ -87,15 +69,11 @@ alias scl="svn checkout"                                           # Checkout (l
 
 ########################################################## Nginx & Passenger
 alias restart='touch ./tmp/restart.txt'															                    # Restart Passenger when executed from the project root
-alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						                    #Runs the NginX error log
-alias nginx_local='mate /usr/local/nginx/conf/nginx.conf /etc/hosts'                    # Edit Nginx config for adding sites to local dev environment
-alias nginx_remote='mate /Users/i0n/thoughtplant/opt/nginx/conf/nginx.conf'             # Edit Remote Nginx config
-alias nginx_stop='sudo nginx -s stop'                                                   # Stops the NginX server
-alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist'           # Starts the NginX server
+alias nginx_log='tail -f /opt/nginx/logs/error.log'						                    #Runs the NginX error log
+alias nginx_config='sudo vim /opt/nginx/conf/nginx.conf'
+alias nginx_stop='sudo /opt/nginx/sbin/nginx -s stop'
+alias nginx_start='sudo /opt/nginx/sbin/nginx'
 alias nginxr='nginx_stop;sleep 2;nginx_start'                                           # Restarts the NginX server
-
-########################################################## FastCGI
-alias fcgi_start='spawn-fcgi -a 127.0.0.1 -p 9000 -f /usr/local/bin/php-cgi -C 5 -U i0n'  # Starts FastCGI on port 9000 with user i0n
 
 ########################################################## Node.js
 alias noder='killall node;monit'
@@ -105,9 +83,6 @@ alias th='thin --debug --rackup config.ru start' #starts standard rack apps with
 
 ########################################################## Ruby Gems
 alias gu='gem update'
-
-########################################################## Home Brew
-alias bu='brew update'
 
 ########################################################## Rails
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
@@ -122,14 +97,3 @@ alias rdm='rake db:migrate'														# Runs a Rake database migration
 alias rt='rake test'																	# Runs all tests
 alias rtu='rake test:units'														# Runs all unit tests (models)
 alias rtf='rake test:functionals'											# Runs all functional tests (controllers)
-
-########################################################## MongoDB
-alias mongo_start='mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf'
-alias mongo_repair='rm /usr/local/var/mongodb/mongod.lock'
-
-########################################################## Jumpstart
-alias js='jumpstart'                                  # Alias for my jumpstart gems command
-########################################################## flac2mp3 (run from the containing dir)	
-function flac2mp3_dir {
-  for f in *.flac; do flac2mp3 "$f"; done
-}
