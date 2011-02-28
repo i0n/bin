@@ -13,3 +13,6 @@
 [submodule "dotfiles/vim/bundle/vim-git"]
 	path = dotfiles/vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
+[submodule "dotfiles/vim/bundle/vim-surround"]
+	path = dotfiles/vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
