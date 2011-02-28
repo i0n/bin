@@ -45,7 +45,7 @@ alias reset_textmate="defaults delete com.macromates.textmate OakLanguageFileBin
 alias tmb="cd /Users/i0n/Library/Application\ Support/TextMate"                         # Move into the Textmate directory
 
 ########################################################## Vim
-alias v='vim'
+alias v='vim -N'
 
 ########################################################## Git 
 alias g='git status'																											# Git Status
