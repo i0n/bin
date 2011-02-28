@@ -16,3 +16,12 @@
 [submodule "dotfiles/vim/bundle/vim-surround"]
 	path = dotfiles/vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "dotfiles/vim/bundle/vim-ragtag"]
+	path = dotfiles/vim/bundle/vim-ragtag
+	url = https://github.com/tpope/vim-ragtag.git
+[submodule "dotfiles/vim/bundle/vim-endwise"]
+	path = dotfiles/vim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "dotfiles/vim/bundle/snipmate"]
+	path = dotfiles/vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
