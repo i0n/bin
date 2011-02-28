@@ -10,3 +10,6 @@
 [submodule "dotfiles/vim/bundle/vim-rooter"]
 	path = dotfiles/vim/bundle/vim-rooter
 	url = https://github.com/airblade/vim-rooter.git
+[submodule "dotfiles/vim/bundle/vim-git"]
+	path = dotfiles/vim/bundle/vim-git
+	url = https://github.com/tpope/vim-git.git
