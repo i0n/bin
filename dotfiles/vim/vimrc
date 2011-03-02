@@ -55,12 +55,12 @@ colorscheme ir_black
 " let maplocalleader = "`"
 
 " Tab mappings.
-map <leader>tt ;tabnew<cr>
+map <leader>t ;tabnew<cr>
 map <leader>te ;tabedit
 map <leader>tc ;tabclose<cr>
 map <leader>to ;tabonly<cr>
-map <leader>tn ;tabnext<cr>
-map <leader>tp ;tabprevious<cr>
+map <leader>] ;tabnext<cr>
+map <leader>[ ;tabprevious<cr>
 map <leader>tf ;tabfirst<cr>
 map <leader>tl ;tablast<cr>
 map <leader>tm ;tabmove
@@ -75,261 +75,14 @@ map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>c <C-w>c
 
-" Fuzzy Finder plugin mapping
-map <leader>t ;FufFile<cr>
+" CommandT  plugin mapping
+map <leader>f ;CommandT<cr>
 
 " NERDTree plugin mapping
 map <leader>d ;NERDTreeToggle<cr>
 
 " Buffer Explorer plugin mapping
 map <leader>b ;BufExplorer<cr>
-
-" swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Mappings to make text indentation in command mode easier
-nnoremap > >>
-nnoremap < <<
-
-" Mappings to make text indentation in visual mode easier
-vmap > >gv
-vmap < <gv
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-" Sets up some global settings for the ragtag plugin 
-let g:ragtag_global_maps = 1 
-
-" Fuzzy Finder plugin mapping
-map <Leader>t ;FufFile<cr>
-
-" NERDTree plugin mapping
-map <leader>d ;NERDTreeToggle<cr>
-
-" swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Mappings to make text indentation in command mode easier
-nnoremap > >>
-nnoremap < <<
-
-" Mappings to make text indentation in visual mode easier
-vmap > >gv
-vmap < <gv
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-" Sets up some global settings for the ragtag plugin 
-let g:ragtag_global_maps = 1 
-
-" Fuzzy Finder plugin mapping
-map <Leader>t ;FufFile<cr>
-
-" NERDTree plugin mapping
-map <leader>d ;NERDTreeToggle<cr>
-
-" swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Mappings to make text indentation in command mode easier
-
-" Fuzzy Finder plugin mapping
-map <Leader>t ;FufFile<cr>
-
-" NERDTree plugin mapping
-map <leader>d ;NERDTreeToggle<cr>
-
-" swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Mappings to make text indentation in command mode easier
-nnoremap > >>
-nnoremap < <<
-
-" Mappings to make text indentation in visual mode easier
-vmap > >gv
-vmap < <gv
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-" Sets up some global settings for the ragtag plugin 
-let g:ragtag_global_maps = 1 
-
-" Fuzzy Finder plugin mapping
-map <Leader>t ;FufFile<cr>
-
-" NERDTree plugin mapping
-map <leader>d ;NERDTreeToggle<cr>
-
-" swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Mappings to make text indentation in command mode easier
-nnoremap > >>
-nnoremap < <<
-
-" Mappings to make text indentation in visual mode easier
-vmap > >gv
-vmap < <gv
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-" Sets up some global settings for the ragtag plugin 
-let g:ragtag_global_maps = 1 
-
-" Fuzzy Finder plugin mapping
-map <Leader>t ;FufFile<cr>
-
-" NERDTree plugin mapping
-map <leader>d ;NERDTreeToggle<cr>
-
-" swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Mappings to make text indentation in command mode easier
-
-" Fuzzy Finder plugin mapping
-map <Leader>t ;FufFile<cr>
-
-" NERDTree plugin mapping
-map <leader>d ;NERDTreeToggle<cr>
-
-" swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Mappings to make text indentation in command mode easier
-nnoremap > >>
-nnoremap < <<
-
-" Mappings to make text indentation in visual mode easier
-vmap > >gv
-vmap < <gv
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-" Sets up some global settings for the ragtag plugin 
-let g:ragtag_global_maps = 1 
-
-" Fuzzy Finder plugin mapping
-map <Leader>t ;FufFile<cr>
-
-" NERDTree plugin mapping
-map <leader>d ;NERDTreeToggle<cr>
-
-" swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Mappings to make text indentation in command mode easier
-nnoremap > >>
-nnoremap < <<
-
-" Mappings to make text indentation in visual mode easier
-vmap > >gv
-vmap < <gv
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-" Sets up some global settings for the ragtag plugin 
-let g:ragtag_global_maps = 1 
-
-" Fuzzy Finder plugin mapping
-map <Leader>t ;FufFile<cr>
-
-" NERDTree plugin mapping
-map <leader>d ;NERDTreeToggle<cr>
-
-" swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
-
-" Mappings to make text indentation in command mode easier
-nnoremap > >>
-nnoremap < <<
-
-" Mappings to make text indentation in visual mode easier
-vmap > >gv
-vmap < <gv
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-" Sets up some global settings for the ragtag plugin 
-let g:ragtag_global_maps = 1 
-
-" Fuzzy Finder plugin mapping
-map <Leader>t ;FufFile<cr>
-
-" NERDTree plugin mapping
-map <leader>d ;NERDTreeToggle<cr>
 
 " swap colon and semicolon for easier commands
 nnoremap ; :
