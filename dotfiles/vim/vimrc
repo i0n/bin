@@ -75,8 +75,10 @@ map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>c <C-w>c
 
-" CommandT  plugin mapping
-map <leader>f ;CommandT<cr>
+" CommandT  plugin mappings
+nmap <silent> <leader>f ;CommandT<cr>
+let g:CommandTMatchWindowAtTop=1
+let g:CommandTCancelMap='<Esc>'
 
 " NERDTree plugin mapping
 map <leader>d ;NERDTreeToggle<cr>
