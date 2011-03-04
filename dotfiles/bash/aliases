@@ -88,8 +88,7 @@ alias scl="svn checkout"                                           # Checkout (l
 ########################################################## Nginx & Passenger
 alias restart='touch ./tmp/restart.txt'															                    # Restart Passenger when executed from the project root
 alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						                    #Runs the NginX error log
-alias nginx_local='mate /usr/local/nginx/conf/nginx.conf /etc/hosts'                    # Edit Nginx config for adding sites to local dev environment
-alias nginx_remote='mate /Users/i0n/thoughtplant/opt/nginx/conf/nginx.conf'             # Edit Remote Nginx config
+alias nginx_config='vim -p /usr/local/nginx/conf/nginx.conf /etc/hosts'                    # Edit Nginx config for adding sites to local dev environment
 alias nginx_stop='sudo nginx -s stop'                                                   # Stops the NginX server
 alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist'           # Starts the NginX server
 alias nginxr='nginx_stop;sleep 2;nginx_start'                                           # Restarts the NginX server
