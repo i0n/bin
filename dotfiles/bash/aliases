@@ -1,5 +1,5 @@
 ########################################################## Local Environment Config
-alias ian='mate ~/sites/bin/ && reload'																    # Edit personal environment setup and reload
+alias ian='vim -N ~/sites/bin/dotfiles/bash/aliases'																    # Edit personal environment setup and reload
 alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
 																																					# Opening function for my terminal to go to my sites folder and display a list
 function cdsl {
@@ -88,7 +88,7 @@ alias scl="svn checkout"                                           # Checkout (l
 ########################################################## Nginx & Passenger
 alias restart='touch ./tmp/restart.txt'															                    # Restart Passenger when executed from the project root
 alias nginx_log='tail -f /usr/local/nginx/logs/error.log'						                    #Runs the NginX error log
-alias nginx_config='vim -p /usr/local/nginx/conf/nginx.conf /etc/hosts'                    # Edit Nginx config for adding sites to local dev environment
+alias nginx_config='vim -N -p /usr/local/nginx/conf/nginx.conf /etc/hosts'                    # Edit Nginx config for adding sites to local dev environment
 alias nginx_stop='sudo nginx -s stop'                                                   # Stops the NginX server
 alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist'           # Starts the NginX server
 alias nginxr='nginx_stop;sleep 2;nginx_start'                                           # Restarts the NginX server
