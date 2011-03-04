@@ -66,14 +66,14 @@ map <leader>tl ;tablast<cr>
 map <leader>tm ;tabmove
 
 " Window mappings.
-map <leader>w <C-w>w 
+map <leader><Tab> <C-w>w 
 map <leader>o <C-w>o
 map <leader>v <C-w>v
 map <leader>h <C-w>s
 map <leader>p <C-w>p
 map <leader>j <C-w>j
 map <leader>k <C-w>k
-map <leader>c <C-w>c
+map <leader>w <C-w>c
 
 " CommandT  plugin mappings
 nmap <silent> <leader>f ;CommandT<cr>
