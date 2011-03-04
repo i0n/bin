@@ -46,6 +46,7 @@ alias tmb="cd /Users/i0n/Library/Application\ Support/TextMate"                 
 
 ########################################################## Vim
 alias v='vim -N'
+alias vim_config='vim -N ~/Sites/bin/dotfiles/vim/vimrc'
 
 ########################################################## Git 
 alias g='git status'																											# Git Status
