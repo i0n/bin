@@ -62,7 +62,8 @@ alias gpom='git push origin master'                                       # To p
 alias gb='git branch'																											# Git Branch
 alias gt='git tag'																												# Git Tag
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
-alias gcl='git clone'																								# Clone a remote repository. e.g: gcl git://github.com/masterkain/macruby.git
+alias gcl='git clone'																								      # Clone a remote repository. e.g: gcl git://github.com/masterkain/macruby.git
+alias gh='git rev-parse HEAD'                                             # Retrieves the hash for the last commit
 																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
 function gg {
 	git commit -v -a -m "$*"
@@ -70,7 +71,6 @@ function gg {
 alias gm='git merge'																											# Git Merge
 alias gcp='git cherry-pick'																								# Git Cherry-Pick Commit to merge into current branch. From branch you want to pull change into: gcp 21312hfff (represents the unique key for that change)
 alias gd='git diff'																												# Git Diff
-alias gh='github'																													# Alias for the github gem
 																																					# Download the files from a GitHub repository to the current dir. Pass the username then the repo.
 function gdl() {
 	git clone git://github.com/$1/$2.git
