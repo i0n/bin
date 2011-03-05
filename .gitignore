@@ -6,3 +6,4 @@ public/system/photos/*
 mkmf.log
 dotfiles/vim/.netrwhist
 *.swp
+tmp/*

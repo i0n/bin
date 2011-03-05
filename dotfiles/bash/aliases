@@ -1,5 +1,5 @@
 ########################################################## Local Environment Config
-alias ian='vim -N ~/sites/bin/dotfiles/bash/aliases'																    # Edit personal environment setup and reload
+alias ian='vim -N -p ~/sites/bin/dotfiles/bash/aliases ~/sites/bin/dotfiles/bash/env'																    # Edit personal environment setup and reload
 alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
 																																					# Opening function for my terminal to go to my sites folder and display a list
 function cdsl {
