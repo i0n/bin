@@ -63,7 +63,7 @@ alias gb='git branch'																											# Git Branch
 alias gt='git tag'																												# Git Tag
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
 alias gcl='git clone'																								      # Clone a remote repository. e.g: gcl git://github.com/masterkain/macruby.git
-alias gh='git rev-parse HEAD | pbcopy'                                             # Retrieves the hash for the last commit
+alias gh='git rev-parse HEAD | pbcopy | pbpaste'                          # Retrieves the hash for the last commit
 																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
 function gg {
 	git commit -v -a -m "$*"
