@@ -1,9 +1,19 @@
 ########################################################## Local Environment Config
+<<<<<<< HEAD
 alias ianb='nano ~/bin/ && reload'																# Edit personal environment setup and reload
 alias reload='source ~/.bashrc '		# Reload personal bash and zsh setup
 alias iana='nano ~/bin/dotfiles/bash/aliases && reload'					# Edit aliases and reload
 alias ianc='nano ~/bin/dotfiles/bash/config && reload'						# Edit config and reload
 alias iane='nano ~/bin/dotfiles/bash/env && reload'							# Edit env and reload
+=======
+alias ian='vim -N -p ~/sites/bin/dotfiles/bash/aliases ~/sites/bin/dotfiles/bash/env'																    # Edit personal environment setup and reload
+alias reload='source ~/.bashrc && source ~/.zshrc && source ~/.zshenv'		# Reload personal bash and zsh setup
+																																					# Opening function for my terminal to go to my sites folder and display a list
+function cdsl {
+	cd sites
+	ls -lah
+}
+>>>>>>> 67ca20e... added tmp dir to gitignore and changed alias for vim use
 
 ########################################################## General
 alias l='ls -lah' 																												# List files and folders including hidden files
