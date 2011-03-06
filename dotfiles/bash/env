@@ -1,6 +1,7 @@
 ############################################################## Default Editor
 export EDITOR='/usr/local/bin/vim'
 export SVN_EDITOR='/usr/local/bin/vim'
+export VIMRC='/Users/i0n/Sites/bin/dotfiles/vim/vimrc'
 
 ############################################################## Node.js
 export NODE_ENV="development"
