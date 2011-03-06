@@ -22,6 +22,7 @@ set wildmode=list:longest         " Complete files like a shell.
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
+set cmdheight=2                   " Number of lines used for the command-line
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 
@@ -32,6 +33,7 @@ set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
+
 
 set visualbell                    " No beeping.
 
@@ -77,6 +79,11 @@ map <leader>p <C-w>p
 map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>w <C-w>c
+
+" source $MYVIMRC reloads the saved $MYVIMRC
+:nmap <Leader>r :source $VIMRC 
+" opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
+:nmap <Leader>i :e $VIMRC
 
 " CommandT  plugin mappings
 nmap <silent> <leader>f ;CommandT<cr>
