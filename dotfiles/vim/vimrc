@@ -54,7 +54,7 @@ set laststatus=2                 " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 set t_Co=256
-colorscheme gardener
+colorscheme wombat256
 
 " Mapping to set leader key  
 " let mapleader = "`"
