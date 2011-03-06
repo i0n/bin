@@ -22,3 +22,6 @@
 [submodule "dotfiles/vim/bundle/vim-endwise"]
 	path = dotfiles/vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "dotfiles/vim/bundle/command-t"]
+	path = dotfiles/vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
