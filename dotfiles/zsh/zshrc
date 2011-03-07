@@ -1,14 +1,5 @@
-# When setting up don't forget to create the file ~/.zshrc if it does not already exist and paste the following line into it
-# . ~/sites/bin/dotfiles/zshrc
-# When setting up don't forget to create the file ~/.zshenv if it does not already exist and paste the following line into it
-# . ~/sites/bin/dotfiles/zsh/env
+. ~/bin/dotfiles/zsh/config
+. ~/bin/dotfiles/zsh/aliases
 
-. ~/sites/bin/dotfiles/zsh/config
-. ~/sites/bin/dotfiles/zsh/aliases
-
-if [[ -f "$HOME/.amazon_keys" ]]; then
-  source "$HOME/.amazon_keys";
-fi
-if [[ -s /Users/i0n/.rvm/scripts/rvm ]] ; then 
-  source /Users/i0n/.rvm/scripts/rvm ; 
-fi
+# This loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
