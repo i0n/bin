@@ -3,4 +3,4 @@
 # Removes existing bash zsh ssh and vim dotfiles and sets up links to ~/bin/dotfiles
 # Ian Alexander Wood @i0n 2011
 
-exec 'rm -R -f ~/.bash* ~/.profile ~/.zsh* ~/.ssh/config ~/.vim* && ln -s ~/bin/dotfiles/zsh/zshrc ~/.zshrc && ln -s ~/bin/dotfiles/zsh/zshenv ~/.zshenv && ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config && ln -s ~/bin/dotfiles/vim/vimrc ~/.vimrc && ln -s ~/bin/dotfiles/vim ~/.vim'
+exec 'rm -R -f ~/.bash* ~/.profile ~/.zsh* ~/.ssh/config ~/.vim* && ln -s ~/bin/dotfiles/zsh/zshrc ~/.zshrc && ln -s ~/bin/dotfiles/zsh/env ~/.zshenv && ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config && ln -s ~/bin/dotfiles/vim/vimrc ~/.vimrc && ln -s ~/bin/dotfiles/vim ~/.vim'
