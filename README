@@ -1,7 +1,0 @@
-bin folder containing my custom configuration.
-
-To use local 960-gridder.js create a bookmark and add this as the address:
-
-javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://localhost/bin/960-gridder.js';})();
-
-Replace path with the actual path to the file!
