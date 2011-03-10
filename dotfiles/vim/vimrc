@@ -3,8 +3,7 @@ silent! call pathogen#helptags()
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.
-
+filetype plugin indent on         " Turn on file type detection.  
 runtime macros/matchit.vim        " Load the matchit plugin.
 
 set showcmd                       " Display incomplete commands.
@@ -80,7 +79,7 @@ map <leader>k <C-w>k
 map <leader>w <C-w>c
 
 " source $MYVIMRC reloads the saved $MYVIMRC
-:nmap <Leader>r ;source $VIMRC<cr> 
+:nmap <Leader>r ;call ResetAllSnippets()<cr> ;source $VIMRC<cr> 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 :nmap <Leader>i ;e $VIMRC<cr>
 
