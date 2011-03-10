@@ -49,7 +49,13 @@ set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme wombat256
+" now set it up to change the status line based on mode
+if version >= 700
+  au InsertEnter * hi StatusLine term=reverse ctermbg=1 
+  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2
+endif
+
+colorscheme mutant-wombat256
 
 " Mapping to set leader key  
 " let mapleader = "`"
@@ -130,25 +136,3 @@ set previewheight=25
 " Highlights the current line in all windows
 set cursorline 
 
-" :au InsertEnter * hi Normal term=reverse ctermbg=darkgrey guibg=yellow 
-" :au InsertLeave * hi Normal term=NONE    ctermbg=black    guibg=white
-
-" fu! DoColor(int, highlight) 
-"   let identifier="bgColor" 
-"   if a:int 
-"     call ColorBG(identifier, a:highlight) 
-"   else 
-"     call UnColorBG(identifier) 
-"   endif 
-"   redraw 
-" endfu 
-
-"  set t_SI="\e[?48c"
-"  set t_EI=""
-
-"  if &term =~ "xterm\\|rxvt|xterm-256color"
-"    :silent !echo -ne "\033]12;red\007"
-"    let &t_SI = "\033]12;orange\007"
-"    let &t_EI = "\033]12;red\007"
-"    autocmd VimLeave * :!echo -ne "\033]12;red\007"
-"  endif
