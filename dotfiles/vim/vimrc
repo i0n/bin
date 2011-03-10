@@ -51,8 +51,8 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 
 " now set it up to change the status line based on mode
 if version >= 700
-  au InsertEnter * hi StatusLine term=reverse ctermbg=1 
-  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2
+  au InsertEnter * hi StatusLine ctermfg=7 ctermbg=1 
+  au InsertLeave * hi StatusLine ctermfg=0 ctermbg=2
 endif
 
 colorscheme mutant-wombat256
