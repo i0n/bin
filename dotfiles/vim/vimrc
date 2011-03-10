@@ -49,11 +49,9 @@ set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" now set it up to change the status line based on mode
-if version >= 700
-  au InsertEnter * hi StatusLine ctermfg=7 ctermbg=1 
-  au InsertLeave * hi StatusLine ctermfg=0 ctermbg=2
-endif
+" Color changes for the status bar when in insert mode
+au InsertEnter * hi StatusLine ctermfg=7 ctermbg=1 
+au InsertLeave * hi StatusLine ctermfg=0 ctermbg=2
 
 colorscheme mutant-wombat256
 
