@@ -7,3 +7,4 @@ mkmf.log
 dotfiles/vim/.netrwhist
 *.swp
 tmp/*
+dotfiles/vim/bundle/*/doc/tags*

@@ -1,27 +1,36 @@
 [submodule "dotfiles/vim/bundle/vim-fugitive"]
 	path = dotfiles/vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+  ignore = untracked
 [submodule "dotfiles/vim/bundle/vim-rails"]
 	path = dotfiles/vim/bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
+  ignore = untracked
 [submodule "dotfiles/vim/bundle/nerdtree"]
 	path = dotfiles/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+  ignore = untracked
 [submodule "dotfiles/vim/bundle/vim-rooter"]
 	path = dotfiles/vim/bundle/vim-rooter
 	url = https://github.com/airblade/vim-rooter.git
+  ignore = untracked
 [submodule "dotfiles/vim/bundle/vim-git"]
 	path = dotfiles/vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
+  ignore = untracked
 [submodule "dotfiles/vim/bundle/vim-surround"]
 	path = dotfiles/vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+  ignore = untracked
 [submodule "dotfiles/vim/bundle/vim-ragtag"]
 	path = dotfiles/vim/bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag.git
+  ignore = untracked
 [submodule "dotfiles/vim/bundle/vim-endwise"]
 	path = dotfiles/vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
+  ignore = untracked
 [submodule "dotfiles/vim/bundle/command-t"]
 	path = dotfiles/vim/bundle/command-t
 	url = https://github.com/wincent/Command-T.git
+  ignore = untracked
