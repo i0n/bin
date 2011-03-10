@@ -126,3 +126,6 @@ autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 " Sets up some global settings for the ragtag plugin 
 let g:ragtag_global_maps = 1 
+
+" Sets the line height of the preview window
+set previewheight=30
