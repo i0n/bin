@@ -83,7 +83,7 @@ map <leader>k <C-w>k
 map <leader>w <C-w>c
 
 " source $MYVIMRC reloads the saved $MYVIMRC
-:nmap <Leader>r ;call ResetAllSnippets()<cr> ;source $VIMRC<cr> 
+:nmap <Leader>r ;call ResetAllSnippets()<cr><bar>;source $VIMRC<cr> 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 :nmap <Leader>i ;e $VIMRC<cr>
 
