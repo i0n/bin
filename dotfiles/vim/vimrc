@@ -31,7 +31,6 @@ set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
-
 set visualbell                    " No beeping.
 
 set nobackup                      " Don't make a backup before overwriting a file.
@@ -50,7 +49,6 @@ set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-set t_Co=256
 colorscheme wombat256
 
 " Mapping to set leader key  
@@ -127,4 +125,30 @@ autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 let g:ragtag_global_maps = 1 
 
 " Sets the line height of the preview window
-set previewheight=30
+set previewheight=25
+
+" Highlights the current line in all windows
+set cursorline 
+
+" :au InsertEnter * hi Normal term=reverse ctermbg=darkgrey guibg=yellow 
+" :au InsertLeave * hi Normal term=NONE    ctermbg=black    guibg=white
+
+" fu! DoColor(int, highlight) 
+"   let identifier="bgColor" 
+"   if a:int 
+"     call ColorBG(identifier, a:highlight) 
+"   else 
+"     call UnColorBG(identifier) 
+"   endif 
+"   redraw 
+" endfu 
+
+"  set t_SI="\e[?48c"
+"  set t_EI=""
+
+"  if &term =~ "xterm\\|rxvt|xterm-256color"
+"    :silent !echo -ne "\033]12;red\007"
+"    let &t_SI = "\033]12;orange\007"
+"    let &t_EI = "\033]12;red\007"
+"    autocmd VimLeave * :!echo -ne "\033]12;red\007"
+"  endif
