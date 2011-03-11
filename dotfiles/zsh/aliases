@@ -78,7 +78,7 @@ alias restart='touch ./tmp/restart.txt'															                    # Rest
 alias nginx_log='tail -f /opt/nginx/logs/error.log'						                          # Runs the NginX error log
 alias nginx_config='vim -N -p /opt/nginx/conf/nginx.conf /etc/hosts'                    # Edit Nginx config for adding sites to local dev environment
 alias nginx_stop='sudo nginx -s stop'                                                   # Stops the NginX server
-alias nginx_start='sudo launchctl load -F /Library/LaunchDaemons/nginx.plist'           # Starts the NginX server
+alias nginx_start='sudo launchctl load -F ~/bin/configfiles/osx/nginx/nginx.plist'      # Starts the NginX server
 alias nginxr='nginx_stop;sleep 2;nginx_start'                                           # Restarts the NginX server
 
 ########################################################## FastCGI
