@@ -85,6 +85,12 @@ map <Leader>y ;%y+<cr>
 :nmap <Leader>r ;call ResetAllSnippets()<cr><bar>;source $VIMRC<cr> 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 :nmap <Leader>i ;e $VIMRC<cr>
+if has("autocmd")
+  " Automatically reloads vimrc when the file is saved.
+  autocmd bufwritepost vimrc source $VIMRC
+  " Automatically reloads snippets when they are saved.
+  autocmd bufwritepost */snipmate/snippets/*.snippets call ResetAllSnippets()
+endif
 
 " CommandT  plugin mappings
 nmap <silent> <leader>f ;CommandT<cr>
