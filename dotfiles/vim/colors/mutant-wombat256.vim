@@ -299,4 +299,9 @@ delf <SID>grey_level
 delf <SID>grey_number
 " }}}
 
+if has("autocmd")
+	" Color changes for the status bar when in insert mode
+	silent! au InsertEnter * hi StatusLine ctermfg=7 ctermbg=1 
+	silent! au InsertLeave * hi StatusLine ctermfg=0 ctermbg=2
+endif
 " vim:set ts=4 sw=4 noet fdm=marker:

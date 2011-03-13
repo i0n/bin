@@ -49,9 +49,6 @@ set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%y\ %{fugitive#statusline()}%m%r\ \ \ \ \ %l\ [%c-%v]\ %P
 
-" Color changes for the status bar when in insert mode
-silent! au InsertEnter * hi StatusLine ctermfg=7 ctermbg=1 
-silent! au InsertLeave * hi StatusLine ctermfg=0 ctermbg=2
 
 colorscheme mutant-wombat256
 
