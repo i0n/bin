@@ -88,8 +88,6 @@ map <Leader>y ;%y+<cr>
 if has("autocmd")
   " Automatically reloads vimrc when the file is saved.
   autocmd bufwritepost vimrc source $VIMRC
-  " Automatically reloads snippets when they are saved.
-  autocmd bufwritepost */snipmate/snippets/*.snippets call ResetAllSnippets()
 endif
 
 " CommandT  plugin mappings
@@ -143,3 +141,13 @@ set cursorline
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> ;call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
+endfunc
+

@@ -235,7 +235,7 @@ endfun
 
 call <SID>X("Normal",		"cccccc",	"242424",	"none")
 call <SID>X("Cursor",		"222222",	"ecee90",	"none")
-call <SID>X("CursorLine",	"",			"32322e",	"none")
+call <SID>X("CursorLine",	"",			"333333",	"none")
 call <SID>X("CursorColumn",	"",			"2d2d2d",	"")
 			"CursorIM
 			"Question
@@ -244,12 +244,12 @@ call <SID>X("Search",		"444444",	"af87d7",	"")
 call <SID>X("MatchParen",	"ecee90",	"857b6f",	"bold")
 call <SID>X("SpecialKey",	"6c6c6c",	"2d2d2d",	"none")
 call <SID>X("Visual",		"ecee90",	"597418",	"none")
-call <SID>X("LineNr",		"857b6f",	"121212",	"none")
-call <SID>X("Folded",		"a0a8b0",	"404048",	"none")
+call <SID>X("LineNr",		"660066",	"none",	"none")
+call <SID>X("Folded",		"a0a8b0",	"46465d",	"none")
 call <SID>X("Title",		"f6f3e8",	"",			"bold")
-call <SID>X("VertSplit",	"444444",	"444444",	"none")
+call <SID>X("VertSplit",	"000000",	"000000",	"none")
 call <SID>X("StatusLine",	"043904",	"a7ec21",	"italic")
-call <SID>X("StatusLineNC",	"c6c6c6",	"444444",	"none")
+call <SID>X("StatusLineNC",	"990099",	"000000",	"none")
 			"Scrollbar
 			"Tooltip
 			"Menu
@@ -269,8 +269,8 @@ call <SID>X("WarningMsg",	"ff0000",	"",			"")
 " syntax highlighting
 call <SID>X("Number",		"e5786d",	"",			"none")
 call <SID>X("Constant",		"e5786d",	"",			"none")
-call <SID>X("String",		"95e454",	"",			"italic")
-call <SID>X("Comment",		"c0bc6c",	"",			"italic")
+call <SID>X("String",		"78a57c",	"",			"italic")
+call <SID>X("Comment",		"696969",	"",			"italic")
 call <SID>X("Identifier",	"caeb82",	"",			"none")
 call <SID>X("Keyword",		"87afff",	"",			"none")
 call <SID>X("Statement",	"87afff",	"",			"none")
