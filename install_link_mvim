@@ -4,7 +4,10 @@
 
 def link_mvim
 
-  vim = %x{which vim}
-  exec "ln -s #{vim} ~/bin/mvim" 
+  vim = %x{which vim}.chomp
+  puts "Linking Vim in: #{vim} to /usr/local/bin/mvim"
+  exec "ln -s #{vim} /usr/local/bin/mvim" 
 
-end 
+end
+
+link_mvim
