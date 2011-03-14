@@ -49,7 +49,6 @@ set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%y\ %{fugitive#statusline()}%m%r\ \ \ \ \ %l\ [%c-%v]\ %P
 
-
 colorscheme raphael
 
 " Mapping to set leader key  
@@ -103,6 +102,9 @@ map <leader>d ;NERDTreeToggle<cr>
 
 " Buffer Explorer plugin mapping
 map <leader>b ;BufExplorer<cr>
+
+" hexHighlight mapping
+map <leader>c ;call HexHighlight()<cr>
 
 " swap colon and semicolon for easier commands
 nnoremap ; :

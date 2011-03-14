@@ -1,1 +1,10 @@
+" Turn off scrollbars
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+" Turn off toolbar
 set guioptions-=T
+
+" Set font
+set guifont=Bitstream\ Vera\ Sans\ Mono:h12
