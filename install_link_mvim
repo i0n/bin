@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+# Installs a symlink for mvim to ~/bin/mvim so that it will load Vim if called from the terminal
+
+def link_mvim
+
+  vim = %x{which vim}
+  exec "ln -s #{vim} ~/bin/mvim" 
+
+end 
