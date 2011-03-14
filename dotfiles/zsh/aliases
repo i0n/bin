@@ -1,9 +1,9 @@
 ########################################################## Local Environment Config
-alias alias_config='vim -N ~/bin/dotfiles/zsh/aliases'		                # Edit aliases
-alias path_config='vim -N ~/bin/dotfiles/zsh/env'                         # Edit paths
-alias zsh_config='vim -N ~/bin/dotfiles/zsh/config'                       # Edit zsh config
-alias vim_config='vim -N ~/bin/dotfiles/vim/vimrc'                        # Edit vim config
-alias ssh_config='vim -N ~/bin/dotfiles/ssh/config'										    # Edit ssh aliases
+alias alias_config='vim ~/bin/dotfiles/zsh/aliases'		                # Edit aliases
+alias path_config='vim ~/bin/dotfiles/zsh/env'                         # Edit paths
+alias zsh_config='vim ~/bin/dotfiles/zsh/config'                       # Edit zsh config
+alias vim_config='vim ~/bin/dotfiles/vim/vimrc'                        # Edit vim config
+alias ssh_config='vim ~/bin/dotfiles/ssh/config'										    # Edit ssh aliases
 alias reload='source ~/.zshrc && source ~/.zshenv'		                    # Reload personal bash and zsh setup
 
 ########################################################## General
@@ -33,7 +33,7 @@ alias showf='defaults write com.apple.finder AppleShowAllFiles TRUE;killall Find
 alias hidef='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder'    # Hides all hidden files in the finder
 
 ########################################################## Vim
-alias v='vim -N'
+alias v='vim'
 
 ########################################################## Git 
 alias g='git status'																											# Git Status

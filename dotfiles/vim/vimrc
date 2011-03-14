@@ -50,11 +50,11 @@ set laststatus=2                 " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%y\ %{fugitive#statusline()}%m%r\ \ \ \ \ %l\ [%c-%v]\ %P
 
 
-colorscheme mutant-wombat256
+colorscheme raphael
 
 " Mapping to set leader key  
-" let mapleader = "`"
-" let maplocalleader = "`"
+let mapleader=","
+let maplocalleader=","
 
 " Tab mappings.
 map <leader>t ;tabnew<cr>
@@ -135,7 +135,10 @@ set previewheight=25
 
 " Highlights the current line in all windows
 set cursorline 
+" Stop cursor blink in normal mode
+set gcr=n:blinkon0
 
+" Changes the cursor shape in terminal vim (using iTerm2 on OS X)
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
