@@ -13,3 +13,6 @@ export AUTOFEATURE=true
 ############################################################## Paths
 export MANPATH="/usr/local/Cellar/node/0.2.6/share/man:$MAN_PATH"
 export PATH="$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/usr/local/share/npm/bin:/opt/mongodb/bin:/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/python/2.7.1/bin:$PATH"
+
+# This loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
