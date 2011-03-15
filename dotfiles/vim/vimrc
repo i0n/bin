@@ -56,6 +56,9 @@ colorscheme raphael
 let mapleader=","
 let maplocalleader=","
 
+" Mapping terminal command key for quick commands
+nmap \ ;!
+
 " Tab mappings.
 map <leader>t ;tabnew<cr>
 map <leader>te ;tabedit
