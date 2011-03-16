@@ -82,9 +82,14 @@ map <leader>w <C-w>c
 map <Leader>y ;%y+<cr>
 
 " source $MYVIMRC reloads the saved $MYVIMRC
-:nmap <Leader>r ;call ResetAllSnippets()<cr><bar>;source $VIMRC<cr> 
+nmap <leader>r ;call ResetAllSnippets()<cr><bar>;source $VIMRC<cr> 
 
-:nmap <Leader>i ;e $VIMRC<cr>
+" Mappings to commonly edited files
+nmap <leader>1 ;e $VIMRC<cr>
+nmap <leader>2 ;e ~/bin/dotfiles/vim/colors/raphael.vim<cr>
+nmap <leader>3 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/_.snippets<cr>
+nmap <leader>4 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/html.snippets<cr>
+nmap <leader>5 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/ruby.snippets<cr>
 
 " Automatically reloads vimrc when the file is saved.
 if has("autocmd")
@@ -108,7 +113,6 @@ map <leader>d ;NERDTreeToggle<cr>
 
 " Buffer Explorer plugin mapping
 map <leader>b ;BufExplorer<cr>
-nnoremap <leader>bs <leader>bh
 
 " hexHighlight mapping
 map <leader>c ;call HexHighlight()<cr>
@@ -146,6 +150,9 @@ set previewheight=25
 set cursorline 
 " Stop cursor blink in normal mode
 set gcr=n:blinkon0
+
+" Automatically saves files when the buffer is changed
+set autowrite
 
 " Changes the cursor shape in terminal vim (using iTerm2 on OS X)
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"

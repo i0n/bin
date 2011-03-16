@@ -257,7 +257,7 @@ call <SID>X("Number",		"A5C261",	"",			"NONE")
 call <SID>X("PreProc",		"E6E1DC",	"",			"NONE")
 call <SID>X("Search",		"2b2b2b",	"",			"italic")
 call <SID>X("Statement",	"CC7833",	"",			"NONE")
-call <SID>X("StatusLine",	"ffffff",	"005d00",	"NONE")
+call <SID>X("StatusLine",	"000000",	"079ff3",	"NONE")
 call <SID>X("StatusLineNC",	"2B2B2B",	"C0C0FF",	"NONE")
 call <SID>X("String",		"A5C261",	"",			"NONE")
 call <SID>X("Title",		"FFFFFF",	"",			"NONE")
@@ -306,11 +306,11 @@ delf <SID>grey_number
 " Color changes for the status bar when in insert mode
 if has("autocmd")
   if has("gui_running")
-    silent! au InsertEnter * hi StatusLine guibg=red  
-    silent! au InsertLeave * hi StatusLine guibg=#005d00
+    silent! au InsertEnter * hi StatusLine guifg=#ffffff guibg=red 
+    silent! au InsertLeave * hi StatusLine guifg=#000000 guibg=#079ff3 
   else
     silent! au InsertEnter * hi StatusLine ctermfg=7 ctermbg=1 
-    silent! au InsertLeave * hi StatusLine ctermfg=0 ctermbg=2
+    silent! au InsertLeave * hi StatusLine ctermfg=0 ctermbg=12
   endif
 endif
 			"CursorIM
