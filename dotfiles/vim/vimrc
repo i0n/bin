@@ -80,6 +80,10 @@ map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>w <C-w>c
 map <Leader>y ;%y+<cr>
+map <up> <C-w>k
+map <down> <C-w>j
+map <left> <C-w>h
+map <right> <C-w>l
 
 " source $MYVIMRC reloads the saved $MYVIMRC
 nmap <leader>r ;call ResetAllSnippets()<cr><bar>;source $VIMRC<cr> 
@@ -167,3 +171,5 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
 endfunc
 
+" map jj o<esc>`a
+" map kk O<esc>`a
