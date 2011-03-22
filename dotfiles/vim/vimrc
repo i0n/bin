@@ -114,6 +114,7 @@ let g:CommandTMaxHeight=25
 
 " NERDTree plugin mapping
 map <leader>d ;NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
 
 " Buffer Explorer plugin mapping
 map <leader>b ;BufExplorer<cr>
@@ -135,6 +136,19 @@ nnoremap < <<
 " Mappings to make text indentation in visual mode easier
 vmap > >gv
 vmap < <gv
+
+" Insert mode mappings
+" set macmeta
+imap ≥ => 
+imap <C-Space> %
+imap <A-Space> %
+" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap  :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <S-> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+nnoremap <silent>∆ :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent>˚ :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Automatic fold settings for specific files. Uncomment to use.
 set foldmethod=manual
