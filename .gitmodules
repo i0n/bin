@@ -2,10 +2,6 @@
 	path = dotfiles/vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
   ignore = untracked
-[submodule "dotfiles/vim/bundle/vim-rails"]
-	path = dotfiles/vim/bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
-  ignore = untracked
 [submodule "dotfiles/vim/bundle/nerdtree"]
 	path = dotfiles/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -34,3 +30,6 @@
 	path = dotfiles/vim/bundle/command-t
 	url = https://github.com/wincent/Command-T.git
   ignore = untracked
+[submodule "dotfiles/vim/bundle/vim-rails"]
+	path = dotfiles/vim/bundle/vim-rails
+	url = git@github.com:i0n/vim-rails.git

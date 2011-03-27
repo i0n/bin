@@ -42,9 +42,9 @@ set clipboard=unnamed            " Set up clipboard
 map <F2> ;.w !pbcopy<CR><CR>     " Copies the current line to the clipboard.
 map <F3> ;r !pbpaste<CR>         " Pastes the current content from the clipboard.
 
-set tabstop=2                    " Global tab width.
-set shiftwidth=2                 " And again, related.
-set expandtab                    " Use spaces instead of tabs
+" set tabstop=2                    " Global tab width.
+" set shiftwidth=2                 " And again, related.
+" set expandtab                    " Use spaces instead of tabs
 
 set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
