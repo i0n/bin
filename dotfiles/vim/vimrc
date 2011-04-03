@@ -90,10 +90,11 @@ nmap <leader>r ;call ResetAllSnippets()<cr><bar>;source $VIMRC<cr>
 
 " Mappings to commonly edited files
 nmap <leader>1 ;e $VIMRC<cr>
-nmap <leader>2 ;e ~/bin/dotfiles/vim/colors/raphael.vim<cr>
-nmap <leader>3 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/_.snippets<cr>
-nmap <leader>4 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/html.snippets<cr>
-nmap <leader>5 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/ruby.snippets<cr>
+nmap <leader>2 ;e ~/bin/dotfiles/zsh/aliases<cr>
+nmap <leader>3 ;e ~/bin/dotfiles/vim/colors/raphael.vim<cr>
+nmap <leader>4 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/_.snippets<cr>
+nmap <leader>5 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/html.snippets<cr>
+nmap <leader>6 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/ruby.snippets<cr>
 
 
 if has("autocmd")
