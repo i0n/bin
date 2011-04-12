@@ -146,7 +146,7 @@ vmap < <gv
 
 " Insert mode mappings
 " set macmeta
-imap ≥ => 
+imap ≥  <space>=> 
 imap <C-Space> %
 imap <A-Space> %
 " Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
@@ -182,6 +182,10 @@ set autowrite
 " Changes the cursor shape in terminal vim (using iTerm2 on OS X)
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Auto indent entire file with Alt =
+map   <silent> ≠ mmgg=G'm
+imap  <silent> ≠ <Esc> mmgg=G'm
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> ;call <SID>SynStack()<CR>
