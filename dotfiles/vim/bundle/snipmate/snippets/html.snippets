@@ -1,6 +1,6 @@
 # Some useful Unicode entities
 # Non-Breaking Space
-snippet nbs
+snippet space
 	&nbsp;
 # ←
 snippet left
@@ -47,6 +47,16 @@ snippet backspace
 # ⎋
 snippet escape
 	&#x238B;
+
+snippet &
+	&amp;
+# &
+snippet copyright
+	&copy;
+# ©
+snippet £
+	&pound;
+# £	
 # Generic Doctype
 snippet doctype HTML 4.01 Strict
 	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
@@ -160,7 +170,7 @@ snippet style
 snippet base
 	<base href="${1}" target="${2}"`Close()`>
 snippet br
-	<br`Close()[1:]`>
+	<br>${1}
 snippet div
 	<div>
 		${1}
@@ -243,3 +253,5 @@ snippet img
 	<img id="${1:id}" src="${2}" alt="${3:$1}" />
 snippet button
 	<button>${1}</button>
+snippet span
+	<span>${1}</span>
