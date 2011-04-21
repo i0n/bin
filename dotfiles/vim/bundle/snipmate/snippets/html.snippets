@@ -36,7 +36,7 @@ snippet enter
 snippet command
 	&#x2318;
 # ⌥
-snippet option
+snippet option_key
 	&#x2325;
 # ⌦
 snippet delete
@@ -169,9 +169,9 @@ snippet style
 	</style>${3}
 snippet base
 	<base href="${1}" target="${2}"`Close()`>
-snippet br
+snippet b
 	<br>${1}
-snippet div
+snippet d
 	<div>
 		${1}
 	</div>
@@ -189,18 +189,15 @@ snippet movie
 			pluginspage="http://www.apple.com/quicktime/download/"
 		`Close()[1:]`>
 	</object>${6}
-snippet fieldset
-	<fieldset id="$1">
+snippet fi
+	<fieldset>
 		<legend>${1:name}</legend>
-
-		${3}
+		${2}
 	</fieldset>
-snippet form
-	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
-		${3}
-
-
-	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
+snippet fo
+	<form action="${1:`Filename('$1_submit')`}" method="${2:post}" accept-charset="utf-8">
+		${4}
+		<input type="submit" value="${3:submit}" `Close()`>
 	</form>
 snippet h1
 	<h1>${1}</h1>
@@ -214,9 +211,9 @@ snippet h5
 	<h5>${1}</h5>
 snippet h6
 	<h6>${1}</h6>
-snippet input
-	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
-snippet label
+snippet in
+	<input type="${1:text/submit/hidden/button}" value="${2}" `Close()`>${3}
+snippet la
 	<label for="${1:name}">${2:$1}</label>
 snippet link
 	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
@@ -224,34 +221,36 @@ snippet mailto
 	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
 snippet meta
 	<meta name="${1:name}" content="${2:content}"`Close()`>${3}
-snippet opt
+snippet op
 	<option value="${1:option}">${2:$1}</option>${3}
-snippet optt
-	<option>${1:option}</option>${2}
-snippet select
-	<select name="${1:some_name}" id="${2:$1}">
-		<option value="${3:option}">${4:$3}</option>
-	</select>${5}
+snippet se
+	<select>
+		<option value="${1:option}">${2}</option>${3}
+	</select>
 snippet table
 	<table border="${1:0}">
 		<tr><th>${2:Header}</th></tr>
 		<tr><th>${3:Data}</th></tr>
 	</table>${4}
-snippet textarea
+snippet te
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
 snippet p
-	<p>${1}</p>
-snippet ul
+	<p>${1}</p>{2}
+snippet u
 	<ul>
-		<li>${1}</li>
+		<li>${1}</li>${2}
 	</ul>
-snippet li
-	<li>${1}</li>
+snippet l
+	<li>${1}</li>${2}
 snippet a
-	<a href="${1:url}">${2:$1}</a>
-snippet img
-	<img id="${1:id}" src="${2}" alt="${3:$1}" />
+	<a href="${1:url}">${2:$1}</a>${3}
+snippet i
+	<img src="${1}" alt="${$2}" />${3}
 snippet button
-	<button>${1}</button>
-snippet span
-	<span>${1}</span>
+	<button>${1}</button>${2}
+snippet s
+	<span>${1}</span>${2}
+snippet st
+	<strong>${1}</strong>${2}
+snippet e
+	<em>${1}</em>${2}
