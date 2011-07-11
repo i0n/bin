@@ -1,61 +1,61 @@
 # Some useful Unicode entities
 # Non-Breaking Space
 snippet space
-	&nbsp;
+	&nbsp;${1}
 # ←
 snippet left
-	&#x2190;
+	&#x2190;${1}
 # →
 snippet right
-	&#x2192;
+	&#x2192;${1}
 # ↑
 snippet up
-	&#x2191;
+	&#x2191;${1}
 # ↓
 snippet down
-	&#x2193;
+	&#x2193;${1}
 # ↩
 snippet return
-	&#x21A9;
+	&#x21A9;${1}
 # ⇤
 snippet backtab
-	&#x21E4;
+	&#x21E4;${1}
 # ⇥
 snippet tab
-	&#x21E5;
+	&#x21E5;${1}
 # ⇧
 snippet shift
-	&#x21E7;
+	&#x21E7;${1}
 # ⌃
 snippet control
-	&#x2303;
+	&#x2303;${1}
 # ⌅
 snippet enter
-	&#x2305;
+	&#x2305;${1}
 # ⌘
 snippet command
-	&#x2318;
+	&#x2318;${1}
 # ⌥
 snippet option_key
-	&#x2325;
+	&#x2325;${1}
 # ⌦
 snippet delete
-	&#x2326;
+	&#x2326;${1}
 # ⌫
 snippet backspace
-	&#x232B;
+	&#x232B;${1}
 # ⎋
 snippet escape
-	&#x238B;
+	&#x238B;${1}
 
 snippet &
-	&amp;
+	&amp;${1}
 # &
 snippet copyright
-	&copy;
+	&copy;${1}
 # ©
 snippet £
-	&pound;
+	&pound;${1}
 # £	
 # Generic Doctype
 snippet doctype HTML 4.01 Strict
@@ -144,6 +144,7 @@ snippet html
 			<script src="/javascripts/jquery/init.js" charset="utf-8"></script>
 		</body>
 	</html>
+
 snippet body
 	<body>
 		${1}
@@ -214,7 +215,7 @@ snippet h6
 snippet in
 	<input type="${1:text/submit/hidden/button}" value="${2}" `Close()`>${3}
 snippet la
-	<label for="${1:name}">${2:$1}</label>
+	<label>${1}</label>
 snippet link
 	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
 snippet mailto
@@ -235,18 +236,18 @@ snippet table
 snippet te
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
 snippet p
-	<p>${1}</p>{2}
+	<p>${1}</p>
 snippet u
 	<ul>
 		<li>${1}</li>${2}
 	</ul>
 snippet l
-	<li>${1}</li>${2}
+	<li>${1}</li>
 snippet a
 	<a href="${1:url}">${2:$1}</a>${3}
 snippet i
-	<img src="${1}" alt="${$2}" />${3}
-snippet button
+	<img src="${1}" alt="${2}" />${3}
+snippet bu
 	<button>${1}</button>${2}
 snippet s
 	<span>${1}</span>${2}
@@ -254,3 +255,8 @@ snippet st
 	<strong>${1}</strong>${2}
 snippet e
 	<em>${1}</em>${2}
+snippet au
+	<audio controls preload="none">
+		<source src="${1:}.ogg">
+		<source src="$1.mp3">
+	</audio>
