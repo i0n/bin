@@ -85,8 +85,7 @@ map <down> <C-w>j
 map <left> <C-w>h
 map <right> <C-w>l
 
-" source $MYVIMRC reloads the saved $MYVIMRC
-" nmap <leader>r ;call ResetAllSnippets()<cr><bar>;source $VIMRC<cr> 
+" nmap <leader>r ;call ReloadAllSnippets()<cr>
 
 " Mappings to commonly edited files
 nmap <leader>1 ;e $VIMRC<cr>

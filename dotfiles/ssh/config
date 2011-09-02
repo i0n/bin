@@ -17,3 +17,8 @@ Host commval
 	HostName 77.92.77.106
 	User i0n
 	port 22
+Host pele
+	HostName 31.222.189.207
+	User i0n
+	port 22
+	

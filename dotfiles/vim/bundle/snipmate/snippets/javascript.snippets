@@ -7,11 +7,11 @@ snippet proto
 # Function
 snippet fun
 	function ${1:function_name} (${2:argument}) {
-		${3:// body...}
+		${3}
 	}
 # Anonymous Function
 snippet f
-	function(${1}) {${2}};
+	function(${1}) {${2}}
 # if
 snippet if
 	if (${1:true}) {${2}}
@@ -72,8 +72,26 @@ snippet get
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
-# Document Ready for jQuery
-snippet doc
+# jQuery document ready 
+snippet dr
 	$(document).ready(function(){
 		${1}  
+	});
+# jQuery function
+snippet jqf
+	(function($) {
+		${1}
+	})(jQuery);
+# jQuery enclosure
+snippet $
+	$(${1})${2};
+# Jasmine describe
+snippet describe
+	describe("${1}", function() {
+		${2}
+	});
+# Jasmine it
+snippet it
+	it("${1}", function() {
+		${2}
 	});

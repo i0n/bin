@@ -159,9 +159,9 @@ snippet head
 snippet title
 	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
 snippet script
-	<script type="text/javascript" charset="utf-8">
-		${1}
-	</script>${2}
+	<script type="${1:text/javascript}">
+		${2}
+	</script>${3}
 snippet scriptsrc
 	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
 snippet style
