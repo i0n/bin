@@ -8,7 +8,4 @@ dotfiles/vim/.netrwhist
 *.swp
 tmp/*
 dotfiles/vim/bundle/*/doc/tags*
-dotfiles/vim/bundle/vim-git
-dotfiles/vim/bundle/vim-ragtag
-dotfiles/vim/bundle/vim-surround
 dotfiles/vim/tmp/*
