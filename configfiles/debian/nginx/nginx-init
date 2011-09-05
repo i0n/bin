@@ -18,8 +18,8 @@
 #		server and it's process state.
 #
 # processname: nginx
-# config:      /usr/local/nginx/conf/nginx.conf
-# pidfile:     /acronymlabs/server/nginx.pid
+# config:      /opt/nginx/conf/nginx.conf
+# pidfile:     /var/run/nginx.pid
 # Provides:    nginx
 #
 # Author:  Jason Giedymin
@@ -57,7 +57,6 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #------------------------------------------------------------------------------
-
 #------------------------------------------------------------------------------
 #                               Functions
 #------------------------------------------------------------------------------
