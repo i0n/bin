@@ -1,18 +1,3 @@
-Host waavoo
-	HostName waavoo.com
-	User waavooc
-	Port 22
-	
-Host mosaic
-	HostName 66.84.0.147
-	User mosaicp
-	port 22
-	
-Host thoughtplant
-	HostName 109.123.70.124
-	User i0n
-	port 22
-	
 Host commval
 	HostName 77.92.77.106
 	User i0n
@@ -21,4 +6,16 @@ Host pele
 	HostName 31.222.189.207
 	User i0n
 	port 22
-	
+Host hal
+  HostName Burt-the-Mini-Mac.local 
+  User i0n
+  port 22
+  ProxyCommand  ssh ian@Hal.local
+Host burt
+  HostName Burt-the-Mini-Mac.local
+  User i0n
+  port 22
+Host hal
+  HostName Hal.local
+  User ian
+  port 22
