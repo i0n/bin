@@ -90,7 +90,7 @@ alias noder='killall node;monit'
 alias th='thin --debug --rackup config.ru start' #starts standard rack apps with thin
 
 ########################################################## Ruby Gems
-alias gu='gem update'
+alias gu='gem update --no-ri --no-rdoc'
 
 ########################################################## Home Brew
 alias bu='brew update'
