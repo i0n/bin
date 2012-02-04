@@ -199,3 +199,6 @@ endfunc
 
 " map jj o<esc>`a
 " map kk O<esc>`a
+
+" Mapping to remove all blank lines (whitespace)
+nmap <leader>l ;g/^$/d<CR>
