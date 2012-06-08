@@ -202,3 +202,5 @@ endfunc
 
 " Mapping to remove all blank lines (whitespace)
 nmap <leader>l ;g/^$/d<CR>
+
+:command Thtml :%!tidy -q -i -html
