@@ -229,13 +229,25 @@ snippet se
 		<option value="${1:option}">${2}</option>${3}
 	</select>
 snippet table
-	<table border="${1:0}">
+	<table border="${1:0}" cellpadding="${1:0}" cellspacing="${1:0}">
 		<tbody>
 			<tr>
-				<td>${2}</td>
+				<td>
+					${2}
+				</td>
 			</tr>
 		</tbody>
 	</table>
+snippet tr
+	<tr>
+		<td>
+			${1}
+		</td>
+	</tr>
+snippet td
+	<td>
+		${2}
+	</td>
 snippet te
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
 snippet p
