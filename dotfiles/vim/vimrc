@@ -148,6 +148,7 @@ vmap < <gv
 " Insert mode mappings
 " set macmeta
 imap ≥  <space>=> 
+imap ≤ <%= %>
 imap <C-Space> %
 imap <A-Space> %
 " Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.

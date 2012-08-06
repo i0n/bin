@@ -19,3 +19,11 @@ Host hal
   HostName Hal.local
   User ian
   port 22
+Host reviewomatic_preview
+  HostName reviewomatic.preview.alphagov.co.uk
+  User i0n
+  port 22
+Host reviewomatic_production
+  HostName reviewomatic.production.alphagov.co.uk
+  User i0n
+  port 22
