@@ -36,7 +36,7 @@ set visualbell                    " No beeping.
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+set directory=~/.vim/tmp//,.  " Keep swap files in one location
 
 set clipboard=unnamed            " Set up clipboard 
 map <F2> ;.w !pbcopy<CR><CR>     " Copies the current line to the clipboard.
@@ -88,7 +88,7 @@ map <right> <C-w>l
 " nmap <leader>r ;call ReloadAllSnippets()<cr>
 
 " Mappings to commonly edited files
-nmap <leader>1 ;e $VIMRC<cr>
+nmap <leader>1 ;e ~/bin/dotfiles/vim/vimrc<cr>
 nmap <leader>2 ;e ~/bin/dotfiles/zsh/aliases<cr>
 nmap <leader>3 ;e ~/bin/dotfiles/vim/colors/raphael.vim<cr>
 nmap <leader>4 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/_.snippets<cr>
@@ -99,7 +99,7 @@ nmap <leader>8 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/ruby.snippets<cr>
 
 
 if has("autocmd")
-  autocmd bufwritepost vimrc source $VIMRC      " Automatically reloads vimrc when the file is saved.
+  autocmd bufwritepost vimrc source ~/bin/dotfiles/vim/vimrc " Automatically reloads vimrc when the file is saved.
 endif
 
 " Automatically save file when exiting insert mode
