@@ -36,7 +36,7 @@ set visualbell                    " No beeping.
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
-set directory=~/.vim/tmp//,.  " Keep swap files in one location
+set directory=$HOME/.vimtmp//, " Keep swap files in one location
 
 set clipboard=unnamed            " Set up clipboard 
 map <F2> ;.w !pbcopy<CR><CR>     " Copies the current line to the clipboard.
@@ -88,18 +88,18 @@ map <right> <C-w>l
 " nmap <leader>r ;call ReloadAllSnippets()<cr>
 
 " Mappings to commonly edited files
-nmap <leader>1 ;e ~/bin/dotfiles/vim/vimrc<cr>
-nmap <leader>2 ;e ~/bin/dotfiles/zsh/aliases<cr>
-nmap <leader>3 ;e ~/bin/dotfiles/vim/colors/raphael.vim<cr>
-nmap <leader>4 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/_.snippets<cr>
-nmap <leader>5 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/html.snippets<cr>
-nmap <leader>6 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/css.snippets<cr>
-nmap <leader>7 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/javascript.snippets<cr>
-nmap <leader>8 ;e ~/bin/dotfiles/vim/bundle/snipmate/snippets/ruby.snippets<cr>
+nmap <leader>1 ;e $HOME/bin/dotfiles/vim/vimrc<cr>
+nmap <leader>2 ;e $HOME/bin/dotfiles/zsh/aliases<cr>
+nmap <leader>3 ;e $HOME/bin/dotfiles/vim/colors/raphael.vim<cr>
+nmap <leader>4 ;e $HOME/bin/dotfiles/vim/bundle/snipmate/snippets/_.snippets<cr>
+nmap <leader>5 ;e $HOME/bin/dotfiles/vim/bundle/snipmate/snippets/html.snippets<cr>
+nmap <leader>6 ;e $HOME/bin/dotfiles/vim/bundle/snipmate/snippets/css.snippets<cr>
+nmap <leader>7 ;e $HOME/bin/dotfiles/vim/bundle/snipmate/snippets/javascript.snippets<cr>
+nmap <leader>8 ;e $HOME/bin/dotfiles/vim/bundle/snipmate/snippets/ruby.snippets<cr>
 
 
 if has("autocmd")
-  autocmd bufwritepost vimrc source ~/bin/dotfiles/vim/vimrc " Automatically reloads vimrc when the file is saved.
+  autocmd bufwritepost vimrc source $HOME/bin/dotfiles/vim/vimrc " Automatically reloads vimrc when the file is saved.
 endif
 
 " Automatically save file when exiting insert mode
@@ -114,7 +114,7 @@ let g:CommandTSelectNextMap=['<Esc>OB', '<Down>']
 let g:CommandTMaxHeight=25
 
 " Snipmate plugin mappings
-let g:snippets_dir="~/bin/dotfiles/vim/bundle/snipmate/snippets"
+let g:snippets_dir="$HOME/bin/dotfiles/vim/bundle/snipmate/snippets"
 
 " set notimeout          " don't timeout on mappings
 " set ttimeout           " do timeout on terminal key codes
