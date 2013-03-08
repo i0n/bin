@@ -27,3 +27,8 @@ Host reviewomatic_production
   HostName reviewomatic.production.alphagov.co.uk
   User i0n
   port 22
+Host samewave_staging
+  HostName samewave-001.vm.brightbox.net
+  User rails
+  port 22
+  IdentityFile ~/.ssh/brightbox-key
