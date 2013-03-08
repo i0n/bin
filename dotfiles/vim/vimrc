@@ -60,7 +60,7 @@ let maplocalleader=","
 nmap \ ;!
 
 " Tab mappings.
-map <leader>t ;tabnew<cr>
+map <leader>tn ;tabnew<cr>
 map <leader>te ;tabedit
 map <leader>tc ;tabclose<cr>
 map <leader>to ;tabonly<cr>
@@ -69,6 +69,9 @@ map <leader>[ ;tabprevious<cr>
 map <leader>tf ;tabfirst<cr>
 map <leader>tl ;tablast<cr>
 map <leader>tm ;tabmove
+
+" Finding all todos in project
+map <leader>t ;Ack TODO -G 'public\\|vendor\\|tmp' --invert-file-match<cr>
 
 " Window mappings.
 map <leader><Tab> <C-w>w 
