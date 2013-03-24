@@ -30,5 +30,5 @@ Host reviewomatic_production
 Host samewave_staging
   HostName samewave-001.vm.brightbox.net
   User rails
-  port 22
+  port 2222
   IdentityFile ~/.ssh/brightbox-key
