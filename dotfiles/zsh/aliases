@@ -99,9 +99,9 @@ alias bu='brew update'
 alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
 alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.
 alias tlog='tail -f ./log/test.log'										#Runs the development log for the current Rails project.
-alias dsql='sqlite3 -line db/development.sqlite3'			#Opens SQlite3 prompt for development database.
-alias psql='sqlite3 -line db/production.sqlite3'			#Opens SQlite3 prompt for production database.
-alias tsql='sqlite3 -line db/test.sqlite3'						#Opens SQlite3 prompt for test database.
+alias dsqlite='sqlite3 -line db/development.sqlite3'			#Opens SQlite3 prompt for development database.
+alias psqlite='sqlite3 -line db/production.sqlite3'			#Opens SQlite3 prompt for production database.
+alias tsqlite='sqlite3 -line db/test.sqlite3'						#Opens SQlite3 prompt for test database.
 alias r='rake'																				# Rake command
 alias rr='rake routes'																# Rake Routes command shows current route mappings
 alias rdm='rake db:migrate'														# Runs a Rake database migration
@@ -119,3 +119,4 @@ alias js='jumpstart'                                  # Alias for my jumpstart g
 function flac2mp3_dir {
   for f in *.flac; do flac2mp3 "$f"; done
 }
+alias psql_start='pg_ctl -D /usr/local/var/postgres -l logfile start'
