@@ -18,3 +18,9 @@ export SELENIUM_SERVER_JAR=/usr/local/bin/selenium-server-standalone-2.8.0.jar
 
 source "$HOME/.rvm/scripts/rvm"
 export PATH=./bin:$PATH # Add local bin to remove bundle exec
+
+############################################################## SameWave Variables
+export AWS_ACCESS_KEY_ID='AKIAJUPQXTJJBEWGTVVQ'
+export AWS_SECRET_ACCESS_KEY='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'
+export FOG_ASSET_DIRECTORY='samewave-development-assets'
+export FOG_DIRECTORY='samewave-development'

@@ -108,7 +108,7 @@ if has("autocmd")
 endif
 
 " Automatically save file when exiting insert mode
-imap <esc> <esc>;w<cr>	                  
+" imap <esc> <esc>;w<cr>	                  
 
 " CommandT  plugin mappings
 nmap <silent> <leader>f ;CommandT<cr>
