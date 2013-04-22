@@ -71,7 +71,7 @@ map <leader>tl ;tablast<cr>
 map <leader>tm ;tabmove
 
 " Finding all todos in project
-map <leader>t ;Ack TODO -G 'public\\|vendor\\|tmp' --invert-file-match<cr>
+map <leader>t ;Ack TODO --ignore-dir 'vendor' --ignore-dir 'log' --ignore-dir 'tmp' --ignore-dir 'public'<cr>
 " Maps Enter to open QuickFixes currently selected file.
 :autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
