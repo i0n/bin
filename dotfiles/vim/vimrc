@@ -10,8 +10,6 @@ runtime macros/matchit.vim        " Load the matchit plugin.
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
-set backspace=indent,eol,start    " Intuitive backspacing.
-
 set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
@@ -27,7 +25,6 @@ set ruler                         " Show cursor position.
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
-set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
@@ -36,15 +33,16 @@ set visualbell                    " No beeping.
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
-set directory=$HOME/.vimtmp//, " Keep swap files in one location
+set directory=$HOME/.vimtmp//,    " Keep swap files in one location
 
 set clipboard=unnamed            " Set up clipboard 
 map <F2> ;.w !pbcopy<CR><CR>     " Copies the current line to the clipboard.
 map <F3> ;r !pbpaste<CR>         " Pastes the current content from the clipboard.
 
-" set tabstop=2                    " Global tab width.
-" set shiftwidth=2                 " And again, related.
-" set expandtab                    " Use spaces instead of tabs
+" Whitespace
+set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+set expandtab                   " use spaces, not tabs (optional)
+set backspace=indent,eol,start  " backspace through everything in insert mode
 
 set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
@@ -209,4 +207,7 @@ endfunc
 " Mapping to remove all blank lines (whitespace)
 nmap <leader>l ;g/^$/d<CR>
 
-:command Thtml :%!tidy -q -i -html
+":command Thtml :%!tidy -q -i -html
+
+" Add auto-expander for Handlebars template tags
+imap {{ {{}}<Esc>hi
