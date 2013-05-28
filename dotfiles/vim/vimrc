@@ -43,6 +43,9 @@ map <F3> ;r !pbpaste<CR>         " Pastes the current content from the clipboard
 set tabstop=2 shiftwidth=2 noexpandtab       " a tab is two spaces (or set this to 4)
 "set expandtab                   " use spaces, not tabs (optional)
 "set backspace=indent,eol,start  " backspace through everything in insert mode
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_space_guides = 0
+let g:indent_guides_guide_size = 1
 
 set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
