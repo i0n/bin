@@ -2,9 +2,7 @@ silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 set nocompatible                  " Must come first because it changes other options.
 set shell=/bin/zsh
-" set shellcmdflag=-ic
-syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.  
+
 runtime macros/matchit.vim        " Load the matchit plugin.
 
 set showcmd                       " Display incomplete commands.
@@ -40,12 +38,17 @@ map <F2> ;.w !pbcopy<CR><CR>     " Copies the current line to the clipboard.
 map <F3> ;r !pbpaste<CR>         " Pastes the current content from the clipboard.
 
 " Whitespace
-set tabstop=2 shiftwidth=2 noexpandtab       " a tab is two spaces (or set this to 4)
-"set expandtab                   " use spaces, not tabs (optional)
-"set backspace=indent,eol,start  " backspace through everything in insert mode
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_space_guides = 0
+set tabstop=2 
+set shiftwidth=2 
+set softtabstop=2
+set expandtab                   " use spaces, not tabs (optional)
+set backspace=indent,eol,start  " backspace through everything in insert mode
+
+" Indentation
+let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
@@ -214,3 +217,8 @@ nmap <leader>l ;g/^$/d<CR>
 
 " Add auto-expander for Handlebars template tags
 imap {{ {{}}<Esc>hi
+
+syntax enable                     " Turn on syntax highlighting.
+
+filetype indent off               " Turn off file indentation from plugins
+filetype plugin off               " Turn off configuration loaded from plugins
