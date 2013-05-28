@@ -52,3 +52,6 @@
 [submodule "dotfiles/vim/bundle/SearchComplete"]
 	path = dotfiles/vim/bundle/SearchComplete
 	url = git://github.com/vim-scripts/SearchComplete.git
+[submodule "dotfiles/vim/bundle/ack"]
+	path = dotfiles/vim/bundle/ack
+	url = git://github.com/mileszs/ack.vim.git
