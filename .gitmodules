@@ -34,3 +34,9 @@
 	path = dotfiles/vim/bundle/vim-rails
 	url = git@github.com:i0n/vim-rails.git
 	ignore = untracked
+[submodule "dotfiles/vim/bundle/vim-indent-guides"]
+	path = dotfiles/vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "dotfiles/vim/bundle/vim-handlebars"]
+	path = dotfiles/vim/bundle/vim-handlebars
+	url = git://github.com/nono/vim-handlebars.git
