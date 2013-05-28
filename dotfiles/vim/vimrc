@@ -15,8 +15,8 @@ set hidden                        " Handle multiple buffers better.
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 
-set ignorecase                    " Case-insensitive searching.
-set smartcase                     " But case-sensitive if expression contains a capital letter.
+"set ignorecase                    " Case-insensitive searching.
+"set smartcase                     " But case-sensitive if expression contains a capital letter.
 
 set cmdheight=2                   " Number of lines used for the command-line
 set number                        " Show line numbers.
@@ -40,9 +40,9 @@ map <F2> ;.w !pbcopy<CR><CR>     " Copies the current line to the clipboard.
 map <F3> ;r !pbpaste<CR>         " Pastes the current content from the clipboard.
 
 " Whitespace
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
-set expandtab                   " use spaces, not tabs (optional)
-set backspace=indent,eol,start  " backspace through everything in insert mode
+set tabstop=2 shiftwidth=2 noexpandtab       " a tab is two spaces (or set this to 4)
+"set expandtab                   " use spaces, not tabs (optional)
+"set backspace=indent,eol,start  " backspace through everything in insert mode
 
 set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
