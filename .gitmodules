@@ -49,3 +49,6 @@
 [submodule "dotfiles/vim/bundle/vim-javascript"]
 	path = dotfiles/vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
+[submodule "dotfiles/vim/bundle/SearchComplete"]
+	path = dotfiles/vim/bundle/SearchComplete
+	url = git://github.com/vim-scripts/SearchComplete.git
