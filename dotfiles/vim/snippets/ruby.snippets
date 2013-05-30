@@ -1,0 +1,788 @@
+# New Block
+snippet =b "=b"
+=begin rdoc
+	${1}
+=end
+endsnippet
+
+snippet y "y"
+:yields: ${1:arguments}
+endsnippet
+
+snippet rb "rb"
+#!/usr/bin/env ruby -wKU
+endsnippet
+
+snippet beg "beg"
+begin
+	${3}
+rescue ${1:Exception} => ${2:e}
+end
+endsnippet
+
+snippet req "req"
+require "${1}"${2}
+endsnippet
+
+snippet # "#"
+# =>
+endsnippet
+
+snippet end "end"
+__END__
+endsnippet
+
+snippet case "case"
+case ${1:object}
+when ${2:condition}
+	${3}
+end
+endsnippet
+
+snippet when "when"
+when ${1:condition}
+	${2}
+endsnippet
+
+snippet def "def"
+def ${1:method_name}
+	${2}
+end
+endsnippet
+
+snippet deft "deft"
+def test_${1:case_name}
+	${2}
+end
+endsnippet
+
+snippet if "if"
+if ${1:condition}
+	${2}
+end
+endsnippet
+
+snippet ife "ife"
+if ${1:condition}
+	${2}
+else
+	${3}
+end
+endsnippet
+
+snippet elsif "elsif"
+elsif ${1:condition}
+	${2}
+endsnippet
+
+snippet unless "unless"
+unless ${1:condition}
+	${2}
+end
+endsnippet
+
+snippet while "while"
+while ${1:condition}
+	${2}
+end
+endsnippet
+
+snippet for "for"
+for ${1:e} in ${2:c}
+	${3}
+end		
+endsnippet
+
+snippet until "until"
+until ${1:condition}
+	${2}
+end
+endsnippet
+
+snippet cla "class .. end"
+class ${1:`!v substitute(Filename(), '^.', '\u&', '')`}
+	${2}
+end
+endsnippet
+
+snippet cla "class .. initialize .. end"
+class ${1:`!v substitute(Filename(), '^.', '\u&', '')`}
+	def initialize(${2:args})
+		${3}
+	end
+end
+endsnippet
+
+snippet cla "class .. < ParentClass .. initialize .. end"
+class ${1:`!v substitute(Filename(), '^.', '\u&', '')`} < ${2:ParentClass}
+	def initialize(${3:args})
+		${4}
+	end
+end
+endsnippet
+
+snippet cla "ClassName = Struct .. do .. end"
+${1:`!v substitute(Filename(), '^.', '\u&', '')`} = Struct.new(:${2:attr_names}) do
+	def ${3:method_name}
+		${4}
+	end
+end
+endsnippet
+
+snippet cla "class BlankSlate .. initialize .. end"
+class ${1:BlankSlate}
+	instance_methods.each { |meth| undef_method(meth) unless meth =~ /\A__/ }
+endsnippet
+
+snippet cla "class << self .. end"
+class << ${1:self}
+	${2}
+end
+endsnippet
+
+# class .. < DelegateClass .. initialize .. end
+snippet cla- "cla-"
+class ${1:`!v substitute(Filename(), '^.', '\u&', '')`} < DelegateClass(${2:ParentClass})
+	def initialize(${3:args})
+		super(${4:del_obj})
+		${5}
+	end
+end
+endsnippet
+
+snippet mod "module .. end"
+module ${1:`!v substitute(Filename(), '^.', '\u&', '')`}
+	${2}
+end
+endsnippet
+
+snippet mod "module .. module_function .. end"
+module ${1:`!v substitute(Filename(), '^.', '\u&', '')`}
+	module_function
+	${2}
+end
+endsnippet
+
+snippet mod "module .. ClassMethods .. end"
+module ${1:`!v substitute(Filename(), '^.', '\u&', '')`}
+	module ClassMethods
+		${2}
+	end
+	module InstanceMethods
+	end
+	def self.included(receiver)
+		receiver.extend         ClassMethods
+		receiver.send :include, InstanceMethods
+	end
+end
+endsnippet
+
+# attr_reader
+snippet r "r"
+attr_reader :${1:attr_names}
+endsnippet
+
+# attr_writer
+snippet w "w"
+attr_writer :${1:attr_names}
+endsnippet
+
+# attr_accessor
+snippet rw "rw"
+attr_accessor :${1:attr_names}
+endsnippet
+
+# include Enumerable
+snippet Enum "Enum"
+include Enumerable
+def each(&block)
+	${1}
+end
+endsnippet
+
+# include Comparable
+snippet Comp "Comp"
+include Comparable
+def <=>(other)
+	${1}
+end
+endsnippet
+
+# extend Forwardable
+snippet Forw- "Forw-"
+extend Forwardable
+endsnippet
+
+# def self
+snippet defs "defs"
+def self.${1:class_method_name}
+	${2}
+end
+endsnippet
+
+# def method_missing
+snippet defmm "defmm"
+def method_missing(meth, *args, &blk)
+	${1}
+end
+endsnippet
+
+snippet defd "defd"
+def_delegator :${1:@del_obj}, :${2:del_meth}, :${3:new_name}
+endsnippet
+
+snippet defds "defds"
+def_delegators :${1:@del_obj}, :${2:del_methods}
+endsnippet
+
+snippet am "am"
+alias_method :${1:new_name}, :${2:old_name}
+endsnippet
+
+snippet app "app"
+if __FILE__ == $PROGRAM_NAME
+	${1}
+end
+endsnippet
+
+# usage_if()
+snippet usai "usai"
+if ARGV.${1}
+	abort "Usage: #{$PROGRAM_NAME} ${2:ARGS_GO_HERE}"${3}
+end
+endsnippet
+
+# usage_unless()
+snippet usau "usau"
+unless ARGV.${1}
+	abort "Usage: #{$PROGRAM_NAME} ${2:ARGS_GO_HERE}"${3}
+end
+endsnippet
+
+snippet array "array"
+Array.new(${1:10}) { |${2:i}| ${3} }
+endsnippet
+
+snippet hash "hash"
+Hash.new { |${1:hash}, ${2:key}| $1[$2] = ${3} }
+endsnippet
+
+snippet file "File.foreach() { |line| .. }"
+File.foreach(${1:"path/to/file"}) { |${2:line}| ${3} }
+endsnippet
+
+snippet file "File.read()"
+File.read(${1:"path/to/file"})${2}
+endsnippet
+
+snippet Dir "Dir.global() { |file| .. }"
+Dir.glob(${1:"dir/glob/*"}) { |${2:file}| ${3} }
+endsnippet
+
+snippet Dir "Dir[".."]"
+Dir[${1:"glob/**/*.rb"}]${2}
+endsnippet
+
+snippet dir "dir"
+Filename.dirname(__FILE__)
+endsnippet
+
+snippet deli "deli"
+delete_if { |${1:e}| ${2} }
+endsnippet
+
+snippet fil "fil"
+fill(${1:range}) { |${2:i}| ${3} }
+endsnippet
+
+# flatten_once()
+snippet flao "flao"
+inject(Array.new) { |${1:arr}, ${2:a}| $1.push(*$2)}${3}
+endsnippet
+
+snippet zip "zip"
+zip(${1:enums}) { |${2:row}| ${3} }
+endsnippet
+
+# downto(0) { |n| .. }
+snippet dow "dow"
+downto(${1:0}) { |${2:n}| ${3} }
+endsnippet
+
+snippet ste "ste"
+step(${1:2}) { |${2:n}| ${3} }
+endsnippet
+
+snippet tim "tim"
+times { |${1:n}| ${2} }
+endsnippet
+
+snippet upt "upt"
+upto(${1:1.0/0.0}) { |${2:n}| ${3} }
+endsnippet
+
+snippet loo "loo"
+loop { ${1} }
+endsnippet
+
+snippet ea "ea"
+each { |${1:e}| ${2} }
+endsnippet
+
+snippet ead "ead"
+each do |${1:e}|
+	${2}
+end	
+endsnippet
+
+snippet eab "eab"
+each_byte { |${1:byte}| ${2} }
+endsnippet
+
+snippet eac- "each_char { |chr| .. }"
+each_char { |${1:chr}| ${2} }
+endsnippet
+
+snippet eac- "each_cons(..) { |group| .. }"
+each_cons(${1:2}) { |${2:group}| ${3} }
+endsnippet
+
+snippet eai "eai"
+each_index { |${1:i}| ${2} }
+endsnippet
+
+snippet eaid "eaid"
+each_index do |${1:i}|
+end
+endsnippet
+
+snippet eak "eak"
+each_key { |${1:key}| ${2} }
+endsnippet
+
+snippet eakd "eakd"
+each_key do |${1:key}|
+	${2}
+end
+endsnippet
+
+snippet eal "eal"
+each_line { |${1:line}| ${2} }
+endsnippet
+
+snippet eald "eald"
+each_line do |${1:line}|
+	${2}
+end		
+endsnippet
+
+snippet eap "eap"
+each_pair { |${1:name}, ${2:val}| ${3} }
+endsnippet
+
+snippet eapd "eapd"
+each_pair do |${1:name}, ${2:val}|
+	${3}
+end			
+endsnippet
+
+snippet eas- "eas-"
+each_slice(${1:2}) { |${2:group}| ${3} }
+endsnippet
+
+snippet easd- "easd-"
+each_slice(${1:2}) do |${2:group}|
+	${3}
+end		
+endsnippet
+
+snippet eav "eav"
+each_value { |${1:val}| ${2} }
+endsnippet
+
+snippet eavd "eavd"
+each_value do |${1:val}| 
+	${2}
+end
+endsnippet
+
+snippet eawi "eawi"
+each_with_index { |${1:e}, ${2:i}| ${3} }
+endsnippet
+
+snippet eawid "eawid"
+each_with_index do |${1:e},${2:i}|
+	${3}
+end
+endsnippet
+
+snippet reve "reve"
+reverse_each { |${1:e}| ${2} }
+endsnippet
+
+snippet reved "reved"
+reverse_each do |${1:e}|
+	${2}
+end	
+endsnippet
+
+snippet inj "inj"
+inject(${1:init}) { |${2:mem}, ${3:var}| ${4} }
+endsnippet
+
+snippet injd "injd"
+inject(${1:init}) do |${2:mem}, ${3:var}|
+	${4}
+end		
+endsnippet
+
+snippet map "map"
+map { |${1:e}| ${2} }
+endsnippet
+
+snippet mapd "mapd"
+map do |${1:e}| 
+	${2}
+end		
+endsnippet
+
+snippet mapwi- "mapwi-"
+enum_with_index.map { |${1:e}, ${2:i}| ${3} }
+endsnippet
+
+snippet sor "sor"
+sort { |a, b| ${1} }
+endsnippet
+
+snippet sorb "sorb"
+sort_by { |${1:e}| ${2} }
+endsnippet
+
+snippet ran "ran"
+sort_by { rand }
+endsnippet
+
+snippet all "all"
+all? { |${1:e}| ${2} }
+endsnippet
+
+snippet any "any"
+any? { |${1:e}| ${2} }
+endsnippet
+
+snippet cl "cl"
+classify { |${1:e}| ${2} }
+endsnippet
+
+snippet col "col"
+collect { |${1:e}| ${2} }
+endsnippet
+
+snippet cold "cold"
+collect do |${1:e}|
+	${2}
+end
+endsnippet
+
+snippet det "det"
+detect { |${1:e}| ${2} }
+endsnippet
+
+snippet detd "detd"
+detect do |${1:e}|
+	${2}
+end
+endsnippet
+
+snippet fet "fet"
+fetch(${1:name}) { |${2:key}| ${3} }
+endsnippet
+
+snippet fin "fin"
+find { |${1:e}| ${2} }
+endsnippet
+
+snippet find "find"
+find do |${1:e}|
+	${2}
+end		
+endsnippet
+
+snippet fina "fina"
+find_all { |${1:e}| ${2} }
+endsnippet
+
+snippet finad "finad"
+find_all do |${1:e}|
+	${2}
+end			
+endsnippet
+
+snippet gre "gre"
+grep(${1:/pattern/}) { |${2:match}| ${3} }
+endsnippet
+
+snippet sub "sub"
+${1:g}sub(${2:/pattern/}) { |${3:match}| ${4} }
+endsnippet
+
+snippet sca "sca"
+scan(${1:/pattern/}) { |${2:match}| ${3} }
+endsnippet
+
+snippet scad "scad"
+scan(${1:/pattern/}) do |${2:match}|
+	${3}
+end		
+endsnippet
+
+snippet max "max"
+max { |a, b| ${1} }
+endsnippet
+
+snippet min "min"
+min { |a, b| ${1} }
+endsnippet
+
+snippet par "par"
+partition { |${1:e}| ${2} }
+endsnippet
+
+snippet pard "pard"
+partition do |${1:e}|
+	${2}
+end		
+endsnippet
+
+snippet rej "rej"
+reject { |${1:e}| ${2} }
+endsnippet
+
+snippet rejd "rejd"
+reject do |${1:e}|
+	${2}
+end
+endsnippet
+
+snippet sel "sel"
+select { |${1:e}| ${2} }
+endsnippet
+
+snippet seld "seld"
+select do |${1:e}|
+	${2}
+end		
+endsnippet
+
+snippet lam "lam"
+lambda { |${1:args}| ${2} }
+endsnippet
+
+snippet do "do"
+do |${1:variable}|
+	${2}
+end
+endsnippet
+
+snippet : ":"
+:${1:key} => ${2:"value"}${3}
+endsnippet
+
+snippet ope "ope"
+open(${1:"path/or/url/or/pipe"}, "${2:w}") { |${3:io}| ${4} }
+endsnippet
+
+# path_from_here()
+snippet patfh "patfh"
+File.join(File.dirname(__FILE__), *%2[${1:rel path here}])${2}
+endsnippet
+
+# unix_filter {}
+snippet unif "unif"
+ARGF.each_line${1} do |${2:line}|
+	${3}
+end
+endsnippet
+
+# option_parse {}
+snippet optp "optp"
+require "optparse"
+options = {${1:default => "args"}}
+ARGV.options do |opts|
+	opts.banner = "Usage: #{File.basename($PROGRAM_NAME)}
+endsnippet
+
+snippet opt "opt"
+opts.on( "-${1:o}", "--${2:long-option-name}", ${3:String},
+         "${4:Option description.}") do |${5:opt}|
+	${6}
+end
+endsnippet
+
+snippet tc "tc"
+require "test/unit"
+require "${1:library_file_name}"
+class Test${2:$1} < Test::Unit::TestCase
+	def test_${3:case_name}
+		${4}
+	end
+end
+endsnippet
+
+snippet ts "ts"
+require "test/unit"
+require "tc_${1:test_case_file}"
+require "tc_${2:test_case_file}"${3}
+endsnippet
+
+snippet as "as"
+assert(${1:test}, "${2:Failure message.}")${3}
+endsnippet
+
+snippet ase "ase"
+assert_equal(${1:expected}, ${2:actual})${3}
+endsnippet
+
+snippet asne "asne"
+assert_not_equal(${1:unexpected}, ${2:actual})${3}
+endsnippet
+
+snippet asid "asid"
+assert_in_delta(${1:expected_float}, ${2:actual_float}, ${3:2 ** -20})${4}
+endsnippet
+
+snippet asio "asio"
+assert_instance_of(${1:ExpectedClass}, ${2:actual_instance})${3}
+endsnippet
+
+snippet asko "asko"
+assert_kind_of(${1:ExpectedKind}, ${2:actual_instance})${3}
+endsnippet
+
+snippet asn "asn"
+assert_nil(${1:instance})${2}
+endsnippet
+
+snippet asnn "asnn"
+assert_not_nil(${1:instance})${2}
+endsnippet
+
+snippet asm "asm"
+assert_match(/${1:expected_pattern}/, ${2:actual_string})${3}
+endsnippet
+
+snippet asnm "asnm"
+assert_no_match(/${1:unexpected_pattern}/, ${2:actual_string})${3}
+endsnippet
+
+snippet aso "aso"
+assert_operator(${1:left}, :${2:operator}, ${3:right})${4}
+endsnippet
+
+snippet asr "asr"
+assert_raise(${1:Exception}) { ${2} }
+endsnippet
+
+snippet asnr "asnr"
+assert_nothing_raised(${1:Exception}) { ${2} }
+endsnippet
+
+snippet asrt "asrt"
+assert_respond_to(${1:object}, :${2:method})${3}
+endsnippet
+
+snippet ass "assert_same(..)"
+assert_same(${1:expected}, ${2:actual})${3}
+endsnippet
+
+snippet ass "assert_send(..)"
+assert_send([${1:object}, :${2:message}, ${3:args}])${4}
+endsnippet
+
+snippet asns "asns"
+assert_not_same(${1:unexpected}, ${2:actual})${3}
+endsnippet
+
+snippet ast "ast"
+assert_throws(:${1:expected}) { ${2} }
+endsnippet
+
+snippet asnt "asnt"
+assert_nothing_thrown { ${1} }
+endsnippet
+
+snippet fl "fl"
+flunk("${1:Failure message.}")${2}
+endsnippet
+
+# Benchmark.bmbm do .. end
+snippet bm- "bm-"
+TESTS = ${1:10_000}
+Benchmark.bmbm do |results|
+	${2}
+end
+endsnippet
+
+snippet rep "rep"
+results.report("${1:name}:") { TESTS.times { ${2} }}
+endsnippet
+
+# Marshal.dump(.., file)
+snippet Md "Md"
+File.open(${1:"path/to/file.dump"}, "wb") { |${2:file}| Marshal.dump(${3:obj}, $2) }${4}
+endsnippet
+
+# Mashal.load(obj)
+snippet Ml "Ml"
+File.open(${1:"path/to/file.dump"}, "rb") { |${2:file}| Marshal.load($2) }${3}
+endsnippet
+
+# deep_copy(..)
+snippet deec "deec"
+Marshal.load(Marshal.dump(${1:obj_to_copy}))${2}
+endsnippet
+
+snippet Pn- "Pn-"
+PStore.new(${1:"file_name.pstore"})${2}
+endsnippet
+
+snippet tra "tra"
+transaction(${1:true}) { ${2} }
+endsnippet
+
+# xmlread(..)
+snippet xml- "xml-"
+REXML::Document.new(File.read(${1:"path/to/file"}))${2}
+endsnippet
+
+# xpath(..) { .. }
+snippet xpa "xpa"
+elements.each(${1:"//Xpath"}) do |${2:node}|
+	${3}
+end
+endsnippet
+
+# class_from_name()
+snippet clafn "clafn"
+split("::").inject(Object) { |par, const| par.const_get(const) }
+endsnippet
+
+# singleton_class()
+snippet sinc "sinc"
+class << self; self end
+endsnippet
+
+snippet nam "nam"
+namespace :${1:`!v Filename()`} do
+	${2}
+end
+endsnippet
+
+snippet tas "tas"
+desc "${1:Task description\}"
+task :${2:task_name => [:dependent, :tasks]} do
+	${3}
+end
+endsnippet
+
+

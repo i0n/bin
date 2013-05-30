@@ -1,0 +1,140 @@
+# Prototype
+snippet proto "proto"
+${1:class_name}.prototype.${2:method_name} =
+function(${3:first_argument}) {
+	${4:// body...}
+};
+endsnippet
+
+# Function
+snippet fun "fun"
+function ${1:function_name} (${2:argument}) {
+	${3}
+}
+endsnippet
+
+# Anonymous Function
+snippet f "f"
+function(${1}) {${2}}
+endsnippet
+
+# if
+snippet if "if"
+if (${1:true}) {${2}}
+endsnippet
+
+# if ... else
+snippet ife "ife"
+if (${1:true}) {${2}}
+else{${3}}
+endsnippet
+
+# tertiary conditional
+snippet t "t"
+${1:/* condition */} ? ${2:a} : ${3:b}
+endsnippet
+
+# switch
+snippet switch "switch"
+switch(${1:expression}) {
+	case '${3:case}':
+		${4:// code}
+		break;
+	${5}
+	default:
+		${2:// code}
+}
+endsnippet
+
+# case
+snippet case "case"
+case '${1:case}':
+	${2:// code}
+	break;
+${3}
+endsnippet
+
+# for (...) {...}
+snippet for "for"
+for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3:++}) {
+	${4:$1[$2]}
+};
+endsnippet
+
+# for (...) {...} (Improved Native For-Loop)
+snippet forr "forr"
+for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3:--}) {
+	${4:$1[$2]}
+};
+endsnippet
+
+# while (...) {...}
+snippet wh "wh"
+while (${1:/* condition */}) {
+	${2:/* code */}
+}
+endsnippet
+
+# do...while
+snippet do "do"
+do {
+	${2:/* code */}
+} while (${1:/* condition */});
+endsnippet
+
+# Object Method
+snippet :f ":f"
+${1:method_name}: function(${2:attribute}) {
+	${4}
+}${3:,}
+endsnippet
+
+# setTimeout function
+snippet timeout "timeout"
+setTimeout(function() {${3}}${2}, ${1:10};
+endsnippet
+
+# Get Elements
+snippet get "get"
+getElementsBy${1:TagName}('${2}')${3}
+endsnippet
+
+# Get Element
+snippet gett "gett"
+getElementBy${1:Id}('${2}')${3}
+endsnippet
+
+# jQuery document ready 
+snippet dr "dr"
+$(document).ready(function(){
+	${1}  
+});
+endsnippet
+
+# jQuery function
+snippet jqf "jqf"
+(function($) {
+	${1}
+})(jQuery);
+endsnippet
+
+# jQuery enclosure
+snippet $ "$"
+$(${1})${2};
+endsnippet
+
+# Jasmine describe
+snippet describe "describe"
+describe("${1}", function() {
+	${2}
+});
+endsnippet
+
+# Jasmine it
+snippet it "it"
+it("${1}", function() {
+	${2}
+});
+endsnippet
+
+

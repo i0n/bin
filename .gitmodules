@@ -61,15 +61,9 @@
 [submodule "dotfiles/vim/bundle/hexHighlight"]
 	path = dotfiles/vim/bundle/hexHighlight
 	url = git://github.com/vim-scripts/hexHighlight.vim.git
-[submodule "dotfiles/vim/bundle/tlib_vim"]
-	path = dotfiles/vim/bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
-[submodule "dotfiles/vim/bundle/vim-addon-mw-utils"]
-	path = dotfiles/vim/bundle/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "dotfiles/vim/bundle/vim-snipmate"]
-	path = dotfiles/vim/bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
 [submodule "dotfiles/vim/bundle/vim-l9"]
 	path = dotfiles/vim/bundle/vim-l9
 	url = git://github.com/vim-scripts/L9.git
+[submodule "dotfiles/vim/bundle/ultisnips"]
+	path = dotfiles/vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
