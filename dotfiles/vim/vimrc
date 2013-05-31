@@ -3,7 +3,7 @@ silent! call pathogen#helptags()
 set nocompatible                  " Must come first because it changes other options.
 set shell=/bin/zsh
 
-filetype plugin on                " Turn off configuration loaded from plugins
+filetype plugin off                " Turn off configuration loaded from plugins
 syntax enable                     " Turn on syntax highlighting.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
@@ -44,9 +44,9 @@ map <F3> ;r !pbpaste<CR>         " Pastes the current content from the clipboard
 set tabstop=2 
 set expandtab                   " use spaces, not tabs (optional)
 set shiftwidth=2 
-set smarttab autoindent
-"set softtabstop=2
+set softtabstop=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
+set smarttab autoindent
 
 " Indentation viewer
 let g:indent_guides_enable_on_vim_startup = 0
