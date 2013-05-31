@@ -64,6 +64,3 @@
 [submodule "dotfiles/vim/bundle/ultisnips"]
 	path = dotfiles/vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "dotfiles/vim/bundle/vim-javascript-syntax"]
-	path = dotfiles/vim/bundle/vim-javascript-syntax
-	url = git://github.com/jelera/vim-javascript-syntax.git
