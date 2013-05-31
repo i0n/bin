@@ -42,9 +42,10 @@ map <F3> ;r !pbpaste<CR>         " Pastes the current content from the clipboard
 
 " Whitespace
 set tabstop=2 
-set shiftwidth=2 
-set softtabstop=2
 set expandtab                   " use spaces, not tabs (optional)
+set shiftwidth=2 
+set smarttab autoindent
+"set softtabstop=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 " Indentation viewer
