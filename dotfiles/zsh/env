@@ -23,3 +23,5 @@ export PATH=./bin:$PATH # Add local bin to remove bundle exec
 export AWS_ACCESS_KEY_ID='AKIAJUPQXTJJBEWGTVVQ'
 export FOG_ASSET_DIRECTORY='samewave-development-assets'
 export FOG_DIRECTORY='samewave-development'
+. ~/.env/samewave_aws_access_key_id
+. ~/.env/samewave_aws_secret_access_key

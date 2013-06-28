@@ -1,7 +1,5 @@
 . ~/bin/dotfiles/zsh/config
 . ~/bin/dotfiles/zsh/aliases
-. ~/.env/samewave_aws_access_key_id
-. ~/.env/samewave_aws_secret_access_key
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
