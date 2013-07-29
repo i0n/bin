@@ -1,9 +1,9 @@
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
 set nocompatible                  " Must come first because it changes other options.
 set shell=/bin/zsh
 
-filetype plugin off                " Turn off configuration loaded from plugins
+execute pathogen#infect()
+
+filetype plugin off               " Turn off configuration loaded from plugins
 syntax enable                     " Turn on syntax highlighting.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
@@ -219,3 +219,4 @@ nmap <leader>l ;g/^$/d<CR>
 imap {{ {{}}<Esc>hi
 
 filetype indent off               " Turn off file indentation from plugins
+let g:syntastic_javascript_checkers = ['jshint']
