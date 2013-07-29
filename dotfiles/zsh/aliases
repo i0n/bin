@@ -121,3 +121,4 @@ function flac2mp3_dir {
 }
 alias psql_start='pg_ctl -D /usr/local/var/postgres -l logfile start'
 alias redis_start='redis-server /usr/local/etc/redis.conf'
+alias cc='rm -rf /Users/i0n/sites/samewave/tmp/cache; rm -rf /Users/i0n/sites/samewave/tmp/ember-rails; touch tmp /Users/i0n/sites/samewave/tmp/restart.txt; echo cleared caches and restarted rails server.'
