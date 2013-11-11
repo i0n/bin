@@ -26,10 +26,6 @@
 	path = dotfiles/vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
 	ignore = untracked
-[submodule "dotfiles/vim/bundle/command-t"]
-	path = dotfiles/vim/bundle/command-t
-	url = https://github.com/wincent/Command-T.git
-	ignore = untracked
 [submodule "dotfiles/vim/bundle/vim-rails"]
 	path = dotfiles/vim/bundle/vim-rails
 	url = git@github.com:i0n/vim-rails.git
@@ -67,3 +63,6 @@
 [submodule "dotfiles/vim/bundle/syntastic"]
 	path = dotfiles/vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+[submodule "dotfiles/vim/bundle/ctrlp.vim"]
+	path = dotfiles/vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git

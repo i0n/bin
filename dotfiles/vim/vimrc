@@ -7,6 +7,7 @@ filetype plugin off               " Turn off configuration loaded from plugins
 syntax enable                     " Turn on syntax highlighting.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
+set runtimepath^=~/bin/dotfiles/vim/bundle/ctrlp.vim
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -112,13 +113,8 @@ endif
 " Automatically save file when exiting insert mode
 " imap <esc> <esc>;w<cr>	                  
 
-" CommandT  plugin mappings
-nmap <silent> <leader>f ;CommandT<cr>
-let g:CommandTMatchWindowAtTop=1
-let g:CommandTCancelMap='<Esc>'
-let g:CommandTSelectPrevMap=['<Esc>OA', '<Up>']
-let g:CommandTSelectNextMap=['<Esc>OB', '<Down>']
-let g:CommandTMaxHeight=25
+" CtrlP  plugin mappings
+nmap <silent> <leader>f ;CtrlP<cr>
 
 " set notimeout          " don't timeout on mappings
 " set ttimeout           " do timeout on terminal key codes
