@@ -48,9 +48,6 @@
 [submodule "dotfiles/vim/bundle/ack"]
 	path = dotfiles/vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "dotfiles/vim/bundle/bufexplorer"]
-	path = dotfiles/vim/bundle/bufexplorer
-	url = git://github.com/thisivan/vim-bufexplorer.git
 [submodule "dotfiles/vim/bundle/hexHighlight"]
 	path = dotfiles/vim/bundle/hexHighlight
 	url = git://github.com/vim-scripts/hexHighlight.vim.git
