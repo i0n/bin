@@ -4,20 +4,27 @@ export SVN_EDITOR='/usr/local/bin/vim'
 export VIMRC='$HOME/bin/dotfiles/vim/vimrc'
 
 ############################################################## Node.js
+export NODE_PATH="/usr/local/lib/node_modules"
 
 ############################################################## Autotest
 export AUTOFEATURE=true
-export NODE_PATH="/usr/local/lib/node_modules"
 
 ############################################################## Paths
-export PATH="$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:$PATH"
+export PATH="$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:$PATH:/usr/local/Cellar/go/1.2/libexec/bin"
 
 ############################################################## Selenium Server Java variable (to automate Opera)
 export SELENIUM_SERVER_JAR=/usr/local/bin/selenium-server-standalone-2.8.0.jar
 
+############################################################## RVM
 source "$HOME/.rvm/scripts/rvm"
+
+############################################################## Misc
 export PATH=./bin:$PATH # Add local bin to remove bundle exec
 
+############################################################## Go
+export GOPATH=$HOME/gocode
+
+############################################################## AWS
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/libexec"
 export AWS_CREDENTIAL_FILE=$HOME/.aws-credentials-master
