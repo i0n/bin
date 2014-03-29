@@ -37,7 +37,7 @@ alias v='vim'
 alias m='mvim'
 ########################################################## Git 
 alias g='git status'																											# Git Status
-alias ga='git add .'																											# Git Add (Everything to pending commit)
+alias ga='git add -A'																											# Git Add (Everything to pending commit)
 alias gr='git rm'																													# Git remove a file from staging area. eg: gr file.txt
 alias gl='git log'																												# Git Log (ALL)
 alias ggc='git gc'																												# Tidy git repository (run every 100 commits or so)							
