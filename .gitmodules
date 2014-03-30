@@ -66,3 +66,6 @@
 [submodule "dotfiles/vim/bundle/bufexplorer"]
 	path = dotfiles/vim/bundle/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "dotfiles/vim/bundle/neocomplete"]
+	path = dotfiles/vim/bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
