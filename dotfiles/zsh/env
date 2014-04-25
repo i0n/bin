@@ -10,16 +10,10 @@ export NODE_PATH="/usr/local/lib/node_modules"
 export AUTOFEATURE=true
 
 ############################################################## Paths
-export PATH="$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:$PATH:/usr/local/Cellar/go/1.2/libexec/bin"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:/usr/local/Cellar/go/1.2/libexec/bin"
 
 ############################################################## Selenium Server Java variable (to automate Opera)
 export SELENIUM_SERVER_JAR=/usr/local/bin/selenium-server-standalone-2.8.0.jar
-
-############################################################## RVM
-source "$HOME/.rvm/scripts/rvm"
-
-############################################################## Misc
-export PATH=./bin:$PATH # Add local bin to remove bundle exec
 
 ############################################################## Go
 export GOPATH=$HOME/gocode
