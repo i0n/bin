@@ -66,6 +66,7 @@ function gdl() {
 	cd ..
 	rm -rf $2
 }
+alias gu='git-up'
 ########################################################## Subversion
 alias s="svn status"                                               # Subversion status
 alias sa="svn add --force *"                                       # Add all new files to Subversion repo
@@ -88,9 +89,6 @@ alias noder='killall node;monit'
 
 ########################################################## Thin
 alias th='thin --debug --rackup config.ru start' #starts standard rack apps with thin
-
-########################################################## Ruby Gems
-alias gu='gem update --no-ri --no-rdoc'
 
 ########################################################## Home Brew
 alias bu='brew update'
