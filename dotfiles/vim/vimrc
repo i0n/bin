@@ -173,6 +173,7 @@ set foldmethod=manual
 " Sets up some global settings for the ragtag plugin 
 let g:ragtag_global_maps = 1 
 
+let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsSnippetsDir = ["~/bin/dotfiles/vim/snippets"]
 let g:UltiSnipsSnippetDirectories = ['snippets']
 let g:UltiSnipsExpandTrigger="<tab>"
