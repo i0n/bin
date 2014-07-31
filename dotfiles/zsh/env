@@ -17,7 +17,7 @@ export GOPATH=$HOME/gocode
 
 ############################################################## Docker / CoreOS
 export DOCKER_HOST=tcp://172.17.8.101:2375
-export FLEETCTL_TUNNEL=172.17.8.101:2375
+export FLEETCTL_TUNNEL=127.0.0.1:2222
 
 ############################################################## Paths
 export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:$HOME/gocode/bin"

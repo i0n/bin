@@ -48,4 +48,3 @@ compinit
 WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
 
 bindkey -e
-
