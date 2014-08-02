@@ -126,3 +126,14 @@ alias dump_from_staging='cd ~/sites/samewave;heroku pgbackups:capture --expire -
 docker-enter () {
   ssh -t $(VAGRANT_CWD=$HOME/sites/coreos-vagrant vagrant ssh-config core-01 | awk '{print " -o "$1"="$2}') localhost "sudo /home/core/share/docker-enter $1"
 }
+
+rebuild-coreos() {
+  cd ~/sites/coreos-vagrant-base && \
+  vagrant destroy -f
+  COREOS_TOKEN=$(curl https://discovery.etcd.io/new || exit 1)
+  sed -i '' "s;discovery:.*;discovery: $COREOS_TOKEN;" ~/sites/coreos-vagrant-base/user-data
+  cd ~/.fleetctl && \
+  rm -f known_hosts
+  cd ~/sites/coreos-vagrant-base && \
+  vagrant up
+}
