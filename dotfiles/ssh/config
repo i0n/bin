@@ -1,3 +1,4 @@
+IdentityFile ~/.ssh/id_rsa
 Host commval
 	HostName 77.92.77.106
 	User i0n

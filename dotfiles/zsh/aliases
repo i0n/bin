@@ -124,7 +124,7 @@ alias cc='rm -rf /Users/i0n/sites/samewave/tmp/cache; rm -rf /Users/i0n/sites/sa
 alias dump_from_staging='cd ~/sites/samewave;heroku pgbackups:capture --expire -a samewave-staging;curl -o ~/sites/samewave/samewave_staging.dump `heroku pgbackups:url -a samewave-staging`;pg_restore --verbose --clean --no-acl --no-owner -h localhost -U i0n -d samewave_development ~/sites/samewave/samewave_staging.dump;rm samewave_staging.dump'
 
 docker-enter () {
-  ssh -t $(VAGRANT_CWD=$HOME/sites/coreos-vagrant vagrant ssh-config core-01 | awk '{print " -o "$1"="$2}') localhost "sudo /home/core/share/docker-enter $1"
+  ssh -t $(VAGRANT_CWD=$HOME/sites/coreos-vagrant-base vagrant ssh-config core-01 | awk '{print " -o "$1"="$2}') localhost "sudo /home/core/share/docker-enter $1"
 }
 
 rebuild-coreos() {
