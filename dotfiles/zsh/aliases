@@ -137,3 +137,5 @@ rebuild-coreos() {
   cd ~/sites/coreos-vagrant-base && \
   vagrant up
 }
+
+alias hum='/Users/i0n/sites/humongousdb-cli/bin/humongousdb-cli'
