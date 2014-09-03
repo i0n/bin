@@ -1,35 +1,6 @@
 IdentityFile ~/.ssh/id_rsa
-Host commval
-	HostName 77.92.77.106
-	User i0n
-	port 22
-Host pele
-	HostName 31.222.189.207
-	User i0n
-	port 22
-Host hal
-  HostName Burt-the-Mini-Mac.local 
-  User i0n
-  port 22
-  ProxyCommand  ssh ian@Hal.local
-Host burt
-  HostName Burt-the-Mini-Mac.local
-  User i0n
-  port 22
-Host hal
-  HostName Hal.local
-  User ian
-  port 22
-Host reviewomatic_preview
-  HostName reviewomatic.preview.alphagov.co.uk
-  User i0n
-  port 22
-Host reviewomatic_production
-  HostName reviewomatic.production.alphagov.co.uk
-  User i0n
-  port 22
-Host samewave_staging
-  HostName samewave-001.vm.brightbox.net
-  User rails
-  port 2222
-  IdentityFile ~/.ssh/brightbox-key
+Host enternships
+  User     core
+  HostName 54.77.194.106
+  IdentityFile ~/.ssh/Enternships-AWS-EU-IRELAND-i0n.pem
+

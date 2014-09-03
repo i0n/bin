@@ -17,7 +17,14 @@ export GOPATH=$HOME/gocode
 
 ############################################################## Docker / CoreOS
 export DOCKER_HOST=tcp://172.17.8.101:2375
-export FLEETCTL_TUNNEL=127.0.0.1:2222
+
+########################
+# Local Vagrant setup ##
+#export FLEETCTL_TUNNEL=127.0.0.1:2222
+# Enternships Stack
+export FLEETCTL_TUNNEL=54.77.194.106
+########################
+
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
