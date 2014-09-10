@@ -1,6 +1,6 @@
 IdentityFile ~/.ssh/id_rsa
 Host enternships
   User     core
-  HostName 54.77.194.106
+  HostName 54.77.197.65
   IdentityFile ~/.ssh/Enternships-AWS-EU-IRELAND-i0n.pem
 

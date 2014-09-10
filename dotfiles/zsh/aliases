@@ -137,5 +137,4 @@ rebuild-coreos() {
   cd ~/projects/humongous/coreos-vagrant-base && \
   vagrant up
 }
-
-alias hum='/Users/i0n/projects/humongous/humongousdb-cli/bin/humongousdb-cli'
+alias f='fleetctl'
