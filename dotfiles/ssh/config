@@ -3,4 +3,17 @@ Host enternships
   User     core
   HostName 54.77.197.65
   IdentityFile ~/.ssh/Enternships-AWS-EU-IRELAND-i0n.pem
-
+Host default
+  User     core
+  HostName 54.183.231.142
+  IdentityFile ~/.ssh/AWS-EU-IRELAND-1.pem
+Host core-01
+  HostName 127.0.0.1
+  User core
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /Users/i0n/.vagrant.d/insecure_private_key
+  IdentitiesOnly yes
+  LogLevel FATAL

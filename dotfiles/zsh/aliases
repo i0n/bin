@@ -128,13 +128,13 @@ docker-enter () {
 }
 
 rebuild-coreos() {
-  cd ~/projects/humongous/coreos-vagrant-base && \
+  cd ~/projects/humongousdb/coreos-vagrant-base && \
   vagrant destroy -f
   COREOS_TOKEN=$(curl https://discovery.etcd.io/new || exit 1)
-  sed -i '' "s;discovery:.*;discovery: $COREOS_TOKEN;" ~/projects/humongous/coreos-vagrant-base/user-data
+  sed -i '' "s;discovery:.*;discovery: $COREOS_TOKEN;" ~/projects/humongousdb/coreos-vagrant-base/user-data
   cd ~/.fleetctl && \
   rm -f known_hosts
-  cd ~/projects/humongous/coreos-vagrant-base && \
+  cd ~/projects/humongousdb/coreos-vagrant-base && \
   vagrant up
 }
 alias f='fleetctl'

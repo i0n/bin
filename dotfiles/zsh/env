@@ -18,17 +18,12 @@ export GOPATH=$HOME/gocode
 ############################################################## Docker / CoreOS
 export DOCKER_HOST=tcp://172.17.8.101:2375
 
-########################
-# Local Vagrant setup ##
-#export FLEETCTL_TUNNEL=127.0.0.1:2222
-# Enternships Stack
-export FLEETCTL_TUNNEL=54.77.194.106
-########################
+export FLEETCTL_TUNNEL=54.77.228.149
 
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
-export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:$HOME/gocode/bin"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:$HOME/gocode/bin:$HOME/projects/humongous/kubernetes/cluster"
 
 ############################################################## AWS
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -38,3 +33,7 @@ source $HOME/.aws-credentials-master
 
 export EC2_HOME="/usr/local/opt/ec2-api-tools/libexec"
 export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
+
+############################################################## Google Cloud
+# The next line updates PATH for the Google Cloud SDK.
+export KUBERNETES_PROVIDER="vagrant"
