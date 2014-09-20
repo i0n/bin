@@ -1,9 +1,4 @@
 ########################################################## Local Environment Config
-alias alias_config='vim ~/bin/dotfiles/zsh/aliases'		                # Edit aliases
-alias path_config='vim ~/bin/dotfiles/zsh/env'                         # Edit paths
-alias zsh_config='vim ~/bin/dotfiles/zsh/config'                       # Edit zsh config
-alias vim_config='vim ~/bin/dotfiles/vim/vimrc'                        # Edit vim config
-alias ssh_config='vim ~/bin/dotfiles/ssh/config'										    # Edit ssh aliases
 alias reload='source ~/.zshrc && source ~/.zshenv'		                    # Reload personal bash and zsh setup
 
 ########################################################## General
@@ -38,26 +33,13 @@ alias m='mvim'
 ########################################################## Git 
 alias g='git status'																											# Git Status
 alias ga='git add -A'																											# Git Add (Everything to pending commit)
-alias gr='git rm'																													# Git remove a file from staging area. eg: gr file.txt
-alias gl='git log'																												# Git Log (ALL)
-alias ggc='git gc'																												# Tidy git repository (run every 100 commits or so)							
-alias gpl='git pull --rebase origin master'																											# Git Pull
-alias gps='git push'																							        # Git Push
-alias gpst='git push --tags'																							# Git Push with tags
-alias grao='git remote add origin'																				# To add a remote Git repository append clone URL e.g: git@github.com:i0n/dotfiles.git
-alias gpom='git push origin master'                                       # To push master branch to origin (For instance after creating a bare remote repo and wanting to push local changes)
 alias gb='git branch'																											# Git Branch
-alias gt='git tag'																												# Git Tag
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
-alias gcl='git clone'																								      # Clone a remote repository. e.g: gcl git://github.com/masterkain/macruby.git
 alias gh='git rev-parse HEAD | pbcopy | pbpaste'                          # Retrieves the hash for the last commit
 																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
 function gg {
 	git commit -v -a -m "$*"
 }
-alias gm='git merge'																											# Git Merge
-alias gcp='git cherry-pick'																								# Git Cherry-Pick Commit to merge into current branch. From branch you want to pull change into: gcp 21312hfff (represents the unique key for that change)
-alias gd='git diff'																												# Git Diff
 																																					# Download the files from a GitHub repository to the current dir. Pass the username then the repo.
 function gdl() {
 	git clone git://github.com/$1/$2.git
@@ -66,46 +48,24 @@ function gdl() {
 	cd ..
 	rm -rf $2
 }
-alias gu='git-up'
-########################################################## Subversion
-alias s="svn status"                                               # Subversion status
-alias sa="svn add --force *"                                       # Add all new files to Subversion repo
-alias sps="svn commit"                                             # Commit changes to Subversion repo
-alias spl="svn update"                                             # Update subversion repo
-alias scl="svn checkout"                                           # Checkout (like clone) an existing Subversion repo
 
 ########################################################## Nginx & Passenger
-alias restart='touch ./tmp/restart.txt'															                    # Restart Passenger when executed from the project root
-alias nginx_log='tail -f /opt/nginx/logs/error.log'						                          # Runs the NginX error log
-alias nginx_config='vim -N -p /opt/nginx/conf/nginx.conf /etc/hosts'                    # Edit Nginx config for adding sites to local dev environment
-alias nginx_stop='sudo nginx -s stop'                                                   # Stops the NginX server
-alias osx_nginx_start='sudo launchctl load -F ~/bin/configfiles/osx/nginx/nginx.plist'      # Starts the NginX server
+#alias restart='touch ./tmp/restart.txt'															                    # Restart Passenger when executed from the project root
+#alias nginx_log='tail -f /opt/nginx/logs/error.log'						                          # Runs the NginX error log
+#alias nginx_config='vim -N -p /opt/nginx/conf/nginx.conf /etc/hosts'                    # Edit Nginx config for adding sites to local dev environment
+#alias nginx_stop='sudo nginx -s stop'                                                   # Stops the NginX server
+#alias osx_nginx_start='sudo launchctl load -F ~/bin/configfiles/osx/nginx/nginx.plist'      # Starts the NginX server
 
 ########################################################## FastCGI
 alias fcgi_start='spawn-fcgi -a 127.0.0.1 -p 9000 -f /usr/local/bin/php-cgi -C 5 -U i0n'  # Starts FastCGI on port 9000 with user i0n
-
-########################################################## Node.js
-alias noder='killall node;monit'
-
-########################################################## Thin
-alias th='thin --debug --rackup config.ru start' #starts standard rack apps with thin
 
 ########################################################## Home Brew
 alias bu='brew update'
 
 ########################################################## Rails
-alias dlog='tail -f ./log/development.log'						#Runs the development log for the current Rails project.
-alias plog='tail -f ./log/production.log'							#Runs the development log for the current Rails project.
-alias tlog='tail -f ./log/test.log'										#Runs the development log for the current Rails project.
 alias dsqlite='sqlite3 -line db/development.sqlite3'			#Opens SQlite3 prompt for development database.
 alias psqlite='sqlite3 -line db/production.sqlite3'			#Opens SQlite3 prompt for production database.
 alias tsqlite='sqlite3 -line db/test.sqlite3'						#Opens SQlite3 prompt for test database.
-alias r='rake'																				# Rake command
-alias rr='rake routes'																# Rake Routes command shows current route mappings
-alias rdm='rake db:migrate'														# Runs a Rake database migration
-alias rt='rake test'																	# Runs all tests
-alias rtu='rake test:units'														# Runs all unit tests (models)
-alias rtf='rake test:functionals'											# Runs all functional tests (controllers)
 
 ########################################################## MongoDB
 alias mongo_start='mongod --config /usr/local/etc/mongod.conf'
@@ -138,3 +98,6 @@ rebuild-coreos() {
   vagrant up
 }
 alias f='fleetctl'
+alias k='~/projects/humongous/kubernetes/cluster/kubecfg.sh'
+
+

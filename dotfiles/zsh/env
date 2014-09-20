@@ -18,7 +18,7 @@ export GOPATH=$HOME/gocode
 ############################################################## Docker / CoreOS
 export DOCKER_HOST=tcp://172.17.8.101:2375
 
-export FLEETCTL_TUNNEL=54.77.228.149
+export FLEETCTL_TUNNEL=54.194.148.215
 
 export ETCDCTL_PEERS="http://core-01:4001"
 
@@ -36,4 +36,4 @@ export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
 
 ############################################################## Google Cloud
 # The next line updates PATH for the Google Cloud SDK.
-export KUBERNETES_PROVIDER="vagrant"
+export KUBERNETES_PROVIDER="gce"
