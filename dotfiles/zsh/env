@@ -14,17 +14,18 @@ export SELENIUM_SERVER_JAR=/usr/local/bin/selenium-server-standalone-2.8.0.jar
 
 ############################################################## Go
 export GOPATH=$HOME/gocode
+export GOROOT=`go env GOROOT`
 
 ############################################################## Docker 
 export DOCKER_HOST=tcp://172.17.8.101:2375
 export DOCKER_HUB_USER=i0nw
 
 ############################################################## CoreOS
-export FLEETCTL_TUNNEL=54.194.148.215
+export FLEETCTL_TUNNEL=54.194.117.52
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
-export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:$HOME/gocode/bin:$HOME/projects/humongous/kubernetes/cluster"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:$HOME/gocode/bin:$GOROOT/bin:$HOME/projects/humongous/kubernetes/cluster"
 
 ############################################################## AWS
 export JAVA_HOME="$(/usr/libexec/java_home)"

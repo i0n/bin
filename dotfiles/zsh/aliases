@@ -99,5 +99,4 @@ rebuild-coreos() {
 }
 alias f='fleetctl'
 alias k='~/projects/humongous/kubernetes/cluster/kubecfg.sh'
-
-
+alias v='vagrant'
