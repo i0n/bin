@@ -83,8 +83,14 @@ alias redis_start='redis-server /usr/local/etc/redis.conf'
 alias cc='rm -rf /Users/i0n/projects/samewave/tmp/cache; rm -rf /Users/i0n/projects/samewave/tmp/ember-rails; touch tmp /Users/i0n/projects/samewave/tmp/restart.txt; echo cleared caches and restarted rails server.'
 alias dump_from_staging='cd ~/projects/samewave;heroku pgbackups:capture --expire -a samewave-staging;curl -o ~/projects/samewave/samewave_staging.dump `heroku pgbackups:url -a samewave-staging`;pg_restore --verbose --clean --no-acl --no-owner -h localhost -U i0n -d samewave_development ~/projects/samewave/samewave_staging.dump;rm samewave_staging.dump'
 
+# docker-enter for CoreOS host
+#docker-enter () {
+#  ssh -t $(VAGRANT_CWD=$HOME/projects/coreos-vagrant-base vagrant ssh-config core-01 | awk '{print " -o "$1"="$2}') localhost "sudo /home/core/share/docker-enter $1"
+#}
+
+# docker-enter for custom vagrant docker host 
 docker-enter () {
-  ssh -t $(VAGRANT_CWD=$HOME/projects/coreos-vagrant-base vagrant ssh-config core-01 | awk '{print " -o "$1"="$2}') localhost "sudo /home/core/share/docker-enter $1"
+  ssh -t $(VAGRANT_CWD=$HOME/projects/event-horizon/vagrant-docker-host vagrant ssh-config vagrant-docker-host | awk '{print " -o "$1"="$2}') localhost "sudo /usr/local/bin/docker-enter $1"
 }
 
 rebuild-coreos() {

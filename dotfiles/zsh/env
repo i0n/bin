@@ -21,7 +21,7 @@ export DOCKER_HOST=tcp://172.17.8.101:2375
 export DOCKER_HUB_USER=i0nw
 
 ############################################################## CoreOS
-export FLEETCTL_TUNNEL=54.194.148.215
+export FLEETCTL_TUNNEL=54.72.227.27
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
@@ -39,7 +39,12 @@ export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
 ############################################################## Kubernetes
 export KUBERNETES_PROVIDER="vagrant"
 
+############################################################## Vagrant
+export VAGRANT_DOCKER_HOST="$HOME/projects/event-horizon/vagrant-docker-host/Vagrantfile"
+
+############################################################## Packer 
+#export PACKER_CACHE_DIR="$HOME/.packertmp"
+#export TMPDIR="$HOME/.packertmp"
+
 ############################################################## Atlas 
-source $HOME/.atlas-credentials
-
-
+#source $HOME/.atlas-credentials
