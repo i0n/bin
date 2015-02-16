@@ -3,8 +3,9 @@ export EDITOR='/usr/local/bin/vim'
 export SVN_EDITOR='/usr/local/bin/vim'
 export VIMRC='$HOME/bin/dotfiles/vim/vimrc'
 
-############################################################## Node.js
-export NODE_PATH="/usr/local/lib/node_modules"
+############################################################## NVM (node.js io.js npm)
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 ############################################################## Autotest
 export AUTOFEATURE=true
@@ -17,15 +18,22 @@ export GOPATH=$HOME/gopath
 export GOROOT=`go env GOROOT`
 
 ############################################################## Docker 
+# Docker daemon on CoreOS and Vagrant
 export DOCKER_HOST=tcp://172.17.8.101:2375
+
+# Docker daemon on boot2docker
+#export DOCKER_HOST=tcp://192.168.59.104:2376
+#export DOCKER_CERT_PATH=/Users/i0n/.boot2docker/certs/boot2docker-vm
+#export DOCKER_TLS_VERIFY=1
+
 export DOCKER_HUB_USER=i0nw
 
 ############################################################## CoreOS
-export FLEETCTL_TUNNEL=54.72.227.27
+export FLEETCTL_TUNNEL=54.194.117.52
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
-export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/lib/node_modules/.bin:$HOME/gopath/bin:$GOROOT/bin:$HOME/projects/humongous/kubernetes/cluster"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/gopath/src/github.com/GoogleCloudPlatform/kubernetes/_output/dockerized/bin/darwin/amd64"
 
 ############################################################## AWS
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -38,6 +46,8 @@ export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
 
 ############################################################## Kubernetes
 export KUBERNETES_PROVIDER="vagrant"
+export KUBERNETES_MASTER=http://172.17.8.101:8080
+export KUBE_MASTER_IP=172.17.8.101
 
 ############################################################## Vagrant
 export VAGRANT_DOCKER_HOST="$HOME/projects/event-horizon/vagrant-docker-host/Vagrantfile"
