@@ -45,9 +45,13 @@ export EC2_HOME="/usr/local/opt/ec2-api-tools/libexec"
 export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
 
 ############################################################## Kubernetes
-export KUBERNETES_PROVIDER="vagrant"
-export KUBERNETES_MASTER=http://172.17.8.101:8080
-export KUBE_MASTER_IP=172.17.8.101
+#export KUBERNETES_PROVIDER="vagrant"
+#export KUBERNETES_MASTER=http://172.17.8.101:8080
+#export KUBE_MASTER_IP=172.17.8.101
+
+export KUBERNETES_PROVIDER="gcloud"
+export KUBERNETES_MASTER=http://130.211.55.83:8080
+export KUBE_MASTER_IP=130.211.55.83
 
 ############################################################## Vagrant
 export VAGRANT_DOCKER_HOST="$HOME/projects/event-horizon/vagrant-docker-host/Vagrantfile"

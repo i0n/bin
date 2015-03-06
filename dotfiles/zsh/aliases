@@ -28,7 +28,6 @@ alias showf='defaults write com.apple.finder AppleShowAllFiles TRUE;killall Find
 alias hidef='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder'    # Hides all hidden files in the finder
 
 ########################################################## Vim
-alias v='vim'
 alias m='mvim'
 ########################################################## Git 
 alias g='git status'																											# Git Status
@@ -106,3 +105,4 @@ rebuild-coreos() {
 alias f='fleetctl'
 alias k='kubectl'
 alias v='vagrant'
+alias t='terraform'
