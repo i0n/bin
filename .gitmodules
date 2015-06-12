@@ -68,3 +68,6 @@
 [submodule "dotfiles/vim/bundle/vim-less"]
 	path = dotfiles/vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "dotfiles/vim/bundle/vim-go"]
+	path = dotfiles/vim/bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
