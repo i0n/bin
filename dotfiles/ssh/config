@@ -15,29 +15,43 @@ IdentityFile ~/.ssh/id_rsa
 #
 # You should not hand-edit this section, unless you are deleting it.
 #
-Host coreos-kubernetes-node-2.europe-west1-b.pure-karma-837
-    HostName 104.155.12.170
+Host coreos-kubernetes-node-0.europe-west1-b.payfriendz-infrastructure
+    HostName 146.148.11.92
     IdentityFile /Users/i0n/.ssh/google_compute_engine
     UserKnownHostsFile=/dev/null
     CheckHostIP=no
     StrictHostKeyChecking=no
 
-Host coreos-kubernetes-node-1.europe-west1-b.pure-karma-837
-    HostName 130.211.55.83
+Host coreos-etcd-node-1.europe-west1-b.payfriendz-infrastructure
+    HostName 104.155.88.247
     IdentityFile /Users/i0n/.ssh/google_compute_engine
     UserKnownHostsFile=/dev/null
     CheckHostIP=no
     StrictHostKeyChecking=no
 
-Host coreos-kubernetes-node-0.europe-west1-b.pure-karma-837
-    HostName 104.155.43.119
+Host coreos-kubernetes-master.europe-west1-b.payfriendz-infrastructure
+    HostName 104.155.90.82
     IdentityFile /Users/i0n/.ssh/google_compute_engine
     UserKnownHostsFile=/dev/null
     CheckHostIP=no
     StrictHostKeyChecking=no
 
-Host coreos-kubernetes-master.europe-west1-b.pure-karma-837
-    HostName 104.155.32.194
+Host coreos-kubernetes-node-1.europe-west1-b.payfriendz-infrastructure
+    HostName 104.155.84.233
+    IdentityFile /Users/i0n/.ssh/google_compute_engine
+    UserKnownHostsFile=/dev/null
+    CheckHostIP=no
+    StrictHostKeyChecking=no
+
+Host coreos-etcd-node-0.europe-west1-b.payfriendz-infrastructure
+    HostName 104.155.84.196
+    IdentityFile /Users/i0n/.ssh/google_compute_engine
+    UserKnownHostsFile=/dev/null
+    CheckHostIP=no
+    StrictHostKeyChecking=no
+
+Host coreos-kubernetes-node-2.europe-west1-b.payfriendz-infrastructure
+    HostName 104.155.91.100
     IdentityFile /Users/i0n/.ssh/google_compute_engine
     UserKnownHostsFile=/dev/null
     CheckHostIP=no

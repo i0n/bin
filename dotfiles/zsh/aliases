@@ -32,7 +32,7 @@ alias m='mvim'
 ########################################################## Git 
 alias g='git status'																											# Git Status
 alias ga='git add -A'																											# Git Add (Everything to pending commit)
-alias gb='git branch'																											# Git Branch
+#alias gb='git branch'																											# Git Branch
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
 alias gh='git rev-parse HEAD | pbcopy | pbpaste'                          # Retrieves the hash for the last commit
 																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
@@ -103,6 +103,8 @@ rebuild-coreos() {
   vagrant up
 }
 alias f='fleetctl'
-alias k='kubectl'
+alias k='kubectl --token="XWpTcBcOmk6427jP" -s "https://104.155.1.175:6443" --api-version=v1beta3 --insecure-skip-tls-verify=true'
+#alias k='kubectl --client-certificate="/Users/i0n/projects/payfriendz/infrastructure/.auth/apiserver.crt" --client-key="/Users/i0n/projects/payfriendz/infrastructure/.auth/apiserver.key" --token="XWpTcBcOmk6427jP" -s "https://104.155.4.56:6443" --api-version=v1beta3 --insecure-skip-tls-verify=true'
+#alias k='kubectl'
 alias v='vagrant'
 alias t='terraform'

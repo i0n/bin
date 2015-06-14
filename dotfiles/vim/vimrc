@@ -6,7 +6,7 @@ execute pathogen#infect()
 " Remove ALL autocommands for the current group.
 :autocmd!	
 
-filetype plugin off               " Turn off configuration loaded from plugins
+filetype plugin indent on         
 syntax enable                     " Turn on syntax highlighting.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
@@ -173,8 +173,8 @@ set foldmethod=manual
 " Sets up some global settings for the ragtag plugin 
 let g:ragtag_global_maps = 1 
 
-let g:UltiSnipsUsePythonVersion = 2
-let g:UltiSnipsSnippetsDir = ["~/bin/dotfiles/vim/snippets"]
+"let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsSnippetsDir = ["~/bin/dotfiles/vim/UltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -279,3 +279,6 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 " Map Ctrl k to previous match
 inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+
+" TagBarToggle mapping (view APIs)
+nmap <leader>a ;TagbarToggle<CR>

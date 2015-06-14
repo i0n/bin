@@ -22,7 +22,7 @@ export GOROOT=`go env GOROOT`
 export DOCKER_HOST=tcp://172.17.8.101:2375
 
 # Docker daemon on boot2docker
-#export DOCKER_HOST=tcp://192.168.59.104:2376
+#export DOCKER_HOST=tcp://192.168.59.103:2376
 #export DOCKER_CERT_PATH=/Users/i0n/.boot2docker/certs/boot2docker-vm
 #export DOCKER_TLS_VERIFY=1
 
@@ -33,7 +33,7 @@ export FLEETCTL_TUNNEL=54.194.117.52
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
-export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/gopath/src/github.com/GoogleCloudPlatform/kubernetes/_output/dockerized/bin/darwin/amd64"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/gopath/src/github.com/GoogleCloudPlatform/kubernetes/_output/dockerized/bin/darwin/amd64"
 
 ############################################################## AWS
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -49,9 +49,11 @@ export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
 #export KUBERNETES_MASTER=http://172.17.8.101:8080
 #export KUBE_MASTER_IP=172.17.8.101
 
-export KUBERNETES_PROVIDER="gcloud"
-export KUBERNETES_MASTER=http://104.155.44.99:8080
-export KUBE_MASTER_IP=104.155.44.99
+# Payfriendz cluster
+export KUBERNETES_PROVIDER="gce"
+#export KUBERNETES_MASTER=http://104.155.24.207:8080
+#export KUBE_MASTER_IP=104.155.24.207
+#export KUBE_ROOT="/Users/i0n/projects/payfriendz/kubernetes"
 
 ############################################################## Vagrant
 export VAGRANT_DOCKER_HOST="$HOME/projects/event-horizon/vagrant-docker-host/Vagrantfile"
@@ -61,4 +63,4 @@ export VAGRANT_DOCKER_HOST="$HOME/projects/event-horizon/vagrant-docker-host/Vag
 #export TMPDIR="$HOME/.packertmp"
 
 ############################################################## Atlas 
-#source $HOME/.atlas-credentials
+source $HOME/.atlas-credentials
