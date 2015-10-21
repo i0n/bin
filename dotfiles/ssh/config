@@ -15,6 +15,7 @@ IdentityFile ~/.ssh/id_rsa
 #
 # You should not hand-edit this section, unless you are deleting it.
 #
+
 Host coreos-kubernetes-node-0.europe-west1-b.payfriendz-infrastructure
     HostName 146.148.11.92
     IdentityFile /Users/i0n/.ssh/google_compute_engine

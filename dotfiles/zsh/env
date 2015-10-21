@@ -5,7 +5,7 @@ export VIMRC='$HOME/bin/dotfiles/vim/vimrc'
 
 ############################################################## NVM (node.js io.js npm)
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+source $(/usr/local/bin/brew --prefix nvm)/nvm.sh
 
 ############################################################## Autotest
 export AUTOFEATURE=true
@@ -15,16 +15,19 @@ export SELENIUM_SERVER_JAR=/usr/local/bin/selenium-server-standalone-2.8.0.jar
 
 ############################################################## Go
 export GOPATH=$HOME/gopath
-export GOROOT=`go env GOROOT`
+export GOROOT=`/usr/local/bin/go env GOROOT`
+export GO15VENDOREXPERIMENT=1
 
 ############################################################## Docker 
 # Docker daemon on CoreOS and Vagrant
-export DOCKER_HOST=tcp://172.17.8.101:2375
+#export DOCKER_HOST=tcp://172.17.8.101:2375
+#
 
-# Docker daemon on boot2docker
-#export DOCKER_HOST=tcp://192.168.59.103:2376
-#export DOCKER_CERT_PATH=/Users/i0n/.boot2docker/certs/boot2docker-vm
-#export DOCKER_TLS_VERIFY=1
+# Docker daemon on docker-machine
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/i0n/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
 
 export DOCKER_HUB_USER=i0nw
 
@@ -33,6 +36,10 @@ export FLEETCTL_TUNNEL=54.194.117.52
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
+# Go 1.4 path...
+#export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/Cellar/go14/1.4.2/libexec/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/gopath/src/github.com/GoogleCloudPlatform/kubernetes/_output/dockerized/bin/darwin/amd64"
+
+# Go 1.5 path...
 export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/gopath/src/github.com/GoogleCloudPlatform/kubernetes/_output/dockerized/bin/darwin/amd64"
 
 ############################################################## AWS
@@ -51,6 +58,7 @@ export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
 
 # Payfriendz cluster
 export KUBERNETES_PROVIDER="gce"
+#export KUBERNETES_PROVIDER="vagrant"
 #export KUBERNETES_MASTER=http://104.155.24.207:8080
 #export KUBE_MASTER_IP=104.155.24.207
 #export KUBE_ROOT="/Users/i0n/projects/payfriendz/kubernetes"

@@ -92,6 +92,11 @@ docker-enter () {
   ssh -t $(VAGRANT_CWD=$HOME/projects/event-horizon/vagrant-docker-host vagrant ssh-config vagrant-docker-host | awk '{print " -o "$1"="$2}') localhost "sudo /usr/local/bin/docker-enter $1"
 }
 
+docker-clean () { 
+  docker rmi $(docker images --filter dangling=true)
+  docker rm $(docker ps -aq)
+}
+
 rebuild-coreos() {
   cd ~/projects/humongousdb/coreos-vagrant-base && \
   vagrant destroy -f
@@ -103,8 +108,10 @@ rebuild-coreos() {
   vagrant up
 }
 alias f='fleetctl'
-alias k='kubectl --token="XWpTcBcOmk6427jP" -s "https://104.155.1.175:6443" --api-version=v1beta3 --insecure-skip-tls-verify=true'
-#alias k='kubectl --client-certificate="/Users/i0n/projects/payfriendz/infrastructure/.auth/apiserver.crt" --client-key="/Users/i0n/projects/payfriendz/infrastructure/.auth/apiserver.key" --token="XWpTcBcOmk6427jP" -s "https://104.155.4.56:6443" --api-version=v1beta3 --insecure-skip-tls-verify=true'
+alias k='kubectl'
+#alias k='kubectl --token="XWpTcBcOmk6427jP" -s "http://23.251.131.142:8080" --insecure-skip-tls-verify=true'
+#alias k='kubectl --token="XWpTcBcOmk6427jP" -s "http://146.148.114.97:8080" --insecure-skip-tls-verify=true --api-version=v1beta3'
+#alias k='kubectl --client-certificate="/Users/i0n/projects/payfriendz/infrastructure/.auth/apiserver.crt" --client-key="/Users/i0n/projects/payfriendz/infrastructure/.auth/apiserver.key" --token="XWpTcBcOmk6427jP" -s "https://104.155.14.137:6443" --api-version=v1beta3 --insecure-skip-tls-verify=true'
 #alias k='kubectl'
 alias v='vagrant'
 alias t='terraform'
