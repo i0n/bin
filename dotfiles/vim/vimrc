@@ -220,10 +220,15 @@ imap {{ {{}}<Esc>hi
 
 filetype indent off               " Turn off file indentation from plugins
 
+let g:syntastic_aggregate_errors = 1
 "let g:syntastic_javascript_checkers = ['jshint']
 " Use this checker for ES6 and React. Install: npm install -g eslint babel-eslint eslint-plugin-react
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+
+" If go gets slow in vim ...
+"let g:syntastic_go_checkers = ['golint', 'govet']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
