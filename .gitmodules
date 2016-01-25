@@ -74,3 +74,6 @@
 [submodule "dotfiles/vim/bundle/tagbar"]
 	path = dotfiles/vim/bundle/tagbar
 	url = git@github.com:majutsushi/tagbar.git
+[submodule "dotfiles/vim/bundle/vim-jsx"]
+	path = dotfiles/vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
