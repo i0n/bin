@@ -15,7 +15,7 @@ export SELENIUM_SERVER_JAR=/usr/local/bin/selenium-server-standalone-2.8.0.jar
 
 ############################################################## Go
 export GOPATH=$HOME/gopath
-export GOROOT=`/usr/local/bin/go env GOROOT`
+export GOROOT=`/usr/local/opt/go/bin/go env GOROOT`
 export GO15VENDOREXPERIMENT=1
 
 ############################################################## Docker 
@@ -39,11 +39,7 @@ export FLEETCTL_TUNNEL=54.194.117.52
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
-# Go 1.4 path...
-#export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/Cellar/go14/1.4.2/libexec/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/gopath/src/github.com/GoogleCloudPlatform/kubernetes/_output/dockerized/bin/darwin/amd64"
-
-# Go 1.5 path...
-export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/gopath/src/github.com/GoogleCloudPlatform/kubernetes/_output/dockerized/bin/darwin/amd64"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/opt/go/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/gopath/src/github.com/GoogleCloudPlatform/kubernetes/_output/dockerized/bin/darwin/amd64"
 
 ############################################################## AWS
 export JAVA_HOME="$(/usr/libexec/java_home)"
