@@ -6,6 +6,7 @@ execute pathogen#infect()
 " Remove ALL autocommands for the current group.
 :autocmd!	
 
+"filetype indent off               " Turn off file indentation from plugins
 filetype plugin indent on         
 syntax enable                     " Turn on syntax highlighting.
 
@@ -50,7 +51,7 @@ set expandtab                   " use spaces, not tabs (optional)
 set shiftwidth=2 
 set softtabstop=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
-set smarttab autoindent
+"set smarttab autoindent
 
 " Indentation viewer
 let g:indent_guides_enable_on_vim_startup = 0
@@ -218,8 +219,6 @@ nmap <leader>l ;g/^$/d<CR>
 " Add auto-expander for Handlebars template tags
 imap {{ {{}}<Esc>hi
 
-filetype indent off               " Turn off file indentation from plugins
-
 let g:syntastic_aggregate_errors = 1
 "let g:syntastic_javascript_checkers = ['jshint']
 " Use this checker for ES6 and React. Install: npm install -g eslint babel-eslint eslint-plugin-react
@@ -237,6 +236,9 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
+
+let g:go_fmt_autosave = 0
+let g:go_fmt_fail_silently = 1
 
 " Stops vim swapfile alert
 set shortmess+=A
@@ -267,14 +269,14 @@ let g:neocomplete#sources#syntax#min_keyword_length = 6
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+      \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
