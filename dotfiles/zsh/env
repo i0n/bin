@@ -3,10 +3,6 @@ export EDITOR='/usr/local/bin/vim'
 export SVN_EDITOR='/usr/local/bin/vim'
 export VIMRC='$HOME/bin/dotfiles/vim/vimrc'
 
-############################################################## NVM (node.js io.js npm)
-export NVM_DIR=~/.nvm
-source $(/usr/local/bin/brew --prefix nvm)/nvm.sh
-
 ############################################################## Autotest
 export AUTOFEATURE=true
 
