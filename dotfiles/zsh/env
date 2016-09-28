@@ -24,7 +24,7 @@ export VIRTUALBOX_MEMORY_SIZE=2048
 
 # Docker daemon on docker-machine
 export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.64.2:2376"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
 export DOCKER_CERT_PATH="/Users/i0n/.docker/machine/machines/dev"
 export DOCKER_MACHINE_NAME="dev"
 
