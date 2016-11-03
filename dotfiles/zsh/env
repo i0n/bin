@@ -15,19 +15,6 @@ export GOROOT=`/usr/local/opt/go/bin/go env GOROOT`
 export GO15VENDOREXPERIMENT=1
 
 ############################################################## Docker 
-# Docker daemon on CoreOS and Vagrant
-#export DOCKER_HOST=tcp://172.17.8.101:2375
-#
-# Set docker-machine virtualbox defaults
-export VIRTUALBOX_DISK_SIZE=60000
-export VIRTUALBOX_MEMORY_SIZE=2048
-
-# Docker daemon on docker-machine
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/i0n/.docker/machine/machines/dev"
-export DOCKER_MACHINE_NAME="dev"
-
 export DOCKER_HUB_USER=i0nw
 
 ############################################################## CoreOS
@@ -35,7 +22,7 @@ export FLEETCTL_TUNNEL=54.194.117.52
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
-export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/opt/go/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/gopath/src/github.com/GoogleCloudPlatform/kubernetes/_output/dockerized/bin/darwin/amd64"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/opt/go/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/projects/payfriendz/toolbelt"
 
 ############################################################## AWS
 export JAVA_HOME="$(/usr/libexec/java_home)"
