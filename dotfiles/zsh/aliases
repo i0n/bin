@@ -13,26 +13,19 @@ alias h='history 1'																												# Show the executed commands hist
 function hl {
 	history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
-																																					# Create a directory and then move into it 
-function take {	
-	mkdir $1
-	cd $1
-}
-                                                                          # Apache bench test
-function ab_test {
-  ab -n 1000 -c 100 $1
-}
+
 alias updatedb='sudo /usr/libexec/locate.updatedb'                        # Update the locate database
+
 ########################################################## Mac OSX
 alias showf='defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder'     # Shows all hidden files in the finder
 alias hidef='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder'    # Hides all hidden files in the finder
 
 ########################################################## Vim
 alias m='mvim'
+
 ########################################################## Git 
 alias g='git status'																											# Git Status
 alias ga='git add -A'																											# Git Add (Everything to pending commit)
-#alias gb='git branch'																											# Git Branch
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
 alias gh='git rev-parse HEAD | pbcopy | pbpaste'                          # Retrieves the hash for the last commit
 																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
@@ -48,27 +41,8 @@ function gdl() {
 	rm -rf $2
 }
 
-########################################################## Nginx & Passenger
-#alias restart='touch ./tmp/restart.txt'															                    # Restart Passenger when executed from the project root
-#alias nginx_log='tail -f /opt/nginx/logs/error.log'						                          # Runs the NginX error log
-#alias nginx_config='vim -N -p /opt/nginx/conf/nginx.conf /etc/hosts'                    # Edit Nginx config for adding sites to local dev environment
-#alias nginx_stop='sudo nginx -s stop'                                                   # Stops the NginX server
-#alias osx_nginx_start='sudo launchctl load -F ~/bin/configfiles/osx/nginx/nginx.plist'      # Starts the NginX server
-
-########################################################## FastCGI
-alias fcgi_start='spawn-fcgi -a 127.0.0.1 -p 9000 -f /usr/local/bin/php-cgi -C 5 -U i0n'  # Starts FastCGI on port 9000 with user i0n
-
 ########################################################## Home Brew
 alias bu='brew update'
-
-########################################################## Rails
-alias dsqlite='sqlite3 -line db/development.sqlite3'			#Opens SQlite3 prompt for development database.
-alias psqlite='sqlite3 -line db/production.sqlite3'			#Opens SQlite3 prompt for production database.
-alias tsqlite='sqlite3 -line db/test.sqlite3'						#Opens SQlite3 prompt for test database.
-
-########################################################## MongoDB
-alias mongo_start='mongod --config /usr/local/etc/mongod.conf'
-alias mongo_repair='rm /usr/local/var/mongodb/mongod.lock'
 
 ########################################################## Jumpstart
 alias js='jumpstart'                                  # Alias for my jumpstart gems command
@@ -76,16 +50,6 @@ alias js='jumpstart'                                  # Alias for my jumpstart g
 function flac2mp3_dir {
   for f in *.flac; do flac2mp3 "$f"; done
 }
-alias psql_start='pg_ctl -D /usr/local/var/postgres -l logfile start'
-alias mysql_start='mysql.server start'
-alias redis_start='redis-server /usr/local/etc/redis.conf'
-alias cc='rm -rf /Users/i0n/projects/samewave/tmp/cache; rm -rf /Users/i0n/projects/samewave/tmp/ember-rails; touch tmp /Users/i0n/projects/samewave/tmp/restart.txt; echo cleared caches and restarted rails server.'
-alias dump_from_staging='cd ~/projects/samewave;heroku pgbackups:capture --expire -a samewave-staging;curl -o ~/projects/samewave/samewave_staging.dump `heroku pgbackups:url -a samewave-staging`;pg_restore --verbose --clean --no-acl --no-owner -h localhost -U i0n -d samewave_development ~/projects/samewave/samewave_staging.dump;rm samewave_staging.dump'
-
-# docker-enter for CoreOS host
-#docker-enter () {
-#  ssh -t $(VAGRANT_CWD=$HOME/projects/coreos-vagrant-base vagrant ssh-config core-01 | awk '{print " -o "$1"="$2}') localhost "sudo /home/core/share/docker-enter $1"
-#}
 
 # docker-enter for custom vagrant docker host 
 docker-enter () {
@@ -107,11 +71,8 @@ rebuild-coreos() {
   cd ~/projects/humongousdb/coreos-vagrant-base && \
   vagrant up
 }
+alias d='docker'
 alias f='fleetctl'
 alias k='kubectl'
-#alias k='kubectl --token="XWpTcBcOmk6427jP" -s "http://23.251.131.142:8080" --insecure-skip-tls-verify=true'
-#alias k='kubectl --token="XWpTcBcOmk6427jP" -s "http://146.148.114.97:8080" --insecure-skip-tls-verify=true --api-version=v1beta3'
-#alias k='kubectl --client-certificate="/Users/i0n/projects/payfriendz/infrastructure/.auth/apiserver.crt" --client-key="/Users/i0n/projects/payfriendz/infrastructure/.auth/apiserver.key" --token="XWpTcBcOmk6427jP" -s "https://104.155.14.137:6443" --api-version=v1beta3 --insecure-skip-tls-verify=true'
-#alias k='kubectl'
 alias v='vagrant'
 alias t='terraform'
