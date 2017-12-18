@@ -72,6 +72,7 @@ rebuild-coreos() {
   vagrant up
 }
 alias d='docker'
+alias dc='docker-compose'
 alias f='fleetctl'
 alias k='kubectl'
 alias v='vagrant'

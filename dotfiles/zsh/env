@@ -22,7 +22,7 @@ export FLEETCTL_TUNNEL=54.194.117.52
 export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
-export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/opt/go/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/projects/payfriendz/toolbelt"
+export PATH="/usr/local/opt/scala@2.11/bin:/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/opt/go/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/projects/payfriendz/toolbelt"
 
 ############################################################## AWS
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -57,3 +57,8 @@ source $HOME/.atlas-credentials
 
 ############################################################## Android
 export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_MYAPP_RELEASE_STORE_PASSWORD=Payfriendz2017
+export ANDROID_MYAPP_RELEASE_KEY_PASSWORD=Payfriendz2017
+
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
