@@ -7,4 +7,4 @@ set guioptions-=R
 set guioptions-=T
 
 " Set font
-set guifont=Bitstream\ Vera\ Sans\ Mono:h12
+set guifont=Bitstream\ Vera\ Sans\ Mono:h13

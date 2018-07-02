@@ -69,6 +69,10 @@ set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%y\ %{fugitive#statusline()}%m%r\ \ \ \ \ %l\ [%c-%v]\ %P
 
+
+let g:rehash256 = 1
+"let g:molokai_original = 1
+"colorscheme molokai
 colorscheme raphael
 
 " Mapping to set leader key  
@@ -104,10 +108,11 @@ map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>w <C-w>c
 map <Leader>y ;%y+<cr>
-map <up> <C-w>k
-map <down> <C-w>j
-map <left> <C-w>h
-map <right> <C-w>l
+map <Up> <C-w>k
+map <Down> <C-w>j
+map <Left> <C-w>h
+map <Right> <C-w>l
+map  <C-w><C-w>
 
 " nmap <leader>r ;call ReloadAllSnippets()<cr>
 
@@ -239,12 +244,12 @@ let g:syntastic_check_on_wq = 0
 " Use this checker for ES6 and React. Install: npm install -g eslint babel-eslint eslint-plugin-react
 let g:syntastic_javascript_checkers = ['eslint']
 "let g:syntastic_go_checkers = ['go', 'govet']
-let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+"let g:syntastic_go_checkers = ['go', 'golint', 'govet']
 "let g:syntastic_go_checkers = ['gometalinter']
 
 " If go gets slow in vim ...
 " let g:syntastic_go_checkers = []
-" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " let g:go_highlight_functions = 1
 " let g:go_highlight_methods = 1
@@ -318,3 +323,43 @@ inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
 " TagBarToggle mapping (view APIs)
 nmap <leader>a ;TagbarToggle<CR>
+
+" vim-go
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>v  <Plug>(go-vet)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
+let g:go_addtags_transform = "camelcase"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_deadline = "5s"
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+let g:go_auto_type_info = 1
+set updatetime=100
+"let g:go_auto_sameids = 1

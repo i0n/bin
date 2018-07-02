@@ -74,3 +74,6 @@
 [submodule "dotfiles/vim/bundle/vim-jsx"]
 	path = dotfiles/vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+[submodule "dotfiles/vim/bundle/vim-go"]
+	path = dotfiles/vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git

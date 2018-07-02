@@ -7,31 +7,31 @@ export VIMRC='$HOME/bin/dotfiles/vim/vimrc'
 export AUTOFEATURE=true
 
 ############################################################## Selenium Server Java variable (to automate Opera)
-export SELENIUM_SERVER_JAR=/usr/local/bin/selenium-server-standalone-2.8.0.jar
+#export SELENIUM_SERVER_JAR=/usr/local/bin/selenium-server-standalone-2.8.0.jar
 
 ############################################################## Go
 export GOPATH=$HOME/gopath
-export GOROOT=`/usr/local/opt/go/bin/go env GOROOT`
+#export GOROOT=`/usr/local/opt/go/bin/go env GOROOT`
 export GO15VENDOREXPERIMENT=1
 
 ############################################################## Docker 
 export DOCKER_HUB_USER=i0nw
 
 ############################################################## CoreOS
-export FLEETCTL_TUNNEL=54.194.117.52
-export ETCDCTL_PEERS="http://core-01:4001"
+#export FLEETCTL_TUNNEL=54.194.117.52
+#export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
-export PATH="/usr/local/opt/scala@2.11/bin:/usr/local/bin:$PATH:$HOME/bin:/usr/local/mysql/bin:/opt/nginx/sbin:/opt/mongodb/bin:/usr/local/sbin:/usr/local/opt/go/bin:$HOME/gopath/bin:$GOROOT/bin:/Users/i0n/projects/payfriendz/toolbelt"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/opt/go/bin:$HOME/gopath/bin:/$HOME/gopath/src/github.com/jenkins-x/jx/build"
 
 ############################################################## AWS
-export JAVA_HOME="$(/usr/libexec/java_home)"
+#export JAVA_HOME="$(/usr/libexec/java_home)"
 ### Amazon seem to have created an enormous mess here, requiring the inclusion of access keys multiple times in different files and variable names...
-export AWS_CREDENTIAL_FILE=$HOME/.aws-credentials-master
-source $HOME/.aws-credentials-master
+#export AWS_CREDENTIAL_FILE=$HOME/.aws-credentials-master
+#source $HOME/.aws-credentials-master
 
-export EC2_HOME="/usr/local/opt/ec2-api-tools/libexec"
-export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
+#export EC2_HOME="/usr/local/opt/ec2-api-tools/libexec"
+#export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
 
 ############################################################## Kubernetes
 #export KUBERNETES_PROVIDER="vagrant"
@@ -39,26 +39,32 @@ export EC2_AMITOOL_HOME="/usr/local/opt/ec2-ami-tools/libexec"
 #export KUBE_MASTER_IP=172.17.8.101
 
 # Payfriendz cluster
-export KUBERNETES_PROVIDER="gce"
+#export KUBERNETES_PROVIDER="gce"
 #export KUBERNETES_PROVIDER="vagrant"
 #export KUBERNETES_MASTER=http://104.155.24.207:8080
 #export KUBE_MASTER_IP=104.155.24.207
 #export KUBE_ROOT="/Users/i0n/projects/payfriendz/kubernetes"
 
 ############################################################## Vagrant
-export VAGRANT_DOCKER_HOST="$HOME/projects/event-horizon/vagrant-docker-host/Vagrantfile"
+#export VAGRANT_DOCKER_HOST="$HOME/projects/event-horizon/vagrant-docker-host/Vagrantfile"
 
 ############################################################## Packer 
 #export PACKER_CACHE_DIR="$HOME/.packertmp"
 #export TMPDIR="$HOME/.packertmp"
 
 ############################################################## Atlas 
-source $HOME/.atlas-credentials
+#source $HOME/.atlas-credentials
 
 ############################################################## Android
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export ANDROID_MYAPP_RELEASE_STORE_PASSWORD=Payfriendz2017
-export ANDROID_MYAPP_RELEASE_KEY_PASSWORD=Payfriendz2017
+#export ANDROID_HOME=/usr/local/opt/android-sdk
+#export ANDROID_MYAPP_RELEASE_STORE_PASSWORD=Payfriendz2017
+#export ANDROID_MYAPP_RELEASE_KEY_PASSWORD=Payfriendz2017
 
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+#export NVM_DIR="$HOME/.nvm"
+#. "/usr/local/opt/nvm/nvm.sh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/i0n/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/i0n/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/i0n/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/i0n/google-cloud-sdk/completion.zsh.inc'; fi
