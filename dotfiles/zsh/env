@@ -17,6 +17,9 @@ export GO15VENDOREXPERIMENT=1
 ############################################################## Docker 
 export DOCKER_HUB_USER=i0nw
 
+############################################################## jx 
+export GIT_ORGANISATION=i0n
+
 ############################################################## CoreOS
 #export FLEETCTL_TUNNEL=54.194.117.52
 #export ETCDCTL_PEERS="http://core-01:4001"
