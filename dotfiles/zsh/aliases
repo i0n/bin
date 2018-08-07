@@ -44,8 +44,6 @@ function gdl() {
 ########################################################## Home Brew
 alias bu='brew update'
 
-########################################################## Jumpstart
-alias js='jumpstart'                                  # Alias for my jumpstart gems command
 ########################################################## flac2mp3 (run from the containing dir)	
 function flac2mp3_dir {
   for f in *.flac; do flac2mp3 "$f"; done
@@ -73,7 +71,5 @@ rebuild-coreos() {
 }
 alias d='docker'
 alias dc='docker-compose'
-alias f='fleetctl'
 alias k='kubectl'
-alias v='vagrant'
-alias t='terraform'
+alias t='tree'
