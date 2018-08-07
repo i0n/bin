@@ -1,9 +1,13 @@
 autoload -U colors
+
+# zsh-kubectl https://github.com/superbrothers/zsh-kubectl-prompt
+source /usr/local/etc/zsh-kubectl-prompt/kubectl.zsh
+zstyle ':zsh-kubectl-prompt:' separator ':'
+
 colors
 setopt prompt_subst
-PROMPT='
-%{$fg_bold[yellow]%} %M %{$reset_color%} %n %~ %{$fg_bold[magenta]%}$(vcprompt)
-%{$reset_color%}→ '
+PROMPT='%{$fg_bold[yellow]%}%M %{$reset_color%} %n %~ %{$fg_bold[magenta]%}$(vcprompt)%{$fg[grey]%}[$ZSH_KUBECTL_PROMPT]%{$reset_color%}
+→ '
 
 # Set RPROMPT to have info show up on the right, too.
 RPROMPT='%{$fg_bold[Cyan]%} %T' 

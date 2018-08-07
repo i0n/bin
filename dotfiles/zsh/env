@@ -10,9 +10,9 @@ export AUTOFEATURE=true
 #export SELENIUM_SERVER_JAR=/usr/local/bin/selenium-server-standalone-2.8.0.jar
 
 ############################################################## Go
-export GOPATH=$HOME/gopath
-#export GOROOT=`/usr/local/opt/go/bin/go env GOROOT`
-export GO15VENDOREXPERIMENT=1
+#export GO15VENDOREXPERIMENT=1
+#export GO111MODULE=on
+export GOPATH=/Users/i0n/go
 
 ############################################################## Docker 
 export DOCKER_HUB_USER=i0nw
@@ -25,7 +25,7 @@ export GIT_ORGANISATION=i0n
 #export ETCDCTL_PEERS="http://core-01:4001"
 
 ############################################################## Paths
-export PATH="/usr/local/bin:$PATH:$HOME/bin:/usr/local/opt/go/bin:$HOME/gopath/bin:/$HOME/gopath/src/github.com/jenkins-x/jx/build"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:$GOPATH/bin:/$HOME/projects/cloudbees/jx/build:$GOPATH/src/github.com/jenkins-x/jx/build"
 
 ############################################################## AWS
 #export JAVA_HOME="$(/usr/libexec/java_home)"
