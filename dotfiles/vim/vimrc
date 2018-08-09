@@ -1,8 +1,6 @@
 set nocompatible                  " Must come first because it changes other options.
 set shell=/bin/zsh
 
-execute pathogen#infect()
-
 " Remove ALL autocommands for the current group.
 :autocmd!	
 
@@ -11,7 +9,7 @@ filetype plugin indent on
 syntax enable                     " Turn on syntax highlighting.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
-set runtimepath^=~/bin/dotfiles/vim/bundle/ctrlp.vim
+set runtimepath^=~/bin/dotfiles/vim/pack/plugins/start/ctrlp.vim
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -362,4 +360,4 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 let g:go_auto_type_info = 1
 set updatetime=100
-"let g:go_auto_sameids = 1
+let g:go_auto_sameids = 1
