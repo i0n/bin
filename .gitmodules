@@ -77,3 +77,9 @@
 [submodule "dotfiles/vim/bundle/vim-go"]
 	path = dotfiles/vim/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "dotfiles/vim/pack/plugins/start/vim-airline"]
+	path = dotfiles/vim/pack/plugins/start/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim"]
+	path = dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim
+	url = git@github.com:Shougo/dein.vim.git

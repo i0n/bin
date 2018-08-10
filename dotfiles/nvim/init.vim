@@ -1,25 +1,66 @@
-set nocompatible                  " Must come first because it changes other options.
-set shell=/bin/zsh
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-" Remove ALL autocommands for the current group.
-:autocmd!
+" Required:
+set runtimepath+=/Users/i0n/bin/dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim
 
-"filetype indent off               " Turn off file indentation from plugins
+" Required:
+if dein#load_state('/Users/i0n/bin/dotfiles/nvim/dein/.cache')
+  call dein#begin('/Users/i0n/bin/dotfiles/nvim/dein/.cache')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/i0n/bin/dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
+	call dein#add('scrooloose/nerdtree')
+	call dein#add('vim-airline/vim-airline')
+	call dein#add('vim-airline/vim-airline-themes')
+	call dein#add('kien/ctrlp.vim')
+	call dein#add('mileszs/ack.vim')
+	call dein#add('tpope/vim-git')
+	call dein#add('tpope/vim-fugitive')
+	call dein#add('airblade/vim-rooter')
+	call dein#add('jlanzarotta/bufexplorer')
+	call dein#add('tpope/vim-surround')
+	call dein#add('vim-scripts/hexHighlight.vim')
+	
+	call dein#add('w0rp/ale')
+
+	call dein#add('fatih/vim-go')
+
+	""""""""""""""""""""""""""""""""""""""""""""""""""" deoplete
+	call dein#add('Shougo/deoplete.nvim')
+	if !has('nvim')
+		call dein#add('roxma/nvim-yarp')
+		call dein#add('roxma/vim-hug-neovim-rpc')
+	endif
+	call dein#add('zchee/deoplete-go', {'build': 'make'})
+	"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
 filetype plugin indent on
-syntax enable                     " Turn on syntax highlighting.
+syntax enable
 
-"runtime macros/matchit.vim        " Load the matchit plugin.
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" airline
+"End dein Scripts-------------------------
 
-let g:airline_powerline_fonts = 1
-let g:Powerline_symbols = 'unicode'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ctrlp
-
-set runtimepath^=~/bin/dotfiles/vim/pack/plugins/start/ctrlp.vim
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set termguicolors
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -74,12 +115,7 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 "set laststatus=2                 " Show the status line all the time
-" Useful status information at bottom of screen
-"set statusline=[%n]\ %<%.99f\ %h%w%y\ %{fugitive#statusline()}%m%r\ \ \ \ \ %l\ [%c-%v]\ %P
 
-let g:rehash256 = 1
-"let g:molokai_original = 1
-"colorscheme molokai
 colorscheme raphael
 
 " Mapping to set leader key
@@ -121,39 +157,6 @@ map <Left> <C-w>h
 map <Right> <C-w>l
 map  <C-w><C-w>
 
-" nmap <leader>r ;call ReloadAllSnippets()<cr>
-
-" Mappings to commonly edited files
-nmap <leader>1 ;e $HOME/bin/dotfiles/vim/vimrc<cr>
-nmap <leader>2 ;e $HOME/bin/dotfiles/zsh/aliases<cr>
-nmap <leader>3 ;e $HOME/bin/dotfiles/vim/colors/raphael.vim<cr>
-
-if has("autocmd")
-  autocmd bufwritepost vimrc source $HOME/bin/dotfiles/vim/vimrc " Automatically reloads vimrc when the file is saved.
-endif
-
-" Automatically save file when exiting insert mode
-" imap <esc> <esc>;w<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ctrlp
-
-nmap <silent> <leader>f ;CtrlP<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" NERDTree
-
-map <leader>d ;NERDTreeToggle<cr>
-let NERDTreeShowHidden=1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" BufExplorer
-
-map <leader>b ;BufExplorer<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" hexHighlight
-
-map <leader>c ;call HexHighlight()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " swap colon and semicolon for easier commands
 nnoremap ; :
 nnoremap : ;
@@ -186,20 +189,6 @@ nnoremap <silent>˚ :set paste<CR>m`O<Esc>``:set nopaste<CR>
 " Automatic fold settings for specific files. Uncomment to use.
 set foldmethod=manual
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ragtag
-
-let g:ragtag_global_maps = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" UltiSnips
-
-"let g:UltiSnipsUsePythonVersion = 2
-let g:UltiSnipsSnippetsDir = ["~/bin/dotfiles/vim/UltiSnips"]
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Sets the line height of the preview window
 set previewheight=25
 
@@ -219,28 +208,36 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 map   <silent> ≠ mmgg=G'm
 imap  <silent> ≠ <Esc> mmgg=G'm
 
-" Show syntax highlighting groups for word under cursor
-nmap <C-S-P> ;call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
-endfunc
-
-" map jj o<esc>`a
-" map kk O<esc>`a
-
-" Mapping to remove all blank lines (whitespace)
-nmap <leader>l ;g/^$/d<CR>
-
-":command Thtml :%!tidy -q -i -html
-
 " Add auto-expander for Handlebars template tags
 imap {{ {{}}<Esc>hi
 
 " Stops vim swapfile alert
 set shortmess+=A
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" airline
+
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'unicode'
+let g:airline_theme = 'molokai'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ctrlp
+
+nmap <silent> <leader>f ;CtrlP<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" NERDTree
+
+map <leader>d ;NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" BufExplorer
+
+map <leader>b ;BufExplorer<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" hexHighlight
+
+map <leader>c ;call HexHighlight()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ctrlp & ack
 
@@ -259,49 +256,6 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" NeoComplete
-"let g:acp_enableAtStartup = 0
-"let g:neocomplete#enable_at_startup = 1
-"" Use smartcase.
-"let g:neocomplete#enable_smart_case = 1
-"" Set minimum syntax keyword length.
-"let g:neocomplete#sources#syntax#min_keyword_length = 6
-"let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-"" Define dictionary.
-"let g:neocomplete#sources#dictionary#dictionaries = {
-"      \ 'default' : '',
-"      \ 'vimshell' : $HOME.'/.vimshell_hist',
-"      \ 'scheme' : $HOME.'/.gosh_completions'
-"      \ }
-"
-"" Define keyword.
-"if !exists('g:neocomplete#keyword_patterns')
-"  let g:neocomplete#keyword_patterns = {}
-"endif
-"let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-"
-"" Enable omni completion.
-""autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-""autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-""autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-""autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-""autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"
-"" Enable heavy omni completion.
-"if !exists('g:neocomplete#sources#omni#input_patterns')
-"  let g:neocomplete#sources#omni#input_patterns = {}
-"endif
-"
-"let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
-" Map Ctrl j to next match
-inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-" Map Ctrl k to previous match
-inoremap <expr><C-k> pumvisible() ? "\<C-b>" : "\<C-k>"
-
-" TagBarToggle mapping (view APIs)
-nmap <leader>a ;TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" vim-go
 
@@ -347,20 +301,29 @@ let g:go_auto_sameids = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ale
 
-"let g:ale_linters = {
-"	\'go': ['gobuild', 'gofmt', 'golint', 'gometalinter', 'gosimple', 'gotype', 'govet', 'staticcheck'],
-"\}
-"
-"let g:ale_fixers = ['trim_whitespace']
-"
-"nmap <silent> <C-b> <Plug>(ale_previous_wrap)
-"nmap <silent> <C-n> <Plug>(ale_next_wrap)
-"
-"let g:ale_set_loclist = 0
-"let g:ale_set_quickfix = 1
-"
-""let g:ale_open_list = 1
-""let g:ale_list_window_size = 5
-"
-"let g:ale_lint_on_insert_leave = 1
-"let g:ale_fix_on_save = 1
+let g:ale_linters = {
+	\'go': ['gobuild', 'gofmt', 'golint', 'gometalinter', 'gosimple', 'gotype', 'govet', 'staticcheck'],
+\}
+
+let g:ale_fixers = ['trim_whitespace']
+
+nmap <silent> <C-b> <Plug>(ale_previous_wrap)
+nmap <silent> <C-n> <Plug>(ale_next_wrap)
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
+"let g:ale_open_list = 1
+"let g:ale_list_window_size = 5
+
+let g:ale_lint_on_insert_leave = 1
+let g:ale_fix_on_save = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" deoplete
+let g:deoplete#enable_at_startup = 1
+
+" deoplete-go settings
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

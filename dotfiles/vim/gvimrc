@@ -7,4 +7,7 @@ set guioptions-=R
 set guioptions-=T
 
 " Set font
-set guifont=Bitstream\ Vera\ Sans\ Mono:h12
+"set guifont=Bitstream\ Vera\ Sans\ Mono:h12
+"set guifont=Go\ Mono\ for\ Powerline:h12
+"set guifont=Inconsolata\ for\ Powerline:h14
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
