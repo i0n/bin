@@ -29,9 +29,8 @@ if dein#load_state('/Users/i0n/bin/dotfiles/nvim/dein/.cache')
 	call dein#add('jlanzarotta/bufexplorer')
 	call dein#add('tpope/vim-surround')
 	call dein#add('vim-scripts/hexHighlight.vim')
-	
+	call dein#add('vim-scripts/vim-auto-save')
 	call dein#add('w0rp/ale')
-
 	call dein#add('fatih/vim-go')
 
 	""""""""""""""""""""""""""""""""""""""""""""""""""" deoplete
@@ -221,6 +220,7 @@ set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'unicode'
 let g:airline_theme = 'molokai'
+let g:airline#extensions#ale#enabled = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ctrlp
 
@@ -287,7 +287,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-let g:go_metalinter_enabled = []
+let g:go_metalinter_enabled = 0
 "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 "let g:go_metalinter_autosave = 1
 let g:go_metalinter_deadline = "1s"
@@ -301,8 +301,13 @@ let g:go_auto_sameids = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ale
 
+"let g:ale_go_gometalinter_options = '--fast --vendor'
+"let g:ale_linters = {
+"	\'go': ['gometalinter', 'go fmt'],
+"\}
+
 let g:ale_linters = {
-	\'go': ['gobuild', 'gofmt', 'golint', 'gometalinter', 'gosimple', 'gotype', 'govet', 'staticcheck'],
+	\'go': ['go fmt', 'golint', 'go vet'],
 \}
 
 let g:ale_fixers = ['trim_whitespace']
@@ -311,12 +316,13 @@ nmap <silent> <C-b> <Plug>(ale_previous_wrap)
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
 
 let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+let g:ale_set_quickfix = 0
 
 "let g:ale_open_list = 1
 "let g:ale_list_window_size = 5
 
 let g:ale_lint_on_insert_leave = 1
+"let g:ale_lint_on_text_changed = 'never'
 let g:ale_fix_on_save = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" deoplete
@@ -326,4 +332,30 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" neosnippet
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" vim-auto-save
+"let g:auto_save = 1  " enable AutoSave on Vim startup
+"let g:auto_save_in_insert_mode = 0
+"let g:auto_save_silent = 1
+"let g:auto_save_no_updatetime = 1
