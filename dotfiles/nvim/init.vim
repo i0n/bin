@@ -15,8 +15,8 @@ if dein#load_state('/Users/i0n/bin/dotfiles/nvim/dein/.cache')
   call dein#add('/Users/i0n/bin/dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
 
 	call dein#add('scrooloose/nerdtree')
 	call dein#add('vim-airline/vim-airline')
@@ -29,7 +29,6 @@ if dein#load_state('/Users/i0n/bin/dotfiles/nvim/dein/.cache')
 	call dein#add('jlanzarotta/bufexplorer')
 	call dein#add('tpope/vim-surround')
 	call dein#add('vim-scripts/hexHighlight.vim')
-	call dein#add('vim-scripts/vim-auto-save')
 	call dein#add('w0rp/ale')
 	call dein#add('fatih/vim-go')
 
@@ -257,6 +256,16 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" deoplete
+set completeopt+=noselect
+set completeopt-=preview
+
+let g:deoplete#enable_at_startup = 1
+
+" deoplete-go settings
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" vim-go
 
 map <C-n> :cnext<CR>
@@ -295,8 +304,8 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-let g:go_auto_type_info = 1
-set updatetime=100
+"let g:go_auto_type_info = 1
+"set updatetime=100
 let g:go_auto_sameids = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ale
@@ -310,7 +319,7 @@ let g:ale_linters = {
 	\'go': ['go fmt', 'golint', 'go vet'],
 \}
 
-let g:ale_fixers = ['trim_whitespace']
+"let g:ale_fixers = ['trim_whitespace']
 
 nmap <silent> <C-b> <Plug>(ale_previous_wrap)
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
@@ -322,40 +331,27 @@ let g:ale_set_quickfix = 0
 "let g:ale_list_window_size = 5
 
 let g:ale_lint_on_insert_leave = 1
-"let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_fix_on_save = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" deoplete
-let g:deoplete#enable_at_startup = 1
-
-" deoplete-go settings
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" neosnippet
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" vim-auto-save
-"let g:auto_save = 1  " enable AutoSave on Vim startup
-"let g:auto_save_in_insert_mode = 0
-"let g:auto_save_silent = 1
-"let g:auto_save_no_updatetime = 1
+"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"xmap <C-k>     <Plug>(neosnippet_expand_target)
+"
+"" SuperTab like snippets behavior.
+"" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+""imap <expr><TAB>
+"" \ pumvisible() ? "\<C-n>" :
+"" \ neosnippet#expandable_or_jumpable() ?
+"" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"
+"" For conceal markers.
+"if has('conceal')
+"  set conceallevel=2 concealcursor=niv
+"endif

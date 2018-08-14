@@ -4,3 +4,6 @@
 # Turn off autocorrect
 unsetopt correct_all
 #alias get='nocorrect get'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

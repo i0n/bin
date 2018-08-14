@@ -2,6 +2,9 @@
 
 set -e
 
+# Required for deoplete-go
+go get -u github.com/nsf/gocode
+
 go get -u github.com/alecthomas/gometalinter
 
 go get -u honnef.co/go/tools/...
