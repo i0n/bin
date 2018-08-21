@@ -31,6 +31,7 @@ if dein#load_state('/Users/i0n/bin/dotfiles/nvim/dein/.cache')
 	call dein#add('vim-scripts/hexHighlight.vim')
 	call dein#add('w0rp/ale')
 	call dein#add('fatih/vim-go')
+	call dein#add('buoto/gotests-vim')
 
 	""""""""""""""""""""""""""""""""""""""""""""""""""" deoplete
 	call dein#add('Shougo/deoplete.nvim')
@@ -38,7 +39,7 @@ if dein#load_state('/Users/i0n/bin/dotfiles/nvim/dein/.cache')
 		call dein#add('roxma/nvim-yarp')
 		call dein#add('roxma/vim-hug-neovim-rpc')
 	endif
-	call dein#add('zchee/deoplete-go', {'build': 'make'})
+	"call dein#add('zchee/deoplete-go', {'build': 'make'})
 	"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -57,7 +58,7 @@ syntax enable
 "endif
 
 "End dein Scripts-------------------------
-
+"
 set termguicolors
 
 set showcmd                       " Display incomplete commands.
@@ -263,8 +264,8 @@ set completeopt-=preview
 let g:deoplete#enable_at_startup = 1
 
 " deoplete-go settings
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+"let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+"let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" vim-go
 
