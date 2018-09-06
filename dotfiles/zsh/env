@@ -1,6 +1,6 @@
 ############################################################## Default Editor
-export EDITOR='/usr/local/bin/vim'
-export SVN_EDITOR='/usr/local/bin/vim'
+export EDITOR='/usr/local/bin/nvim'
+export SVN_EDITOR='/usr/local/bin/nvim'
 export VIMRC='$HOME/bin/dotfiles/vim/vimrc'
 
 ############################################################## Go

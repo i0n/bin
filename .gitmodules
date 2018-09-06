@@ -53,9 +53,6 @@
 [submodule "dotfiles/vim/bundle/ultisnips"]
 	path = dotfiles/vim/pack/plugins/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "dotfiles/vim/bundle/syntastic"]
-	path = dotfiles/vim/pack/plugins/start/syntastic
-	url = git@github.com:scrooloose/syntastic.git
 [submodule "dotfiles/vim/bundle/ctrlp.vim"]
 	path = dotfiles/vim/pack/plugins/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git

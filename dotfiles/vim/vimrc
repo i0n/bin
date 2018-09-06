@@ -1,5 +1,4 @@
 set nocompatible                  " Must come first because it changes other options.
-set shell=/bin/zsh
 
 " Remove ALL autocommands for the current group.
 :autocmd!
@@ -333,17 +332,17 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-"let g:go_metalinter_enabled = 0
+let g:go_metalinter_enabled = 0
 "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 "let g:go_metalinter_autosave = 1
-"let g:go_metalinter_deadline = "1s"
+let g:go_metalinter_deadline = "1s"
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 "let g:go_auto_type_info = 1
 "set updatetime=100
-let g:go_auto_sameids = 1
+"let g:go_auto_sameids = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ale
 
@@ -353,7 +352,7 @@ let g:go_auto_sameids = 1
 "\}
 
 let g:ale_linters = {
-	\'go': ['go fmt', 'golint', 'go vet'],
+	\'go': ['gofmt', 'golint', 'go vet'],
 \}
 
 "let g:ale_fixers = ['trim_whitespace']

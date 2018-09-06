@@ -317,7 +317,7 @@ let g:go_auto_sameids = 1
 "\}
 
 let g:ale_linters = {
-	\'go': ['go fmt', 'golint', 'go vet'],
+	\'go': ['gofmt', 'golint', 'go vet'],
 \}
 
 "let g:ale_fixers = ['trim_whitespace']
