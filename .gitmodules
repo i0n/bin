@@ -83,3 +83,12 @@
 [submodule "dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim"]
 	path = dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim
 	url = git@github.com:Shougo/dein.vim.git
+[submodule "dotfiles/vim/pack/plugins/start/neocomplete"]
+	path = dotfiles/vim/pack/plugins/start/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim
+[submodule "dotfiles/vim/pack/plugins/start/ale"]
+	path = dotfiles/vim/pack/plugins/start/ale
+	url = https://github.com/w0rp/ale
+[submodule "dotfiles/vim/pack/plugins/start/vim-airline-themes"]
+	path = dotfiles/vim/pack/plugins/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
