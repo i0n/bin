@@ -56,3 +56,20 @@ alias d='docker'
 alias dc='docker-compose'
 alias k='kubectl'
 alias t='tree'
+
+############################################### kubectl / GCP / gcloud ####################### 
+function gcp-switch {
+  if [ "$CLOUDSDK_CORE_ACCOUNT" = "ianalexanderwood@gmail.com" ]
+  then
+    CLOUDSDK_CORE_ACCOUNT=iawood@cloudbees.com
+    echo "switching to gcp account: $CLOUDSDK_CORE_ACCOUNT"
+    gcloud container clusters get-credentials jx-dev-i0n --zone europe-west1-b --project jenkinsx-dev  
+    kubens jx
+  else
+    CLOUDSDK_CORE_ACCOUNT=ianalexanderwood@gmail.com
+    echo "switching to gcp account: $CLOUDSDK_CORE_ACCOUNT"
+    gcloud container clusters get-credentials fildeduck --zone europe-west1-b --project organic-spirit-217211
+    kubens default
+  fi
+}
+

@@ -89,3 +89,6 @@
 [submodule "dotfiles/vim/pack/plugins/start/vim-airline-themes"]
 	path = dotfiles/vim/pack/plugins/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "dotfiles/vim/pack/plugins/start/typescript-vim"]
+	path = dotfiles/vim/pack/plugins/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
