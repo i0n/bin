@@ -6,16 +6,21 @@ export VIMRC='$HOME/bin/dotfiles/vim/vimrc'
 ############################################################## Go
 export GOPATH=/Users/i0n/go
 
+############################################################## Emscripten
+export LLVM=/usr/local/opt/emscripten/libexec/llvm/bin
+export LLVM_ROOT=/usr/local/opt/emscripten/libexec/llvm/bin
+#Setting environment variables:
+#export EMSDK=/Users/i0n/projects/fileduck/emsdk
+#export EM_CONFIG=/Users/i0n/.emscripten
+
 ############################################################## Docker 
 export DOCKER_HUB_USER=i0nw
 
 export CLOUDSDK_CORE_ACCOUNT=ianalexanderwood@gmail.com
 
-############################################################## jx 
-export GIT_ORGANISATION=jenkins-x-pipeline-user
-
 ############################################################## Paths
-export PATH="/usr/local/bin:$PATH:$HOME/bin:$GOPATH/bin:/$HOME/projects/cloudbees/jx/build:$GOPATH/src/github.com/jenkins-x/jx/build"
+#export PATH="/usr/local/bin:$PATH:$HOME/bin:$GOPATH/bin:/$HOME/projects/cloudbees/jx/build:$GOPATH/src/github.com/jenkins-x/jx/build"
+export PATH="/usr/local/bin:/usr/local/bin:$PATH:$HOME/bin:$GOPATH/bin:$HOME/.cargo/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/i0n/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/i0n/google-cloud-sdk/path.zsh.inc'; fi
