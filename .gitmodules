@@ -92,3 +92,9 @@
 [submodule "dotfiles/vim/pack/plugins/start/typescript-vim"]
 	path = dotfiles/vim/pack/plugins/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim
+[submodule "configfiles/osx/fonts/powerline-fonts"]
+	path = configfiles/osx/fonts/powerline-fonts
+	url = https://github.com/powerline/fonts
+[submodule "dotfiles/vim/pack/plugins/start/syntastic"]
+	path = dotfiles/vim/pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic
