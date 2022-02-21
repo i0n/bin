@@ -98,3 +98,6 @@
 [submodule "dotfiles/vim/pack/plugins/start/syntastic"]
 	path = dotfiles/vim/pack/plugins/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic
+[submodule "dotfiles/vim/pack/plugins/start/rust.vim"]
+	path = dotfiles/vim/pack/plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
