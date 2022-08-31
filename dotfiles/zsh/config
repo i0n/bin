@@ -51,10 +51,6 @@ fpath=(/Users/i0n/bin/dotfiles/zsh/completions $fpath)
 autoload -U +X compinit
 compinit
 
-## zsh completion for gcloud (has to be after compinit).
-source '/Users/i0n/google-cloud-sdk/path.zsh.inc'
-source '/Users/i0n/google-cloud-sdk/completion.zsh.inc'
-
 # Make CTRL-W delete after other chars, not just spaces
 WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
 
