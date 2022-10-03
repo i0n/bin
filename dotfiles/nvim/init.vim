@@ -199,10 +199,6 @@ set gcr=n:blinkon0
 " Automatically saves files when the buffer is changed
 set autowrite
 
-" Changes the cursor shape in terminal vim (using iTerm2 on OS X)
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
 " Auto indent entire file with Alt =
 map   <silent> ≠ mmgg=G'm
 imap  <silent> ≠ <Esc> mmgg=G'm
@@ -308,6 +304,9 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 "let g:go_auto_type_info = 1
 "set updatetime=100
 let g:go_auto_sameids = 1
+
+" Changes the cursor shape in insert mode
+set guicursor=i-ci-ve:ver10
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ale
 

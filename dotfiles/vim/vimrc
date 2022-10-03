@@ -353,7 +353,7 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 "\}
 
 let g:ale_linters = {
-	\'go': ['gofmt', 'golint', 'go vet'],
+	\'go': ['gofmt', 'golint', 'go vet', 'staticcheck', 'gotype', 'gobuild'],
 \}
 
 "let g:ale_fixers = ['trim_whitespace']
@@ -392,3 +392,7 @@ let g:ale_fix_on_save = 1
 "if has('conceal')
 "  set conceallevel=2 concealcursor=niv
 "endif
+"
+"
+"
+"
