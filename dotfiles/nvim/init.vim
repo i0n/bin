@@ -308,6 +308,23 @@ let g:go_auto_sameids = 1
 " Changes the cursor shape in insert mode
 set guicursor=i-ci-ve:ver10
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" neovide
+if exists('g:neovide')
+  let g:neovide_input_use_logo=v:true
+  " copy
+  vnoremap <D-c> "+y
+
+  " paste
+  nnoremap <D-v> "+p
+  inoremap <D-v> <Esc>"+pa
+  cnoremap <D-v> <c-r>+
+
+  " undo
+  nnoremap <D-z> u
+  inoremap <D-z> <Esc>ua
+endif
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ale
 
 "let g:ale_go_gometalinter_options = '--fast --vendor'
