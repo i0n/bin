@@ -28,28 +28,28 @@
 	ignore = untracked
 [submodule "dotfiles/vim/bundle/vim-indent-guides"]
 	path = dotfiles/vim/pack/plugins/start/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
 [submodule "dotfiles/vim/bundle/vim-handlebars"]
 	path = dotfiles/vim/pack/plugins/start/vim-handlebars
-	url = git://github.com/nono/vim-handlebars.git
+	url = https://github.com/nono/vim-handlebars.git
 [submodule "dotfiles/vim/bundle/vim-ruby"]
 	path = dotfiles/vim/pack/plugins/start/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
+	url = https://github.com/vim-ruby/vim-ruby.git
 [submodule "dotfiles/vim/bundle/vim-haml"]
 	path = dotfiles/vim/pack/plugins/start/vim-haml
-	url = git://github.com/tpope/vim-haml.git
+	url = https://github.com/tpope/vim-haml.git
 [submodule "dotfiles/vim/bundle/SearchComplete"]
 	path = dotfiles/vim/pack/plugins/start/SearchComplete
-	url = git://github.com/vim-scripts/SearchComplete.git
+	url = https://github.com/vim-scripts/SearchComplete.git
 [submodule "dotfiles/vim/bundle/ack"]
 	path = dotfiles/vim/pack/plugins/start/ack
-	url = git://github.com/mileszs/ack.vim.git
+	url = https://github.com/mileszs/ack.vim.git
 [submodule "dotfiles/vim/bundle/hexHighlight"]
 	path = dotfiles/vim/pack/plugins/start/hexHighlight
-	url = git://github.com/vim-scripts/hexHighlight.vim.git
+	url = https://github.com/vim-scripts/hexHighlight.vim.git
 [submodule "dotfiles/vim/bundle/vim-l9"]
 	path = dotfiles/vim/pack/plugins/start/vim-l9
-	url = git://github.com/vim-scripts/L9.git
+	url = https://github.com/vim-scripts/L9.git
 [submodule "dotfiles/vim/bundle/ultisnips"]
 	path = dotfiles/vim/pack/plugins/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
@@ -67,7 +67,7 @@
 	url = https://github.com/groenewege/vim-less.git
 [submodule "dotfiles/vim/bundle/tagbar"]
 	path = dotfiles/vim/pack/plugins/start/tagbar
-	url = git@github.com:majutsushi/tagbar.git
+	url = https://github.com:majutsushi/tagbar.git
 [submodule "dotfiles/vim/bundle/vim-jsx"]
 	path = dotfiles/vim/pack/plugins/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
@@ -76,10 +76,7 @@
 	url = https://github.com/fatih/vim-go.git
 [submodule "dotfiles/vim/pack/plugins/start/vim-airline"]
 	path = dotfiles/vim/pack/plugins/start/vim-airline
-	url = git@github.com:vim-airline/vim-airline.git
-[submodule "dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim"]
-	path = dotfiles/nvim.old/dein/.cache/repos/github.com/Shougo/dein.vim
-	url = git@github.com:Shougo/dein.vim.git
+	url = https://github.com:vim-airline/vim-airline.git
 [submodule "dotfiles/vim/pack/plugins/start/neocomplete"]
 	path = dotfiles/vim/pack/plugins/start/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim
