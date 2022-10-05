@@ -78,7 +78,7 @@
 	path = dotfiles/vim/pack/plugins/start/vim-airline
 	url = git@github.com:vim-airline/vim-airline.git
 [submodule "dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim"]
-	path = dotfiles/nvim/dein/.cache/repos/github.com/Shougo/dein.vim
+	path = dotfiles/nvim.old/dein/.cache/repos/github.com/Shougo/dein.vim
 	url = git@github.com:Shougo/dein.vim.git
 [submodule "dotfiles/vim/pack/plugins/start/neocomplete"]
 	path = dotfiles/vim/pack/plugins/start/neocomplete
