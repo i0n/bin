@@ -9,5 +9,5 @@ dotfiles/vim/.netrwhist
 tmp/*
 dotfiles/vim/bundle/*/doc/tags*
 dotfiles/vim/tmp/*
-dotfiles/nvim/.netrwhist
-dotfiles/nvim/dein/.cache/*
+dotfiles/nvim.old/.netrwhist
+dotfiles/nvim.old/dein/.cache/*

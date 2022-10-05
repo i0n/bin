@@ -101,3 +101,7 @@
 [submodule "dotfiles/vim/pack/plugins/start/rust.vim"]
 	path = dotfiles/vim/pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule "dotfiles/nvim"]
+	path = dotfiles/nvim
+	url = https://github.com/AstroNvim/AstroNvim
+	branch = nightly
