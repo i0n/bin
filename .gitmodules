@@ -67,7 +67,7 @@
 	url = https://github.com/groenewege/vim-less.git
 [submodule "dotfiles/vim/bundle/tagbar"]
 	path = dotfiles/vim/pack/plugins/start/tagbar
-	url = https://github.com:majutsushi/tagbar.git
+	url = https://github.com/majutsushi/tagbar.git
 [submodule "dotfiles/vim/bundle/vim-jsx"]
 	path = dotfiles/vim/pack/plugins/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
@@ -76,7 +76,7 @@
 	url = https://github.com/fatih/vim-go.git
 [submodule "dotfiles/vim/pack/plugins/start/vim-airline"]
 	path = dotfiles/vim/pack/plugins/start/vim-airline
-	url = https://github.com:vim-airline/vim-airline.git
+	url = https://github.com/vim-airline/vim-airline.git
 [submodule "dotfiles/vim/pack/plugins/start/neocomplete"]
 	path = dotfiles/vim/pack/plugins/start/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim
