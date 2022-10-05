@@ -1,9 +1,31 @@
 --              AstroNvim Configuration Table
 -- All configuration changes should go inside of the table below
-
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
+
+-- Functions for adding blank lines. Mapped to ctrl/alt k
+local function create_array(count, item)
+  local array = {}
+  for _ = 1, count do
+    table.insert(array, item)
+  end
+  return array
+end
+
+local function paste_blank_line(line)
+  local lines = create_array(vim.v.count1, "")
+  vim.api.nvim_buf_set_lines(0, line, line, true, lines)
+end
+
+local function paste_blank_line_above()
+  paste_blank_line(vim.fn.line(".") - 1)
+end
+
+local function paste_blank_line_below()
+  paste_blank_line(vim.fn.line("."))
+end
+
 local config = {
 
   -- Configure AstroNvim updates
@@ -216,6 +238,10 @@ local config = {
       --Close window
       ["<D-w>"] = { "<C-w>c"},
 
+      -- alt j/k for adding blank lines. Functions at top of file.
+       ["˚"] = function() paste_blank_line_above() end,
+       ["∆"] = function() paste_blank_line_below() end,
+
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -332,6 +358,31 @@ local config = {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- neovide
+    vim.cmd([[
+      if exists('g:neovide')
+        let g:neovide_input_use_logo=v:true
+        " copy
+        vnoremap <D-c> "+y
+
+        " paste
+        nnoremap <D-v> "+p
+        inoremap <D-v> <Esc>"+pa
+        cnoremap <D-v> <c-r>+
+
+        " undo
+        nnoremap <D-z> u
+        inoremap <D-z> <Esc>ua
+      endif
+    ]])
+
+    -- Ctrl-j/k deletes blank line below/above
+    vim.cmd([[
+      nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+    ]])
+    vim.cmd([[
+      nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+    ]])
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
