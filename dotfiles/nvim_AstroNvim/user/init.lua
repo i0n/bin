@@ -68,7 +68,9 @@ local config = {
       number = true, -- sets vim.opt.number
       spell = true, -- sets vim.opt.spell
       signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-      wrap = false, -- sets vim.opt.wrap
+      -- Line wrapping...
+      textwidth = 0,
+      wrap = true, -- sets vim.opt.wrap
     },
     g = {
       mapleader = ",", -- sets vim.g.mapleader
@@ -246,6 +248,10 @@ local config = {
       ["<C-p>"] = { function() vim.diagnostic.goto_prev() end, desc = "Previous diagnostic" },
       ["<C-n>"] = { function() vim.diagnostic.goto_next() end, desc = "Next diagnostic" },
 
+      -- Mappings to make text indentation in command mode easier
+      [">"] = { ">>"},
+      ["<"] = { "<<"},
+
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -300,7 +306,7 @@ local config = {
         filtered_items = {
           visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
           hide_dotfiles = false,
-          hide_gitignored = true,
+          hide_gitignored = false,
         },
       },
     },
@@ -387,18 +393,15 @@ local config = {
     vim.cmd([[
       nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
     ]])
-    -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
+
+    -- Fix for neo-tree not setting wrap on windows it opens if it is the first window opened.
+    vim.cmd([[
+      augroup WrapAlways
+        autocmd!
+        autocmd FileType * setlocal wrap
+      augroup END
+    ]])
+
   end,
 }
 
