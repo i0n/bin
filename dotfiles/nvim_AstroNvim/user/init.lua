@@ -48,7 +48,9 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+--  colorscheme = "default_theme",
+--  colorscheme = "gruvbox",
+  colorscheme = "tokyonight-night",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -108,23 +110,23 @@ local config = {
   -- Default theme configuration
   default_theme = {
     -- Modify the color palette for the default theme
-    colors = {
-      fg = "#abb2bf",
-      bg = "#1e222a",
-    },
-    highlights = function(hl) -- or a function that returns a new table of colors to set
-      local C = require "default_theme.colors"
+    -- colors = {
+    --   fg = "#abb2bf",
+    --   bg = "#1e222a",
+    -- },
+    -- highlights = function(hl) -- or a function that returns a new table of colors to set
+    --   local C = require "default_theme.colors"
 
-      hl.Normal = { fg = C.fg, bg = C.bg }
+    --   hl.Normal = { fg = C.fg, bg = C.bg }
 
-      -- New approach instead of diagnostic_style
-      hl.DiagnosticError.italic = true
-      hl.DiagnosticHint.italic = true
-      hl.DiagnosticInfo.italic = true
-      hl.DiagnosticWarn.italic = true
+    --   -- New approach instead of diagnostic_style
+    --   hl.DiagnosticError.italic = true
+    --   hl.DiagnosticHint.italic = true
+    --   hl.DiagnosticInfo.italic = true
+    --   hl.DiagnosticWarn.italic = true
 
-      return hl
-    end,
+    --   return hl
+    -- end,
     -- enable or disable highlighting for extra plugins
     plugins = {
       aerial = true,
@@ -264,6 +266,19 @@ local config = {
   -- Configure plugins
   plugins = {
     init = {
+      {"folke/tokyonight.nvim"},
+      -- { "catppuccin/nvim", as = "catppuccin", config = function() require("catppuccin").setup() end },
+      -- {
+      --   "catppuccin/nvim",
+      --   as = "catppuccin",
+      --   config = function()
+      --     vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+      --     require("catppuccin").setup()
+      --     vim.api.nvim_command "colorscheme catppuccin"
+      --   end
+      -- },
+      -- { "ellisonleao/gruvbox.nvim" },
+
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
