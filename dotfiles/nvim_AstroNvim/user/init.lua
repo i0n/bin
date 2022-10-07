@@ -239,8 +239,12 @@ local config = {
       ["<D-w>"] = { "<C-w>c"},
 
       -- alt j/k for adding blank lines. Functions at top of file.
-       ["˚"] = function() paste_blank_line_above() end,
-       ["∆"] = function() paste_blank_line_below() end,
+      ["˚"] = function() paste_blank_line_above() end,
+      ["∆"] = function() paste_blank_line_below() end,
+
+      -- (ctrl n / ctrl p) Next and previous error from LSP 
+      ["<C-p>"] = { function() vim.diagnostic.goto_prev() end, desc = "Previous diagnostic" },
+      ["<C-n>"] = { function() vim.diagnostic.goto_next() end, desc = "Next diagnostic" },
 
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
