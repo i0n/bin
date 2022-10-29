@@ -240,7 +240,7 @@ local config = {
       ["<D-]>"] = { ":BufferLineCycleNext<cr>"},
 
       --Close window
-      ["<D-w>"] = { "<C-w>c"},
+      ["<D-w>"] = { ":Bdelete<cr>"},
 
       -- alt j/k for adding blank lines. Functions at top of file.
       ["˚"] = function() paste_blank_line_above() end,
