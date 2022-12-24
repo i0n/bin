@@ -12,6 +12,10 @@ export LLVM_ROOT=/usr/local/opt/emscripten/libexec/llvm/bin
 #Setting environment variables:
 #export EMSDK=/Users/i0n/projects/fileduck/emsdk
 #export EM_CONFIG=/Users/i0n/.emscripten
+#export TORCH_CUDA_VERSION=cu117
+#export PYTORCH=/usr/local/Cellar/pytorch/1.13.0
+#export LIBTORCH=/usr/local/Cellar/pytorch/1.13.0
+#export LD_LIBRARY_PATH=${LIBTORCH}/lib:$LD_LIBRARY_PATH
 
 ############################################################## Docker 
 export DOCKER_HUB_USER=i0nw
