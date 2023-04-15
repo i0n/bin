@@ -1,28 +1,14 @@
 . ~/bin/dotfiles/zsh/config
 . ~/bin/dotfiles/zsh/aliases
 
-# Turn off autocorrect
 unsetopt correct_all
-#alias get='nocorrect get'
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Load Angular CLI autocompletion.
-#source <(ng completion script)
-
-############################################################## Paths
-#export PATH="/usr/local/bin:/usr/local/opt/ruby/bin:$PATH:$HOME/bin:$GOPATH/bin:$HOME/.cargo/bin"
-
-# ruby
-if [ -d "/usr/local/opt/ruby/bin" ]; then
-  export PATH=/usr/local/opt/ruby/bin:$PATH
-  export PATH=`gem environment gemdir`/bin:$PATH
-fi
 
 # node / nvm
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-export PATH="/usr/local/bin:$PATH:$HOME/bin:$GOPATH/bin:$HOME/.cargo/bin"
+export PATH="/usr/local/bin:$PATH:$HOME/bin:$GOPATH/bin:$HOME/.cargo/bin:/opt/homebrew/bin"
+
+# starship
 eval "$(starship init zsh)"
