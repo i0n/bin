@@ -1,6 +1,6 @@
 ############################################################## Default Editor
-export EDITOR='/usr/local/bin/neovide'
-export SVN_EDITOR='/usr/local/bin/neovide'
+export EDITOR='/usr/local/bin/nvim'
+export SVN_EDITOR='/usr/local/bin/nvim'
 
 ############################################################## Docker 
 export DOCKER_HUB_USER=i0nw
