@@ -1,6 +1,6 @@
 ############################################################## Default Editor
-export EDITOR='/opt/homebrew/bin/neovide'
-export SVN_EDITOR='/opt/homebrew/bin/neovide'
+export EDITOR='/usr/local/bin/neovide'
+export SVN_EDITOR='/usr/local/bin/neovide'
 
 ############################################################## Docker 
 export DOCKER_HUB_USER=i0nw
