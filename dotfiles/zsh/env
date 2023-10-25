@@ -1,6 +1,7 @@
 ############################################################## Default Editor
-export EDITOR='/usr/local/bin/nvim'
-export SVN_EDITOR='/usr/local/bin/nvim'
+export EDITOR='/opt/homebrew/bin/nvim'
+export SVN_EDITOR='/opt/homebrew/bin/nvim'
 
 ############################################################## Docker 
 export DOCKER_HUB_USER=i0nw
+. "$HOME/.cargo/env"
