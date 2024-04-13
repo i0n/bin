@@ -24,7 +24,7 @@ alias hidef='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Fin
 alias m='mvim'
 
 ########################################################## NeoVim
-alias n='neovide --multigrid --maximized'
+alias n='neovide --maximized'
 
 ########################################################## Git
 alias g='git status'																											# Git Status
