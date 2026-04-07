@@ -1,6 +1,8 @@
-IdentityFile ~/.ssh/ian_graphops
+IdentityFile ~/.ssh/id_ed25519
 
 Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/ian_graphops
+  IdentityFile ~/.ssh/id_ed25519
+
+SetEnv TERM=xterm-256color

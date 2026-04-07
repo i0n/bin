@@ -30,7 +30,6 @@ alias n='neovide --maximized --fork'
 alias g='git status'																											# Git Status
 alias ga='git add -A'																											# Git Add (Everything to pending commit)
 alias gc='git checkout'																										# Git Checkout (Used to switch between branches in the repository)
-alias gh='git rev-parse HEAD | pbcopy | pbpaste'                          # Retrieves the hash for the last commit
 																																					# Git Commit with all arguments, does not require quotes around message (Remember as Git Go!)
 function gg {
 	git commit -v -a -m "$*"

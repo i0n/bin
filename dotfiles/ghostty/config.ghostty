@@ -1,0 +1,14 @@
+cursor-style-blink = false
+background = #111
+foreground = #bbb
+font-family = "Hack Nerd Font Mono"
+font-size = 13
+adjust-cell-height = 5%
+shell-integration-features = no-cursor
+cursor-style = "block"
+palette = 1 = #eb5538
+palette = 2 = #55ff55
+palette = 3 = #ffff55
+palette = 4 = #868ff0
+palette = 5 = #ff55ff
+palette = 6 = #55ffff

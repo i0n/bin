@@ -1,3 +1,9 @@
+############################################################## AWS
+source ~/.aws/env
+
+############################################################## Cloudflare
+source ~/.cloudflare/env
+
 ############################################################## Default Editor
 export EDITOR='/opt/homebrew/bin/nvim'
 export SVN_EDITOR='/opt/homebrew/bin/nvim'
