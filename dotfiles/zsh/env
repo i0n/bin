@@ -4,6 +4,9 @@ source ~/.aws/env
 ############################################################## Cloudflare
 source ~/.cloudflare/env
 
+############################################################## GitHub
+source ~/.github/env
+
 ############################################################## Default Editor
 export EDITOR='/opt/homebrew/bin/nvim'
 export SVN_EDITOR='/opt/homebrew/bin/nvim'
