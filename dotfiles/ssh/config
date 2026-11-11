@@ -6,3 +6,5 @@ Host *
   IdentityFile ~/.ssh/id_ed25519
 
 SetEnv TERM=xterm-256color
+
+Include ~/.ssh/aliases
