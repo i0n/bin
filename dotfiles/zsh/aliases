@@ -76,3 +76,7 @@ function gcp-switch {
 
 ########################################################## Blender
 alias blender='/Applications/Blender.app/Contents/MacOS/Blender'
+
+# Claude Code CLI: own config dir (own Keychain login), so Claude Desktop's
+# sign-in cannot replace it. Shared content in ~/.claude is symlinked in.
+function claude() { CLAUDE_CONFIG_DIR="$HOME/.claude-personal" command claude "$@"; }
