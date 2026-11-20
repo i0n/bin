@@ -16,13 +16,12 @@ return {
   build = "make",
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
-    "stevearc/dressing.nvim",
-    "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     -- required by avante's :Avante command parser
     { "ColinKennedy/mega.cmdparse", dependencies = { "ColinKennedy/mega.logging" } },
     --- The below dependencies are optional,
-    "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+    "folke/snacks.nvim", -- input provider (AstroNvim v6 routes vim.ui.input through snacks)
+    "nvim-mini/mini.icons", -- AstroNvim v6 icon provider (mocks nvim-web-devicons)
     "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting

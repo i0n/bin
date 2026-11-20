@@ -35,7 +35,7 @@ return {
       large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
@@ -76,9 +76,6 @@ return {
           end,
           desc = "Pick to close",
         },
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         -- Swap colon and semicolon for easier commands
@@ -90,23 +87,23 @@ return {
         ["<Left>"] = { "<C-w>h" },
         ["<Right>"] = { "<C-w>l" },
         -- File browser
-        ["<leader>d"] = { ":Neotree toggle filesystem<cr>" },
-        ["<leader>b"] = { ":Neotree toggle buffers<cr>" },
+        ["<Leader>d"] = { ":Neotree toggle filesystem<cr>", desc = "Toggle file explorer" },
+        ["<Leader>b"] = { ":Neotree toggle buffers<cr>", desc = "Toggle buffer explorer" },
         -- Create new vertical and horizontal windows
-        ["<leader>v"] = { "<C-w>v<C-w>w" },
-        ["<leader>h"] = { "<C-w>s<C-w>w" },
+        ["<Leader>v"] = { "<C-w>v<C-w>w", desc = "Vertical split" },
+        ["<Leader>h"] = { "<C-w>s<C-w>w", desc = "Horizontal split" },
         -- Default OS X tab behaviour
         -- Weird mapping bug where mapping without shift works with shift
         ["<D-[>"] = { ":bprev<cr>" },
         ["<D-]>"] = { ":bnext<cr>" },
         --Close window
-        ["<D-w>"] = { ":Bdelete<cr>" },
+        ["<D-w>"] = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
         -- alt j/k for adding blank lines. Functions at top of file.
         ["˚"] = function() paste_blank_line_above() end,
         ["∆"] = function() paste_blank_line_below() end,
         -- (ctrl n / ctrl p) Next and previous error from LSP
-        ["<C-p>"] = { function() vim.diagnostic.goto_prev() end, desc = "Previous diagnostic" },
-        ["<C-n>"] = { function() vim.diagnostic.goto_next() end, desc = "Next diagnostic" },
+        ["<C-p>"] = { function() vim.diagnostic.jump { count = -vim.v.count1 } end, desc = "Previous diagnostic" },
+        ["<C-n>"] = { function() vim.diagnostic.jump { count = vim.v.count1 } end, desc = "Next diagnostic" },
         -- Mappings to make text indentation in command mode easier
         [">"] = { ">>" },
         ["<"] = { "<<" },
